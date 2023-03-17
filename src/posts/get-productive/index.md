@@ -1,9 +1,9 @@
 ---
 title: "Get productive"
 date: "2015-02-01"
-categories: 
+categories:
   - "story"
-tags: 
+tags:
   - "bericht"
   - "denken"
   - "ohnmacht"
@@ -33,16 +33,16 @@ Dieser analoge Vorgang, er wurde zu einem so befreiendem Akt. Und zu einer Erken
 
 Als nächstes habe ich alles andere, digitale weggeschmissen. Alle alten Emails beiseite gelegt und von vorne angefangen. Dabei hat mir ein Beitrag im Internet den richtigen Anstoß gegeben, den ich leider nicht mehr finde. Anstatt wie zuvor, nach und nach mehr und mehr Ordner anzulegen, um darin sortiert die passenden Mails abzulegen, habe ich mich für 5 Ordner entschieden:
 
-\* @Antworten  
-\* @WartenAuf  
-\* Referenzen  
-\* Aufgaben  
-\* Projekte
+* @Antworten
+* @WartenAuf
+* Referenzen
+* Aufgaben
+* Projekte
 
 Von all den Ideen da draußen, hat mich ein Punkt an dieser Struktur am meisten fasziniert. Vereinfachung! Ich will nie wieder so viele Ordner haben. Da programmiere ich lieber 3 Wochen lang eine clevere Suchfunktion (die es schon gibt :)) als jemals wieder viele Ordner zu haben. Bis heute (einen Monat später) habe ich 2 Ordner dazu genommen, da ich erkannt habe, dass ich mehr Interessen habe, deren Relevanz aber nicht so hoch sind.
 
-\* @Lesen  
-\* @Irgendwann/Vielleicht
+* @Lesen
+* @Irgendwann/Vielleicht
 
 Die analogen Ideen und Aufgaben habe ich mir dann einzeln vorgenommen und entschieden, was das nächste Sein sollte, was ich zur erreichung dieses Ziels, zur erledigung des Problems machen müsste. Wie sieht der Stein aus, den ich als nächstes Überschreiten muss? Wenn es mehr als ein Schritt war, habe ich ein Projekt angelegt und zu jedem Projekt so viele Aufgaben erfasst, wie mir eingefallen sind. Zusätzlich habe ich mir überlegt, wann ich diese Aufgaben lösen könnte. Nicht im zeitlichen, sondern im physikalischen Kontext. Was brauche ich für die Erledigung, wann habe ich das?
 
@@ -50,13 +50,13 @@ Die analogen Ideen und Aufgaben habe ich mir dann einzeln vorgenommen und entsch
 
 Dabei herausgekommen sind 5 Kontexte, an denen Ich mich physikalisch befinde und mit denen ich meine Aufgaben gelöst bekomme.
 
-\* @AmRechner  
-\* @Agendas  
-\* @Anrufe  
-\* @Office  
-\* @Besorgungen  
-\* @Irgendwann/Vielleicht  
-\* @ZuHause
+* @AmRechner
+* @Agendas
+* @Anrufe
+* @Office
+* @Besorgungen
+* @Irgendwann/Vielleicht
+* @ZuHause
 
 60 Aufgaben und 30 Projekte sind dabei herausgekommen.
 

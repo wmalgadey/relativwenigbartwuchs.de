@@ -1,7 +1,7 @@
 ---js
 {
-  title: "Beiträge mit dem Schlagwort {{ tag }}",
-  layout: "page.njk",
+  title: "Familie",
+  layout: "main.njk",
   pagination: {
     data: "collections",
     size: 4,
@@ -14,12 +14,10 @@
 }
 ---
 
-<h1>Familie</h1>
+## Familie {.title}
 
-<p>Der einzige wirklich sinnvolle Grund überhaupt etwas zu tun. Evolution ist undenkbar ohne Familie, ohne Nachwuchs und ohne Heimat.</p>
+Der einzige wirklich sinnvolle Grund überhaupt etwas zu tun. Evolution ist undenkbar ohne Familie, ohne Nachwuchs und ohne Heimat.
 
-<ul>
 {% for post in collections[tag] %}
-<li><a href="{{ post.url }}">{{ post.data.title }}<a></li>
+ * [{{ post.data.title }}]({{ post.url }})
 {% endfor %}
-</ul>

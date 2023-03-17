@@ -1,6 +1,6 @@
 ---
 title: start
-layout: page.njk
+layout: main.njk
 eleventyNavigation:
   key: start
   order: 100

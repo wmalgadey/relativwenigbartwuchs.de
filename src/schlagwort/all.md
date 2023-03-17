@@ -9,13 +9,13 @@ pagination:
 layout: page.njk
 permalink: /schlagwort/{{ tag | slugify }}/
 eleventyComputed:
-  title: Beiträge mit dem Schlagwort "{{ tag }}"
+  title: "Schlagwort {{ tag }}"
 ---
 
-<h1>Beiträge mit dem Schlagwort {{ tag }}</h1>
+## Beiträge mit dem Schlagwort <em>{{ tag }}</em> {.title}
 
 <ul>
 {% for post in collections[tag] %}
-<li><a href="{{ post.url }}">{{ post.data.title }}<a></li>
+<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
 {% endfor %}
 </ul>

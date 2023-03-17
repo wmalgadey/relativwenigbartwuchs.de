@@ -1,7 +1,7 @@
 ---
 title: "Im Wasserland"
 date: "2019-07-14"
-categories: 
+categories:
   - "story"
 coverImage: "Im_Wasserland_1.png"
 ---
@@ -16,44 +16,15 @@ Am nächsten morgen ist sie den ganzen Tag zuhause. Weil sie die Grippe hat sie 
 
 Das Buch heißt : die Tintenkleckser Klassenfahrt zum Geisterbahn . Es war lustig, gruselig und spannend. Dann ist sie eingeschlafen. Am nächsten Tag hat sie denn ganzen Tag zuhause gespielt mit ihren Kuscheltiere die heißen: Benno,Brüno,Bruno, Benni. Sie haben ganz verschiedene Spiele gespielt.Eher gesagt nicht den ganzen Tag. Einmal war auch ihre Oma da. Sie hat Frida einen Drachenjuwel geschenkt. Frida fragte wo her hast du eigentlich die ganzen Juwelen Hallo hallo warum nicht.
 
-Dein Opa hat sie geerbt sagte ihre Oma.In jeder Welt ist noch ein Juwel. Also erlebst du jede drei Welten doppelt cool antwortete Frida.darf ich dann wenn ich die Juwelen. gefunden habe meinen Freunden die schenken fragte Frida Du darfst machen was du willst mit denn Juwelen sagte ihre Oma.OK dann mache ich das so. Als die Oma weg war. Ist Frida sofort ins Wasserland gegangen. Sie hat gesucht und gesucht und dann fand sie die drei Juwelen sie schenkte einen der Königin einen mono der Vogel und einen ihrer Oma. Es war sehr cool in Wasserland. Aber jetzt möchte ich den Drachenjuwel ausprobieren .Fortsetzung folgt!
+Dein Opa hat sie geerbt sagte ihre Oma. In jeder Welt ist noch ein Juwel. Also erlebst du jede drei Welten doppelt cool antwortete Frida.darf ich dann wenn ich die Juwelen. gefunden habe meinen Freunden die schenken fragte Frida Du darfst machen was du willst mit denn Juwelen sagte ihre Oma.OK dann mache ich das so. Als die Oma weg war. Ist Frida sofort ins Wasserland gegangen. Sie hat gesucht und gesucht und dann fand sie die drei Juwelen sie schenkte einen der Königin einen mono der Vogel und einen ihrer Oma. Es war sehr cool in Wasserland. Aber jetzt möchte ich den Drachenjuwel ausprobieren. Fortsetzung folgt!
 
-- ![](images/Im_Wasserland_1.png)
-    
-    Seite 1
-    
-- ![](images/Im_Wasserland_2.png)
-    
-    Seite 2
-    
-- ![](images/Im_Wasserland_3.png)
-    
-    Seite 3
-    
-- ![](images/Im_Wasserland_4.png)
-    
-    Seite 4
-    
-- ![](images/Im_Wasserland_5.png)
-    
-    Seite 5
-    
-- ![](images/Im_Wasserland_6.png)
-    
-    Seite 6
-    
-- ![](images/Im_Wasserland_7.png)
-    
-    Seite 7
-    
-- ![](images/Im_Wasserland_8.png)
-    
-    Seite 8
-    
-- ![](images/Im_Wasserland_9.png)
-    
-    Seite 9
-    
-- ![](images/Im_Wasserland_10.png)
-    
-    Seite 10
+![Seite 1](images/Im_Wasserland_1.png "Handschrift Seite 1")
+![Seite 2](images/Im_Wasserland_2.png "Handschrift Seite 2")
+![Seite 3](images/Im_Wasserland_3.png "Handschrift Seite 3")
+![Seite 4](images/Im_Wasserland_4.png "Handschrift Seite 4")
+![Seite 5](images/Im_Wasserland_5.png "Handschrift Seite 5")
+![Seite 6](images/Im_Wasserland_6.png "Handschrift Seite 6")
+![Seite 7](images/Im_Wasserland_7.png "Handschrift Seite 7")
+![Seite 8](images/Im_Wasserland_8.png "Handschrift Seite 8")
+![Seite 9](images/Im_Wasserland_9.png "Handschrift Seite 9")
+![Seite 10](images/Im_Wasserland_10.png "Handschrift Seite 10")
