@@ -2,7 +2,9 @@
 
 @import 'bulma/sass/utilities/initial-variables';
 
-$family-sans-serif: Montserrat, "Helvetica Neue", sans-serif;
+$family-serif: Montserrat, "Helvetica Neue", sans-serif;
+$family-primary: $family-serif;
+
 
 @import 'bulma/bulma';
 /*
@@ -12,13 +14,15 @@ $fa-font-path: '_sass/fontawesome-free-6.3.0-web/webfonts';
 @import '_sass/fontawesome-free-6.3.0-web/scss/solid.scss';
 */
 
-@import 'styles.scss';
 
-
-html,
+// stick footer to the bottom
 body {
-  height: 100vh;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 
 //#region navbar
 
@@ -40,13 +44,24 @@ body {
 //#endregion
 
 
-//#region hamburger
+//#region menu
 
-.menu-sidebar-toggle, .sidebar-primary-toggle {
+.menu-toggle {
   letter-spacing: 2px;
   line-height: 1;
   margin-bottom: 1.8em;
   text-transform: uppercase;
+
+  background: 0 0;
+  color: #000;
+  font-size: 12px;
+  position: absolute;
+  top: 1.8rem;
+  left: 16px;
+  z-index: 999;
+  padding: 6px;
+  transition: color 100ms linear;
+
 
   &.hamburger {
     @include hamburger(1.5rem);
@@ -87,26 +102,56 @@ body {
   }
 }
 
-//#endregion
-
-
-//#region menu button toggles
-
-.menu-sidebar-toggle {
-  background: 0 0;
-  color: #000;
-  font-size: 12px;
-  position: absolute;
-  top: 1.8rem;
-  left: 16px;
-  z-index: 999;
-  padding: 6px;
-  transition: color 100ms linear;
-}
-
-.sidebar-primary-toggle {
+.second-menu-toggle {
   left: auto;
   right: 16px;
 }
 
+.menu-navigation {
+  background: rgba(255, 255, 255, .99);
+  overflow: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  bottom: 0;
+
+  .wrap {
+    width: 100%;
+    height: 100%;
+
+    max-width: 720px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container .columns {
+    padding: 4em 0;
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
 //#endregion
+
+
+
+.cover-image {
+  position: relative;
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    width: auto;
+    height: auto;
+    height: 300px;
+    vertical-align: bottom;
+    box-sizing: border-box;
+  }
+}
