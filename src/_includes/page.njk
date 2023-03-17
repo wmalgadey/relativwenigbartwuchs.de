@@ -1,134 +1,35 @@
-{% include "partials/htmlhead.njk" %}
+{% extends "layouts/main.njk" %}
 
-<header class="site-header">
-  <nav class="navbar is-transparent is-spaced has-shadow" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item is-expanded is-size-5 has-text-centered" href="https://relativwenigbartwuchs.de">
-        relativ wenig bartwuchs
-      </a>
-    </div>
-  </nav>
-</header>
+{% block content %}
 
-<button id="menu-button" class="main-navigation-toggle menu-sidebar-toggle hamburger" aria-controls="menu-primary" aria-expanded="false">
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <div>Menü</div>
-</button>
+  <h1 class="title">{{ title }}</h1>
 
-<nav id="menu" style="display: none;">
-  <button id="menu-close" class="main-navigation-toggle main-navigation-close menu-sidebar-close menu-sidebar-toggle" aria-controls="menu-primary" aria-expanded="false">Menü</button>
-
-  <div class="wrap animated">
-    {% navlist collections.all | eleventyNavigation,
-    page,
-    1 %}
-  </div>
-  <!-- .wrap -->
-</nav>
-
-<button id="sidebar-button" class="sidebar-primary-toggle menu-sidebar-toggle hamburger-dots" aria-controls="sidebar-primary" aria-expanded="false">
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <div>Info</div>
-</button>
-
-<aside id="sidebar" style="display: none;">
-  <button id="sidebar-close" class="sidebar-primary-toggle sidebar-primary-close menu-sidebar-close menu-sidebar-toggle" aria-controls="sidebar-primary" aria-expanded="false">Info</button>
-
-  <div class="wrap animated fadeOutUp">
-
-    <section>
-      <h3>Info</h3>
-
-      <p>Willkommen auf relativ wenig bartwuchs. Dem privaten Weblog von Wolfgang Malgadey.</p>
-    </section>
-
-    <section>
-      <h3>Suchen</h3>
-
-      <form role="search" method="get" class="search-form" action="http://relativwenigbartwuchs.de/">
-        <label>
-          <span class="screen-reader-text">Suche nach:</span>
-          <input type="search" class="search-field" placeholder="Suche&nbsp;…" value="" name="s" title="Suche nach:" spellcheck="false" data-ms-editor="true">
-        </label>
-        <button type="submit" class="search-submit">
-          <span class="screen-reader-text">Suchen</span></button>
-      </form>
-    </section>
-
-    <section>
-      <h3>Kategorien</h3>
-
-      {% navlist collections.kategorien.all,
-      page,
-      1 %}
-    </section>
-
-    <section>
-      <h3>Seiten</h3>
-
-      {% navlist collections.all | eleventyNavigation,
-      page,
-      1 %}
-    </section>
-  </div>
-  <!-- .wrap -->
-
-</aside>
-
-<main class="container content is-fullheight" style="margin-top:50px">
-
-  {% block content %}
-
-    {{ content | safe }}
-
-    {% include "partials/pagelist.njk" %}
-
-  {% endblock %}
-
-</main>
-
-<footer class="footer mt-auto">
-  <aside>
-    <h3>Kategorien</h3>
-
-    {% navlist collections.kategorien.all,
-    page,
-    2 %}
-  </aside>
-
-  <div class="content has-text-centered">
-    <p>
-      <strong>relativ wenig bartwuchs</strong>
-      by
-      <a href="https://malgadey.de">Wolfgang Malgadey</a>.
+  {% if date %}
+    <p class="subtitle">
+      <time datetime="{{ date | dateymd }}">{{ date | datefriendly }}</time>
     </p>
+  {% endif %}
+
+  <div class="level">
+    <div class="level-left">
+      {% for tag in tags %}
+        <div class="level-item">
+          <a href="/schlagwort/{{tag | slugify}}">#{{ tag }}</a>
+        </div>
+      {% endfor %}
+
+      {% for category in categories %}
+        <div class="level-item">
+          <a href="/kategorie/{{category | slugify}}">#{{ category }}</a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 
-  <nav class="level">
-    <div class="level-left">
-      <div class="level-item">
-        <p class="subtitle is-5">
-          relativ wenig bartwuchs
-        </p>
-      </div>
+  <div class="columns">
+    <div class="column">
+      {{ content | safe }}
     </div>
+  </div>
 
-    <div class="level-right">
-      <p class="level-item">
-        <a>impressum</a>
-      </p>
-      <p class="level-item">
-        <a>datenschutz</a>
-      </p>
-      <p class="level-item">
-        <a href="/feed.xml">feed</a>
-      </p>
-    </div>
-  </nav>
-</footer>
-
-{% include "partials/htmlfoot.njk" %}>
+{% endblock %}

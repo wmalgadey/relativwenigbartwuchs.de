@@ -1,21 +1,12 @@
 {% if pagelist %}
   <section class="content">
-    <div class="columns is-multiline">
-
+    <ul class="columns is-multiline">
       {%- for post in pagelist -%}
-        <div class="column post is-4">
+        <li class="column post is-4">
           <article class="columns is-multiline">
 
             <div class="column is-12 post-img">
-              {% if post.data.coverImage %}
-                <figure style="height:300px">
-                  {% coverImageUri post.data.coverImage,
-                  post.url,
-                  post.data.title %}
-                </figure>
-              {% else %}
-                <div style="height:300px">&nbsp;</div>
-              {% endif %}
+              {% coverimage post.data.coverImage, post.data.title, page=post %}
             </div>
 
             <div class="column is-12 featured-content ">
@@ -38,16 +29,16 @@
               {% endif %}
             </div>
           </article>
-        </div>
+        </li>
       {%- endfor -%}
-    </div>
+    </ul>
   </section>
 {% endif %}
 
 {% if pagination.href.previous or pagination.href.next %}
   <nav class="level">
     <div class="level-left">
-      {% if pagination.href.previous %}
+      {% if pagination.href.previous -%}
         <p class="level-item">
           <a href="{{ pagination.href.previous }}">Neuere Beiträge</a>
         </p>
@@ -55,12 +46,11 @@
     </div>
 
     <div class="level-right">
-      {% if pagination.href.next %}
+      {% if pagination.href.next -%}
         <p class="level-item">
           <a href="{{ pagination.href.next }}">Ältere Beiträge</a>
         </p>
       {% endif %}
     </div>
-
   </nav>
 {% endif %}

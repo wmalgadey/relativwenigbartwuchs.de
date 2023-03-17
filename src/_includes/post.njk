@@ -1,4 +1,4 @@
-{% extends "page.njk" %}
+{% extends "layouts/main.njk" %}
 
 {% block content %}
 
@@ -26,10 +26,20 @@
     </div>
 
     <div class="level-right">
-      <p class="level-item">{{ content | wordcount | readtime }}</p>
+      <div class="level-item">
+        <div>
+          {% coverimage coverImage, title %}
+
+          {{ content | wordcount | readtime }}
+        </div>
+      </div>
     </div>
   </div>
 
-  {{ content | safe }}
+  <div class="columns">
+    <div class="column is-three-fifths is-offset-one-fifth">
+      {{ content | safe }}
+    </div>
+  </div>
 
 {% endblock %}
