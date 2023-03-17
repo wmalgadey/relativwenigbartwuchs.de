@@ -3,15 +3,15 @@ const
   dev = global.dev = (process.env.ELEVENTY_ENV === 'development'),
   now = new Date();
 
-module.exports = config => {
+module.exports = eleventyConfig => {
 
   //#region PLUGINS
 
   // navigation
-  config.addPlugin(require('@11ty/eleventy-navigation'));
+  eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'));
 
   // needed for absoluteUrl feature
-  config.addPlugin(require('@11ty/eleventy-plugin-rss'));
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'));
 
   //#endregion
 
@@ -19,17 +19,20 @@ module.exports = config => {
   //#region TRANSFORMS
 
   // inline assets
-  config.addTransform('inline', require('./lib/transforms/inline'));
+  eleventyConfig.addTransform('inline', require('./lib/transforms/inline'));
 
   // minify HTML
   if (!dev) {
-    config.addTransform('htmlminify', require('./lib/transforms/htmlminify'));
+    eleventyConfig.addTransform('htmlminify', require('./lib/transforms/htmlminify'));
   }
 
   // CSS processing
-  config.addTemplateFormats('scss');
-  config.addExtension('scss', require('./lib/extensions/scss'));
-  config.addTransform('postcss', require('./lib/transforms/postcss'));
+  eleventyConfig.addTemplateFormats('scss');
+  eleventyConfig.addExtension('scss', require('./lib/extensions/scss'));
+  eleventyConfig.addTransform('postcss', require('./lib/transforms/postcss'));
+
+  // images
+  eleventyConfig.addTransform('postcss', require('./lib/transforms/social-image'));
 
   //#endregion
 
@@ -38,11 +41,11 @@ module.exports = config => {
 
   // format dates
   const dateformat = require('./lib/filters/dateformat');
-  config.addFilter('datefriendly', dateformat.friendly);
-  config.addFilter('dateymd', dateformat.ymd);
+  eleventyConfig.addFilter('datefriendly', dateformat.friendly);
+  eleventyConfig.addFilter('dateymd', dateformat.ymd);
 
   // format word count and reading time
-  config.addFilter('readtime', require('./lib/filters/readtime'));
+  eleventyConfig.addFilter('readtime', require('./lib/filters/readtime'));
 
   //#endregion
 
@@ -50,9 +53,15 @@ module.exports = config => {
   //#region SHORTCODES
 
   // page navigation
-  config.addShortcode('navlist', require('./lib/shortcodes/navlist.js'));
-  config.addShortcode('excerpt', require('./lib/shortcodes/excerpt.js'));
-  config.addAsyncShortcode('coverImageUri', require('./lib/shortcodes/coverImage.js'));
+  eleventyConfig.addShortcode('navlist', require('./lib/shortcodes/navlist.js'));
+  eleventyConfig.addShortcode('excerpt', require('./lib/shortcodes/excerpt.js'));
+  eleventyConfig.addAsyncShortcode('coverimage', require('./lib/shortcodes/cover-image.js'));
+  eleventyConfig.addAsyncShortcode('googleFonts', require('./lib/shortcodes/google-fonts'));
+
+  eleventyConfig.addFilter("debugger", (...args) => {
+    console.log(...args)
+    debugger;
+  });
 
   //#endregion
 
@@ -60,7 +69,7 @@ module.exports = config => {
   //#region CUSTOM COLLECTIONS
 
   // post collection (in src/posts)
-  config.addCollection('post', collection =>
+  eleventyConfig.addCollection('post', collection =>
 
     collection
       .getFilteredByGlob('./src/posts/**/*.md')
@@ -68,29 +77,29 @@ module.exports = config => {
 
   );
 
-  // Tags
-  config.addCollection('schlagworte', require('./lib/collections/schlagworte'));
-
-  // Categories
-  config.addCollection('kategorien', require('./lib/collections/kategorien'));
+  eleventyConfig.addCollection('schlagworte', require('./lib/collections/schlagworte'));
+  eleventyConfig.addCollection('kategorien', require('./lib/collections/kategorien'));
 
   //#endregion
 
 
   //#region LIBRARIES
 
-  config.setLibrary('md', require('./lib/markdown-it'));
+  eleventyConfig.setLibrary('md', require('./lib/markdown-it'));
 
   //#endregion
 
 
   //#region WATCH FOLDERS
 
-  config.addWatchTarget('./src/css/');
-  config.addWatchTarget('./src/js/');
+  eleventyConfig.addWatchTarget('./src/assets/css/');
+  eleventyConfig.addWatchTarget('./src/assets/js/');
 
   //#endregion
 
+  // eleventyConfig.addPassthroughCopy("./src/posts/**/*.jpeg");
+  // eleventyConfig.addPassthroughCopy("./src/posts/**/*.png");
+  // eleventyConfig.addPassthroughCopy("./src/posts/**/*.jpg");
 
   //#region 11ty defaults
 
