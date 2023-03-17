@@ -6,7 +6,7 @@
           <article class="columns is-multiline">
 
             <div class="column is-12 post-img">
-              {% coverimage post.data.coverImage, post.data.title, page=post %}
+              {% coverimage post.data.coverImage, post.data.title, page=post, placeholder='<div class="cover-image-placeholder">&nbsp;</div>' %}
             </div>
 
             <div class="column is-12 featured-content ">
