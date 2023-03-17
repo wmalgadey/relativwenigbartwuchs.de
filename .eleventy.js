@@ -31,9 +31,6 @@ module.exports = eleventyConfig => {
   eleventyConfig.addExtension('scss', require('./lib/extensions/scss'));
   eleventyConfig.addTransform('postcss', require('./lib/transforms/postcss'));
 
-  // images
-  eleventyConfig.addTransform('postcss', require('./lib/transforms/social-image'));
-
   //#endregion
 
 

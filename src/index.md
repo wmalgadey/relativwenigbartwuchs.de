@@ -15,7 +15,7 @@ eleventyComputed:
 ---
 
 {% if pagination.pageNumber == 0 %}
-# Was gibt es neues? {.title .is-size-2}
+# Was gibt es neues?
 {% else %}
-# Wo waren wir? {.title .is-size-2}
+# Wo waren wir?
 {% endif %}
