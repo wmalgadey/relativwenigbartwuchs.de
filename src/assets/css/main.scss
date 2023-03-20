@@ -31,6 +31,15 @@ body {
   overflow: hidden;
 }
 
+/*
+@include touch {
+  main.container{
+    margin-right: 1.5rem!important;
+    margin-left: 1.5rem!important;
+  }
+}
+*/
+
 //#endregion
 
 

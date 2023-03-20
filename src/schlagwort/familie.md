@@ -1,6 +1,7 @@
 ---js
 {
   title: "Familie",
+  date: "git Last Modified",
   layout: "empty.njk",
   pagination: {
     data: "collections",

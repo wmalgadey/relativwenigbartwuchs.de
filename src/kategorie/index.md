@@ -1,8 +1,10 @@
 ---
 layout: page.njk
+date: "git Last Modified"
 title: Kategorien
+eleventyNavigation:
+  key: kategorien
+  order: 300
 ---
-
-<h2 class="title">Kategorien</h2>
 
 {% navlist collections.kategorien.all, page, 2 %}

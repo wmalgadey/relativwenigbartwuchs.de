@@ -8,7 +8,7 @@ pagination:
   data: collections.post
   alias: pagelist
   reverse: true
-  size: 9
+  size: 12
 permalink: "/{% if pagination.pageNumber > 0 %}seite/{{ pagination.pageNumber }}/{% endif %}/index.html"
 eleventyComputed:
   title: "Seite {{ pagination.pageNumber }}"
