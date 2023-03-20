@@ -94,9 +94,12 @@ module.exports = eleventyConfig => {
 
   //#endregion
 
-  // eleventyConfig.addPassthroughCopy("./src/posts/**/*.jpeg");
-  // eleventyConfig.addPassthroughCopy("./src/posts/**/*.png");
-  // eleventyConfig.addPassthroughCopy("./src/posts/**/*.jpg");
+
+  // Copy any .jpg file to `_site`, via Glob pattern
+  // Keeps the same directory structure.
+  eleventyConfig.addPassthroughCopy("**/*.jpeg");
+  eleventyConfig.addPassthroughCopy("**/*.jpg");
+  eleventyConfig.addPassthroughCopy("**/*.png");
 
   //#region 11ty defaults
 
