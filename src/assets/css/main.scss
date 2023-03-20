@@ -23,6 +23,14 @@ body {
   justify-content: space-between;
 }
 
+.site-main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.footer {
+  padding-bottom: 1.5rem;
+}
 
 //#region navbar
 
@@ -56,7 +64,7 @@ body {
   color: #000;
   font-size: 12px;
   position: absolute;
-  top: 1.8rem;
+  top: 1.2rem;
   left: 16px;
   z-index: 999;
   padding: 6px;
@@ -113,7 +121,7 @@ body {
   padding-left: 5%;
   padding-right: 5%;
   position: fixed;
-  top: 0;
+  top: 60px;
   left: 0;
   width: 100%;
   z-index: 1000;
@@ -141,6 +149,7 @@ body {
 //#endregion
 
 
+//#region cover image
 
 .cover-image {
   position: relative;
@@ -159,3 +168,97 @@ body {
 .cover-image-placeholder {
   min-height: 300px;
 }
+
+//#endregion
+
+
+//#region site
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+//#endregion
+
+
+//#region animation
+
+.animated {
+  -webkit-animation-duration: 350ms;
+  animation-duration: 350ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 25%, 0);
+    transform: translate3d(0, 25%, 0)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 25%, 0);
+    transform: translate3d(0, 25%, 0)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none
+  }
+}
+
+.fade-in-up {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp
+}
+
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0)
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0)
+  }
+}
+
+.fade-out-down {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown
+}
+
+//#endregion
+
+
+.level-is-shrinkable .level-left,
+.level-is-shrinkable .level-item,
+.level-is-shrinkable .level-right {
+  flex-shrink: 1;
+}
+
