@@ -2,34 +2,38 @@
 
 {% block content %}
 
-  <h1 class="title">{{ title }}</h1>
+  <section class="content">
 
-  {% if date %}
-    <p class="subtitle">
-      <time datetime="{{ date | dateymd }}">{{ date | datefriendly }}</time>
-    </p>
-  {% endif %}
+    <h1 class="title">{{ title }}</h1>
 
-  <div class="level">
-    <div class="level-left">
-      {% for tag in tags %}
-        <div class="level-item">
-          <a href="/schlagwort/{{tag | slugify}}">#{{ tag }}</a>
-        </div>
-      {% endfor %}
+    {% if date %}
+      <h2 class="subtitle">
+        <time datetime="{{ page.date | dateymd }}">{{ page.date | datefriendly }}</time>
+      </h2>
+    {% endif %}
 
-      {% for category in categories %}
-        <div class="level-item">
-          <a href="/kategorie/{{category | slugify}}">#{{ category }}</a>
-        </div>
-      {% endfor %}
+    <div class="level">
+      <div class="level-left">
+        {% for tag in tags %}
+          <div class="level-item">
+            <a href="/schlagwort/{{tag | slugify}}">#{{ tag }}</a>
+          </div>
+        {% endfor %}
+
+        {% for category in categories %}
+          <div class="level-item">
+            <a href="/kategorie/{{category | slugify}}">#{{ category }}</a>
+          </div>
+        {% endfor %}
+      </div>
     </div>
-  </div>
 
-  <div class="columns">
-    <div class="column">
-      {{ content | safe }}
+    <div class="columns">
+      <div class="column">
+        {{ content | safe }}
+      </div>
     </div>
-  </div>
+
+  </section>
 
 {% endblock %}

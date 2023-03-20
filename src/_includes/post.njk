@@ -2,44 +2,77 @@
 
 {% block content %}
 
-  <h1 class="title">{{ title }}</h1>
+  <section class="content">
 
-  {% if date %}
-    <p class="subtitle">
-      <time datetime="{{ date | dateymd }}">{{ date | datefriendly }}</time>
-    </p>
-  {% endif %}
+    <header class="columns">
+      <div class="column">
+        <h1 class="title">{{ title }}</h1>
 
-  <div class="level">
-    <div class="level-left">
-      {% for tag in tags %}
-        <div class="level-item">
-          <a href="/schlagwort/{{tag | slugify}}">#{{ tag }}</a>
-        </div>
-      {% endfor %}
-
-      {% for category in categories %}
-        <div class="level-item">
-          <a href="/kategorie/{{category | slugify}}">#{{ category }}</a>
-        </div>
-      {% endfor %}
-    </div>
-
-    <div class="level-right">
-      <div class="level-item">
+        {% if date %}
+          <p class="subtitle">
+            <time datetime="{{ page.date | dateymd }}">{{ page.date | datefriendly }}</time>
+          </p>
+        {% endif %}
+      </div>
+      <div class="column is-narrow">
         <div class="has-text-centered">
-          {% coverimage coverImage, title %}
+          {% coverimage coverImage,
+          title %}
 
           {{ content | wordcount | readtime }}
         </div>
       </div>
-    </div>
-  </div>
+    </header>
 
-  <div class="columns">
-    <div class="column is-three-fifths is-offset-one-fifth">
-      {{ content | safe }}
+    <div class="columns">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        {{ content | safe }}
+      </div>
     </div>
-  </div>
+
+    <footer>
+      <div class="columns is-multiline">
+        <div class="column is-narrow">
+          <div class="level">
+            <div class="level-left">
+              <div class="level-item is-flex-shrink-1">
+                <h3 class="title is-size-7">Beitrag veröffentlicht am
+                  {{ page.date | datefriendly }}
+
+                  {% if categories.length %}
+                    in
+                  {% endif %}
+                </h3>
+              </div>
+
+              {% for category in categories %}
+                <div class="level-item">
+                  <a href="/kategorie/{{category | slugify}}">#{{ category }}</a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        {% if tags.length > 0 %}
+          <div class="column">
+            <div class="level">
+              <div class="level-right">
+                <div class="level-item">
+                  <h3 class="title is-size-7">Schlagwörter</h3>
+                </div>
+
+                {% for tag in tags %}
+                  <div class="level-item">
+                    <a href="/schlagwort/{{tag | slugify}}">#{{ tag }}</a>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </footer>
+  </section>
 
 {% endblock %}

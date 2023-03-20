@@ -1,6 +1,6 @@
 {% include "../partials/htmlhead.njk" %}
 
-<header class="site-header">
+<header>
   <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item is-expanded is-size-5 has-text-centered" href="https://relativwenigbartwuchs.de">
@@ -17,11 +17,9 @@
   <div>Menü</div>
 </button>
 
-<nav id="menu-primary" class="menu-navigation" style="display:none;">
-  <button class="menu-toggle hamburger is-active" aria-controls="menu-primary" aria-expanded="true">Schließen</button>
-
+<nav id="menu-primary" class="menu-navigation animated" style="display:none;">
   <div class="wrap animated container has-text-centered">
-    <div class="columns is-flex is-vcentered is-full-height">
+    <div class="columns is-flex is-vcentered">
       <div class="column">
         {% navlist collections.all | eleventyNavigation,
         page,
@@ -38,11 +36,9 @@
   <div>Info</div>
 </button>
 
-<aside id="menu-secondary" class="menu-navigation" style="display: none;">
-  <button class="menu-toggle second-menu-toggle hamburger-dots is-active" aria-controls="menu-secondary" aria-expanded="true">Schließen</button>
-
-  <div class="wrap container">
-    <div class="columns is-flex is-full-height">
+<aside id="menu-secondary" class="menu-navigation animated" style="display:none;">
+  <div class="animated wrap container">
+    <div class="columns is-flex">
       <div class="column content">
 
         <h3>Info</h3>
@@ -76,7 +72,7 @@
   </div>
 </aside>
 
-<main class="container content" style="margin-top:50px">
+<main class="container is-fluid site-main" style="margin-top:50px;">
 
   {% block content %}
 
@@ -87,21 +83,15 @@
 </main>
 
 <footer class="footer">
-  <aside>
+  <aside class="content">
     <h3>Kategorien</h3>
 
+<nav>
     {% navlist collections.kategorien.all,
     page,
     2 %}
+    </nav>
   </aside>
-
-  <div class="content has-text-centered">
-    <p>
-      <strong>relativ wenig bartwuchs</strong>
-      by
-      <a href="https://malgadey.de">Wolfgang Malgadey</a>.
-    </p>
-  </div>
 
   <nav class="level">
     <div class="level-left">
