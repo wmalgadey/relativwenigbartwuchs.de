@@ -1,54 +1,23 @@
-{% if pagelist %}
-  <ul class="columns is-multiline">
+{% if pagelist -%}
+  <ul class="columns is-multiline ml-0">
     {%- for post in pagelist -%}
       <li class="column is-4">
-        <article class="columns is-multiline">
-
-          <div class="column is-12 content">
-            {% coverimage post.data.coverImage, post.data.title, page=post, placeholder='<div class="cover-image-placeholder">&nbsp;</div>' %}
-          </div>
-
-          <div class="column is-12 content">
-            <h3 class="title">
-              <a href="{{ post.url }}">{{ post.data.title }}</a>
-            </h3>
-
-            {% if post.data.date %}
-              <p class="subtitle">
-                <time datetime="{{ post.data.date | dateymd }}">{{ post.data.date | datefriendly }}</time>
-              </p>
-            {% endif %}
-
-            <p class="post-excerpt">{% excerpt post %}</p>
-
-            {% if post.date %}
-              <p class="time">
-                <time datetime="{{ post.date | dateymd }}">{{ post.date | datefriendly }}</time>
-              </p>
-            {% endif %}
-          </div>
-        </article>
+        {%- coverimage post.data.coverImage, post.data.title, page=post -%}
+        <h3 class="title">
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </h3>
+        {%- if post.data.date -%}
+          <p class="subtitle">
+            <time datetime="{{ post.data.date | dateymd }}">{{ post.data.date | datefriendly }}</time>
+          </p>
+        {%- endif -%}
+        <p class="post-excerpt">{% excerpt post %}</p>
+        {%- if post.date -%}
+          <p class="time">
+            <time datetime="{{ post.date | dateymd }}">{{ post.date | datefriendly }}</time>
+          </p>
+        {%- endif -%}
       </li>
     {%- endfor -%}
   </ul>
-{% endif %}
-
-{% if pagination.href.previous or pagination.href.next %}
-  <nav class="level">
-    <div class="level-left">
-      {% if pagination.href.previous -%}
-        <p class="level-item">
-          <a href="{{ pagination.href.previous }}">Neuere Beiträge</a>
-        </p>
-      {% endif %}
-    </div>
-
-    <div class="level-right">
-      {% if pagination.href.next -%}
-        <p class="level-item">
-          <a href="{{ pagination.href.next }}">Ältere Beiträge</a>
-        </p>
-      {% endif %}
-    </div>
-  </nav>
-{% endif %}
+{%- endif %}

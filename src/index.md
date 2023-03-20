@@ -1,6 +1,6 @@
 ---
 title: start
-layout: main.njk
+layout: empty.njk
 eleventyNavigation:
   key: start
   order: 100
@@ -14,8 +14,11 @@ eleventyComputed:
   title: "Seite {{ pagination.pageNumber }}"
 ---
 
-{% if pagination.pageNumber == 0 %}
-# Was gibt es neues?
-{% else %}
-# Wo waren wir?
-{% endif %}
+{% if pagination.pageNumber == 0 -%}
+# Was gibt es neues? {.title}
+{% else -%}
+# Wo waren wir? {.title}
+{% endif -%}
+
+{% include "partials/pagelist.njk" %}
+{% include "partials/pagelist-prevnext.njk" %}

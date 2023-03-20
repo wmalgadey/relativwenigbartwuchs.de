@@ -5,15 +5,10 @@
 $family-serif: Montserrat, "Helvetica Neue", sans-serif;
 $family-primary: $family-serif;
 
-
 @import 'bulma/bulma';
-/*
-$fa-font-path: '_sass/fontawesome-free-6.3.0-web/webfonts';
 
-@import '_sass/fontawesome-free-6.3.0-web/scss/fontawesome.scss';
-@import '_sass/fontawesome-free-6.3.0-web/scss/solid.scss';
-*/
 
+//#region main
 
 // stick footer to the bottom
 body {
@@ -31,6 +26,13 @@ body {
 .footer {
   padding-bottom: 1.5rem;
 }
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+//#endregion
+
 
 //#region navbar
 
@@ -154,12 +156,13 @@ body {
 .cover-image {
   position: relative;
 
+  margin-left: 0;
+  margin-right: 0;
+
   img {
     max-width: 100%;
     width: 100%;
-    width: auto;
     height: auto;
-    height: 300px;
     vertical-align: bottom;
     box-sizing: border-box;
   }
@@ -169,14 +172,6 @@ body {
   min-height: 300px;
 }
 
-//#endregion
-
-
-//#region site
-
-.disable-scroll {
-  overflow: hidden;
-}
 
 //#endregion
 
@@ -256,9 +251,12 @@ body {
 //#endregion
 
 
+//#region responsive post footer
+
 .level-is-shrinkable .level-left,
 .level-is-shrinkable .level-item,
 .level-is-shrinkable .level-right {
   flex-shrink: 1;
 }
 
+//#endregion

@@ -4,6 +4,7 @@ date: "2019-07-14"
 categories:
   - "story"
 coverImage: "Im_Wasserland_1.png"
+author: Sophie
 ---
 
 Es war einmal in einem kleinem Dorf. Dort waren alle Menschen normale, nur ein Mädchen war nicht ganz normal, sie hat ein Wasserjuwel von ihrer Oma geschenkt bekommen. Also konnte sie Portale öffnen und konnte in andere Welten reisen, als sie in einer anderen Welt war, wusste sie nicht genau wo sie war. Da sah sie ganz viele Wasserpark und da wusste sie das sie in Wasserland war.

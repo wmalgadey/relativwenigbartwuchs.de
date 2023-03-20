@@ -1,7 +1,7 @@
 ---js
 {
   title: "Familie",
-  layout: "main.njk",
+  layout: "empty.njk",
   pagination: {
     data: "collections",
     size: 4,
@@ -18,6 +18,5 @@
 
 Der einzige wirklich sinnvolle Grund überhaupt etwas zu tun. Evolution ist undenkbar ohne Familie, ohne Nachwuchs und ohne Heimat.
 
-{% for post in collections[tag] %}
- * [{{ post.data.title }}]({{ post.url }})
-{% endfor %}
+{% set pagelist = collections.schlagworte[tag] %}
+{% include "partials/pagelist.njk" %}

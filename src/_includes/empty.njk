@@ -1,0 +1,13 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+
+  <section class="content">
+    <div class="columns">
+      <div class="column">
+        {{ content | safe }}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

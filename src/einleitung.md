@@ -1,6 +1,6 @@
 ---
 title: Einleitung
-date: "2017-12-20"
+date: "git Last Modified"
 layout: page.njk
 eleventyNavigation:
   key: einleitung

@@ -72,7 +72,7 @@
   </div>
 </aside>
 
-<main class="container is-fluid site-main" style="margin-top:50px;">
+<main class="site-main container is-max-widescreen">
 
   {% block content %}
 
@@ -83,37 +83,39 @@
 </main>
 
 <footer class="footer">
-  <aside class="content">
-    <h3>Kategorien</h3>
+  <div class="container is-max-widescreen">
+    <aside class="content">
+      <h3>Kategorien</h3>
 
-<nav>
-    {% navlist collections.kategorien.all,
-    page,
-    2 %}
-    </nav>
-  </aside>
+      <nav>
+        {% navlist collections.kategorien.all,
+        page,
+        2 %}
+      </nav>
+    </aside>
 
-  <nav class="level">
-    <div class="level-left">
-      <div class="level-item">
-        <p class="subtitle is-5">
-          relativ wenig bartwuchs
+    <nav class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <p class="subtitle is-5">
+            relativ wenig bartwuchs
+          </p>
+        </div>
+      </div>
+
+      <div class="level-right">
+        <p class="level-item">
+          <a href="/impressum">impressum</a>
+        </p>
+        <p class="level-item">
+          <a href="/datenschutzerklaerung">datenschutz</a>
+        </p>
+        <p class="level-item">
+          <a href="/feed.xml">feed</a>
         </p>
       </div>
-    </div>
-
-    <div class="level-right">
-      <p class="level-item">
-        <a>impressum</a>
-      </p>
-      <p class="level-item">
-        <a>datenschutz</a>
-      </p>
-      <p class="level-item">
-        <a href="/feed.xml">feed</a>
-      </p>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </footer>
 
 {% include "../partials/htmlfoot.njk" %}

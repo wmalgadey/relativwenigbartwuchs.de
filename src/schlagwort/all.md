@@ -6,7 +6,7 @@ pagination:
   addAllPageToCollections: true
   filter:
     - familie
-layout: page.njk
+layout: empty.njk
 permalink: /schlagwort/{{ tag | slugify }}/
 eleventyComputed:
   title: "Schlagwort {{ tag }}"
@@ -14,8 +14,5 @@ eleventyComputed:
 
 ## Beiträge mit dem Schlagwort <em>{{ tag }}</em> {.title}
 
-<ul>
-{% for post in collections[tag] %}
-<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{% endfor %}
-</ul>
+{% set pagelist = collections.schlagworte[tag] %}
+{% include "partials/pagelist.njk" %}

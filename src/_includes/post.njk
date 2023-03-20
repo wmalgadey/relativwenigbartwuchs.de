@@ -24,54 +24,56 @@
       </div>
     </header>
 
-    <div class="columns">
-      <div class="column is-three-fifths is-offset-one-fifth">
+    <div class="columns is-centered">
+      <div class="column is-three-fifths">
         {{ content | safe }}
       </div>
     </div>
 
-    <footer>
-      <div class="columns is-multiline">
-        <div class="column is-narrow">
-          <div class="level">
-            <div class="level-left">
-              <div class="level-item is-flex-shrink-1">
-                <h3 class="title is-size-7">Beitrag veröffentlicht am
-                  {{ page.date | datefriendly }}
+    <footer class="columns is-multiline is-size-7">
+      <div class="column is-narrow">
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item is-flex-shrink-1">
+              <p>Beitrag veröffentlicht am
+                {{ page.date | datefriendly }}
 
-                  {% if categories.length %}
-                    in
-                  {% endif %}
-                </h3>
+                {% if categories.length %}
+                  in
+
+                  {% set comma = joiner() %}
+                  {% for category in categories -%}
+                    {{ comma() }}
+                    <a href="/kategorie/{{category | slugify}}">#{{ category }}</a>
+                  {%- endfor %}
+                  <br/>
+                {% endif %}
+                von
+                {{ author | default("Wolfgang", true) }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% if tags.length > 0 %}
+        <div class="column">
+          <div class="level">
+            <div class="level-left">&nbsp;</div>
+            <div class="level-right">
+              <div class="level-item">
+                <p>Schlagwörter</p>
               </div>
 
-              {% for category in categories %}
+              {% for tag in tags %}
                 <div class="level-item">
-                  <a href="/kategorie/{{category | slugify}}">#{{ category }}</a>
+                  <a href="/schlagwort/{{tag | slugify}}">#{{ tag }}</a>
                 </div>
               {% endfor %}
             </div>
           </div>
         </div>
-
-        {% if tags.length > 0 %}
-          <div class="column">
-            <div class="level">
-              <div class="level-right">
-                <div class="level-item">
-                  <h3 class="title is-size-7">Schlagwörter</h3>
-                </div>
-
-                {% for tag in tags %}
-                  <div class="level-item">
-                    <a href="/schlagwort/{{tag | slugify}}">#{{ tag }}</a>
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        {% endif %}
-      </div>
+      {% endif %}
     </footer>
   </section>
 
