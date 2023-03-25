@@ -107,7 +107,7 @@ module.exports = eleventyConfig => {
 
     dir: {
       input: 'src',
-      output: 'build'
+      output: '_site'
     },
 
     templateFormats: ['njk', 'md', '11ty.js'],
