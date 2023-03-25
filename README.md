@@ -18,22 +18,28 @@ $ npx wordpress-export-to-markdown
 $ npx eleventy --serve
 ```
 
-## Resources
-
-* https://bulma.io/documentation/
-* https://www.11ty.dev/docs/
-* https://11ty.rocks/
-
 ## Favicons
 
 * https://favicon.io/favicon-generator/
 * https://www.npmjs.com/package/eleventy-plugin-gen-favicons
 
+## Fonts
+
+* https://transfonter.org/
+* https://fonts.google.com/specimen/Montserrat
+
 ----
 
 ## To try
 
-## images
+## Resources
+
+* https://bulma.io/documentation/
+* https://www.11ty.dev/docs/
+* https://11ty.rocks/
+* https://ryanccn.dev/posts/why-eleventy/
+
+### images
 * https://www.npmjs.com/package/eleventy-plugin-sharp
 
 ### social images
@@ -41,9 +47,9 @@ $ npx eleventy --serve
 * https://www.npmjs.com/package/@11tyrocks/eleventy-plugin-social-images
 * https://www.npmjs.com/package/eleventy-plugin-social-img
 
-## other source for posts
+### other source for posts
 * https://www.npmjs.com/package/notion-to-md
 
-## add comments
+### add comments
 * https://bloggingfordevs.com/static-site-comments/
 * https://www.aleksandrhovhannisyan.com/blog/static-site-comments-github-issues/
