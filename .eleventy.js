@@ -47,6 +47,8 @@ module.exports = eleventyConfig => {
   // format word count and reading time
   eleventyConfig.addFilter('readtime', require('./lib/filters/readtime'));
 
+  eleventyConfig.addFilter('splitlines', require('./lib/filters/split-lines'));
+
   //#endregion
 
 
