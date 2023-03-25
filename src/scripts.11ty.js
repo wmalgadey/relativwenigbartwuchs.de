@@ -13,7 +13,7 @@ module.exports = class {
       entryPoints: ['./src/assets/js/main.js'],
       bundle: true,
       minify: !dev,
-      outdir: './build/assets/js',
+      outdir: './_site/assets/js',
       sourcemap: dev,
       target: dev ? 'esnext' : 'es6',
     })
