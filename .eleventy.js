@@ -13,6 +13,9 @@ module.exports = eleventyConfig => {
   // needed for absoluteUrl feature
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'));
 
+  // favicons
+  eleventyConfig.addPlugin(require('eleventy-plugin-gen-favicons'), {});
+
   //#endregion
 
 

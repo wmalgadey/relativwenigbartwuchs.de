@@ -22,6 +22,7 @@
     "bulma": "^0.9.4",
     "cssnano": "^5.1.15",
     "cssom": "^0.5.0",
+    "eleventy-plugin-gen-favicons": "^1.1.2",
     "esbuild": "^0.17.11",
     "html-minifier": "^4.0.0",
     "inline-source": "^8.0.2",
