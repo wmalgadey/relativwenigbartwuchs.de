@@ -26,6 +26,7 @@
     "esbuild": "^0.17.11",
     "html-minifier": "^4.0.0",
     "inline-source": "^8.0.2",
+    "linkedom": "^0.14.25",
     "markdown-it-attrs": "^4.1.6",
     "postcss": "^8.4.21",
     "postcss-advanced-variables": "^3.0.1",
