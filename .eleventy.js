@@ -57,7 +57,8 @@ module.exports = eleventyConfig => {
   // page navigation
   eleventyConfig.addShortcode('navlist', require('./lib/shortcodes/navlist.js'));
   eleventyConfig.addShortcode('excerpt', require('./lib/shortcodes/excerpt.js'));
-  eleventyConfig.addAsyncShortcode('coverimage', require('./lib/shortcodes/cover-image.js'));
+
+  eleventyConfig.addAsyncShortcode('coverimage', require('./lib/shortcodes/cover-image'));
   eleventyConfig.addAsyncShortcode('googleFonts', require('./lib/shortcodes/google-fonts'));
 
   eleventyConfig.addFilter("debugger", (...args) => {
@@ -105,6 +106,8 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy("**/*.jpeg");
   eleventyConfig.addPassthroughCopy("**/*.jpg");
   eleventyConfig.addPassthroughCopy("**/*.png");
+
+  eleventyConfig.on('afterBuild', require('./lib/cover-image-preview'));
 
   //#region 11ty defaults
 
