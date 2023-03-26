@@ -13,6 +13,9 @@ module.exports = eleventyConfig => {
   // needed for absoluteUrl feature
   eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'));
 
+  // syntax highlight
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
+
   // favicons
   eleventyConfig.addPlugin(require('eleventy-plugin-gen-favicons'), {});
 
@@ -39,6 +42,12 @@ module.exports = eleventyConfig => {
 
   //#region FILTERS
 
+  // open debugger
+  eleventyConfig.addFilter('debugger', function (...args) {
+    console.log(...args)
+    debugger;
+  });
+
   // format dates
   const dateformat = require('./lib/filters/dateformat');
   eleventyConfig.addFilter('datefriendly', dateformat.friendly);
@@ -56,8 +65,11 @@ module.exports = eleventyConfig => {
 
   // page navigation
   eleventyConfig.addShortcode('navlist', require('./lib/shortcodes/navlist.js'));
+
+  // extract first paragraph from post
   eleventyConfig.addShortcode('excerpt', require('./lib/shortcodes/excerpt.js'));
 
+  // create cover images
   eleventyConfig.addAsyncShortcode('coverimage', require('./lib/shortcodes/cover-image'));
 
   //#endregion
@@ -97,11 +109,12 @@ module.exports = eleventyConfig => {
 
   // Copy any .jpg file to `_site`, via Glob pattern
   // Keeps the same directory structure.
-  eleventyConfig.addPassthroughCopy("**/*.jpeg");
-  eleventyConfig.addPassthroughCopy("**/*.jpg");
-  eleventyConfig.addPassthroughCopy("**/*.png");
+  // eleventyConfig.addPassthroughCopy("**/*.jpeg");
+  // eleventyConfig.addPassthroughCopy("**/*.jpg");
+  // eleventyConfig.addPassthroughCopy("**/*.png");
+  eleventyConfig.addPassthroughCopy("./src/assets/fonts/**/*");
 
-  eleventyConfig.on('afterBuild', require('./lib/cover-image-preview'));
+  eleventyConfig.on('eleventy.after', require('./lib/preview-image-hook'));
 
   //#region 11ty defaults
 

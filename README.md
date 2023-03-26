@@ -27,6 +27,7 @@ $ npx eleventy --serve
 
 * https://transfonter.org/
 * https://fonts.google.com/specimen/Montserrat
+* https://gwfh.mranftl.com/fonts/montserrat?subsets=latin
 
 ----
 
@@ -38,6 +39,8 @@ $ npx eleventy --serve
 * https://www.11ty.dev/docs/
 * https://11ty.rocks/
 * https://ryanccn.dev/posts/why-eleventy/
+* https://github.com/manustays/abhi.page.11ty
+* https://github.com/bnijenhuis/bnijenhuis-nl
 
 ### images
 * https://www.npmjs.com/package/eleventy-plugin-sharp
@@ -46,6 +49,7 @@ $ npx eleventy --serve
 * https://www.npmjs.com/package/eleventy-plugin-og-image
 * https://www.npmjs.com/package/@11tyrocks/eleventy-plugin-social-images
 * https://www.npmjs.com/package/eleventy-plugin-social-img
+* https://github.com/phauer/svg-buddy
 
 ### other source for posts
 * https://www.npmjs.com/package/notion-to-md
