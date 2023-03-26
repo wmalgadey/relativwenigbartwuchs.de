@@ -59,12 +59,6 @@ module.exports = eleventyConfig => {
   eleventyConfig.addShortcode('excerpt', require('./lib/shortcodes/excerpt.js'));
 
   eleventyConfig.addAsyncShortcode('coverimage', require('./lib/shortcodes/cover-image'));
-  eleventyConfig.addAsyncShortcode('googleFonts', require('./lib/shortcodes/google-fonts'));
-
-  eleventyConfig.addFilter("debugger", (...args) => {
-    console.log(...args)
-    debugger;
-  });
 
   //#endregion
 
