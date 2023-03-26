@@ -57,13 +57,13 @@ body {
 
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 //#endregion
 
 
-//#region menu
+//#region menu buttons
 
 .menu-toggle {
   letter-spacing: 2px;
@@ -126,7 +126,11 @@ body {
   right: 16px;
 }
 
-.menu-navigation {
+//#endregion
+
+
+//#region info pages
+.info {
   background: rgba(255, 255, 255, .99);
   overflow: auto;
   padding-left: 5%;
@@ -168,8 +172,8 @@ body {
   margin-left: 0;
   margin-right: 0;
 
-  aspect-ratio : 1 / 1;
-  overflow: hidden!important;
+  aspect-ratio: 1 / 1;
+  overflow: hidden !important;
 
   img {
     max-width: 100%;
@@ -269,6 +273,72 @@ body {
 .level-is-shrinkable .level-item,
 .level-is-shrinkable .level-right {
   flex-shrink: 1;
+}
+
+//#endregion
+
+
+//#region tag cloud
+
+ul {
+  &.tag-cloud {
+    list-style: none;
+    padding-left: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1.5rem;
+
+    a[data-weight="1"] {
+      --size: 1;
+    }
+
+    a[data-weight="2"] {
+      --size: 2;
+    }
+
+    a[data-weight="3"] {
+      --size: 3;
+    }
+
+    a[data-weight="4"] {
+      --size: 4;
+    }
+
+    a[data-weight="5"] {
+      --size: 5;
+    }
+
+    a[data-weight="6"] {
+      --size: 6;
+    }
+
+    a[data-weight="7"] {
+      --size: 7;
+    }
+
+    a[data-weight="8"] {
+      --size: 8;
+    }
+
+    a[data-weight="9"] {
+      --size: 9;
+    }
+
+    a {
+      --size: 4;
+      font-size: calc(var(--size) * 0.25rem + 0.5rem);
+      opacity: calc((15 - (9 - var(--size))) / 15);
+
+      display: block;
+      padding: 0.125rem 0.25rem;
+      text-decoration: none;
+      position: relative;
+    }
+  }
 }
 
 //#endregion
