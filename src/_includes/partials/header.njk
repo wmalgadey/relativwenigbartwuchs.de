@@ -1,3 +1,5 @@
+{% import "macros/navlist.njk" as navlist with context %}
+
 <header>
   <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -19,9 +21,9 @@
   <div class="wrap animated container has-text-centered">
     <div class="columns is-flex is-vcentered">
       <div class="column">
-        {% navlist collections.all | eleventyNavigation,
-        page,
-        1 %}
+        <ul>
+          {%- for entry in collections.all | eleventyNavigation %}{{ navlist.renderNavItemPage(entry) }}{%- endfor -%}
+        </ul>
       </div>
     </div>
   </div>
@@ -43,28 +45,15 @@
 
         <p>Willkommen auf relativ wenig bartwuchs. Dem privaten Weblog von Wolfgang Malgadey.</p>
 
-        <h3>Suchen</h3>
-
-        <form role="search" method="get" class="search-form" action="http://relativwenigbartwuchs.de/">
-          <label>
-            <span class="screen-reader-text">Suche nach:</span>
-            <input type="search" class="search-field" placeholder="Suche&nbsp;…" value="" name="s" title="Suche nach:" spellcheck="false" data-ms-editor="true">
-          </label>
-          <button type="submit" class="search-submit">
-            <span class="screen-reader-text">Suchen</span></button>
-        </form>
-
         <h3>Kategorien</h3>
-
-        {% navlist collections.kategorien.all,
-        page,
-        1 %}
+        <ul>
+          {%- for entry in collections.kategorien.all %}{{ navlist.renderNavItem(entry) }}{%- endfor -%}
+        </ul>
 
         <h3>Seiten</h3>
-
-        {% navlist collections.all | eleventyNavigation,
-        page,
-        1 %}
+        <ul>
+          {%- for entry in collections.all | eleventyNavigation %}{{ navlist.renderNavItemPage(entry) }}{%- endfor -%}
+        </ul>
       </div>
     </div>
   </div>

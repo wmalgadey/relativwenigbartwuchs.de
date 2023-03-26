@@ -1,10 +1,13 @@
 ---
+title: Kategorien
 layout: page.njk
 date: "git Last Modified"
-title: Kategorien
 eleventyNavigation:
   key: kategorien
   order: 300
 ---
 
-{% navlist collections.kategorien.all, page, 2 %}
+{% import "macros/navlist.njk" as navlist %}
+<ul>
+  {%- for entry in collections.kategorien.all %}{{ navlist.renderNavItem(entry) }}{%- endfor -%}
+</ul>

@@ -63,9 +63,6 @@ module.exports = eleventyConfig => {
 
   //#region SHORTCODES
 
-  // page navigation
-  eleventyConfig.addShortcode('navlist', require('./lib/shortcodes/navlist.js'));
-
   // extract first paragraph from post
   eleventyConfig.addShortcode('excerpt', require('./lib/shortcodes/excerpt.js'));
 

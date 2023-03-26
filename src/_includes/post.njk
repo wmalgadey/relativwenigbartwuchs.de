@@ -44,7 +44,7 @@
                   {% set comma = joiner() %}
                   {% for category in categories -%}
                     {{ comma() }}
-                    <a href="/kategorie/{{category | slugify}}">#{{ category }}</a>
+                    <a href="/kategorie/{{ category | slugify }}">#{{ category }}</a>
                   {%- endfor %}
                   <br/>
                 {% endif %}
@@ -67,7 +67,7 @@
 
               {% for tag in tags %}
                 <div class="level-item">
-                  <a href="/schlagwort/{{tag | slugify}}">#{{ tag }}</a>
+                  <a href="/schlagwort/{{ tag | slugify }}">#{{ tag }}</a>
                 </div>
               {% endfor %}
             </div>

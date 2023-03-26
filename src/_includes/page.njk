@@ -10,13 +10,15 @@
 
         {% if date %}
           <p class="subtitle">
-            Zuletzt bearbeitet am <time datetime="{{ page.date | dateymd }}">{{ page.date | datefriendly }}</time>
+            Zuletzt bearbeitet am
+            <time datetime="{{ page.date | dateymd }}">{{ page.date | datefriendly }}</time>
           </p>
         {% endif %}
       </div>
       <div class="column is-narrow">
         <div class="has-text-centered">
-          {% coverimage coverImage, title %}
+          {% coverimage coverImage,
+          title %}
         </div>
       </div>
     </header>
