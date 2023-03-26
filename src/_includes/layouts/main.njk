@@ -1,76 +1,6 @@
-{% include "../partials/htmlhead.njk" %}
+{% include '../partials/htmlhead.njk' %}
 
-<header>
-  <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item is-expanded is-size-5 has-text-centered" href="https://relativwenigbartwuchs.de">
-        relativ wenig bartwuchs
-      </a>
-    </div>
-  </nav>
-</header>
-
-<button class="menu-toggle hamburger" aria-controls="menu-primary" aria-expanded="false">
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <div>Menü</div>
-</button>
-
-<nav id="menu-primary" class="menu-navigation animated" style="display:none;">
-  <div class="wrap animated container has-text-centered">
-    <div class="columns is-flex is-vcentered">
-      <div class="column">
-        {% navlist collections.all | eleventyNavigation,
-        page,
-        1 %}
-      </div>
-    </div>
-  </div>
-</nav>
-
-<button class="menu-toggle second-menu-toggle hamburger-dots" aria-controls="menu-secondary" aria-expanded="false">
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <div>Info</div>
-</button>
-
-<aside id="menu-secondary" class="menu-navigation animated" style="display:none;">
-  <div class="animated wrap container">
-    <div class="columns is-flex">
-      <div class="column content">
-
-        <h3>Info</h3>
-
-        <p>Willkommen auf relativ wenig bartwuchs. Dem privaten Weblog von Wolfgang Malgadey.</p>
-
-        <h3>Suchen</h3>
-
-        <form role="search" method="get" class="search-form" action="http://relativwenigbartwuchs.de/">
-          <label>
-            <span class="screen-reader-text">Suche nach:</span>
-            <input type="search" class="search-field" placeholder="Suche&nbsp;…" value="" name="s" title="Suche nach:" spellcheck="false" data-ms-editor="true">
-          </label>
-          <button type="submit" class="search-submit">
-            <span class="screen-reader-text">Suchen</span></button>
-        </form>
-
-        <h3>Kategorien</h3>
-
-        {% navlist collections.kategorien.all,
-        page,
-        1 %}
-
-        <h3>Seiten</h3>
-
-        {% navlist collections.all | eleventyNavigation,
-        page,
-        1 %}
-      </div>
-    </div>
-  </div>
-</aside>
+{% include '../partials/header.njk' %}
 
 <main class="site-main container is-max-widescreen" style="width: 100%;">
 
@@ -82,40 +12,6 @@
 
 </main>
 
-<footer class="footer">
-  <div class="container is-max-widescreen">
-    <aside class="content">
-      <h3>Kategorien</h3>
+{% include '../partials/footer.njk' %}
 
-      <nav>
-        {% navlist collections.kategorien.all,
-        page,
-        2 %}
-      </nav>
-    </aside>
-
-    <nav class="level">
-      <div class="level-left">
-        <div class="level-item">
-          <p class="subtitle is-5">
-            relativ wenig bartwuchs
-          </p>
-        </div>
-      </div>
-
-      <div class="level-right">
-        <p class="level-item">
-          <a href="/impressum">impressum</a>
-        </p>
-        <p class="level-item">
-          <a href="/datenschutzerklaerung">datenschutz</a>
-        </p>
-        <p class="level-item">
-          <a href="/feed.xml">feed</a>
-        </p>
-      </div>
-    </nav>
-  </div>
-</footer>
-
-{% include "../partials/htmlfoot.njk" %}
+{% include '../partials/htmlfoot.njk' %}

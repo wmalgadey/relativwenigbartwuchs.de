@@ -1,0 +1,71 @@
+<header>
+  <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item is-expanded is-size-5 has-text-centered" href="https://relativwenigbartwuchs.de">
+        relativ wenig bartwuchs
+      </a>
+    </div>
+  </nav>
+</header>
+
+<button class="menu-toggle hamburger" aria-controls="menu-primary" aria-expanded="false">
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <div>Menü</div>
+</button>
+
+<nav id="menu-primary" class="info menu-navigation animated" style="display:none;">
+  <div class="wrap animated container has-text-centered">
+    <div class="columns is-flex is-vcentered">
+      <div class="column">
+        {% navlist collections.all | eleventyNavigation,
+        page,
+        1 %}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<button class="menu-toggle second-menu-toggle hamburger-dots" aria-controls="menu-secondary" aria-expanded="false">
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <div>Info</div>
+</button>
+
+<aside id="menu-secondary" class="info menu-navigation animated" style="display:none;">
+  <div class="wrap animated container">
+    <div class="columns is-flex">
+      <div class="column content">
+
+        <h3>Info</h3>
+
+        <p>Willkommen auf relativ wenig bartwuchs. Dem privaten Weblog von Wolfgang Malgadey.</p>
+
+        <h3>Suchen</h3>
+
+        <form role="search" method="get" class="search-form" action="http://relativwenigbartwuchs.de/">
+          <label>
+            <span class="screen-reader-text">Suche nach:</span>
+            <input type="search" class="search-field" placeholder="Suche&nbsp;…" value="" name="s" title="Suche nach:" spellcheck="false" data-ms-editor="true">
+          </label>
+          <button type="submit" class="search-submit">
+            <span class="screen-reader-text">Suchen</span></button>
+        </form>
+
+        <h3>Kategorien</h3>
+
+        {% navlist collections.kategorien.all,
+        page,
+        1 %}
+
+        <h3>Seiten</h3>
+
+        {% navlist collections.all | eleventyNavigation,
+        page,
+        1 %}
+      </div>
+    </div>
+  </div>
+</aside>
