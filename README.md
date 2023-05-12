@@ -1,5 +1,7 @@
 # Everything about this repository!
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/27921fde-8534-475f-aa34-ca6423f9939d/deploy-status)](https://app.netlify.com/sites/relativwenigbartwuchs/deploys)
+
 ## wordpress export to markdown
 
 * https://github.com/lonekorean/wordpress-export-to-markdown
