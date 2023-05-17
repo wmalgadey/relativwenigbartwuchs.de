@@ -62,7 +62,7 @@ Impressum: https://relativwenigbartwuchs.de/impressum/
 
 ## Weitere Informationen
 ### Wie wir deine Daten schützen
-Die Webseite wird statisch generiert. Das heißt, aktuell gibt es kein CMS dass die Daten speichert oder sonstwie verfügbar macht. Der Quellcode der Seite ist auf github.com verfügbar.
+Die Webseite wird statisch generiert. Das heißt, aktuell gibt es kein CMS dass die Daten speichert oder sonstwie verfügbar macht. Der Quellcode der Seite ist auf [github.com](https://github.com/wmalgadey/relativwenigbartwuchs.de) verfügbar.
 
 Es werden Videos von Youtube und Vimeo eingebettet.
 
