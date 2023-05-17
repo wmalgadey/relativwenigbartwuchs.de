@@ -53,6 +53,3 @@ Diese Webseite enthält Links zu externen Webseiten Dritter, auf deren Inhalte k
 
 ## Urheberrecht
 Die auf dieser Webseite veröffentlichten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
-
-## Datenschutz
-Die Nutzung dieser Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf der Webseite personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adresse) erhoben werden, erfolgt dies stets auf freiwilliger Basis.
