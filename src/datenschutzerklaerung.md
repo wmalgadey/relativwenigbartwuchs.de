@@ -40,6 +40,8 @@ Netlify hält einen Vertrag über die Auftragsverarbeitung gemäß Art. 28 DSGVO
 
 Mehr über die Daten, die durch die Verwendung von Netlify verarbeitet werden, erfahren Sie in der Privacy Policy auf https://www.netlify.com/privacy/.
 
+(Quelle: Erstellt mit dem [Datenschutz Generator](https://www.adsimple.de/datenschutz-generator/) von AdSimple)
+
 ### Mit wem wir deine Daten teilen.
 Mit niemandem.
 
