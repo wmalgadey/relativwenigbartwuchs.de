@@ -1,0 +1,3 @@
+---
+source: https://training.breakthroughguitar.com/get-lead-guitar-lightbulb-moment-1?fbc_id=23847988272370272&fbclid=PAAaYwreUTN6GgpQpGhQj9Kea2SIivkN5fB6HpqgxFWSQYv9VNm47Fwx9sNoc_aem_ARNHfJrdakZblBdLLdj_QZMb2vv1RKn0oXbVgSDce3JGkg7NX8PKyI4dMzlp8nM4H6-skSl6ARvyhF69h3saVvPHEYpbbCpqJ3Q7BCcAHWN-8DyTDni-DYoEeKcgnzS49oM
+---

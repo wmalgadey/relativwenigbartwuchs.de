@@ -1,0 +1,18 @@
+{% if pagelist -%}
+  <ul class="columns is-multiline mx-0">
+    {%- for post in pagelist -%}
+      <li class="column is-one-third">
+        {%- preview post.data.preview, post.data.title, page=post -%}
+        <h3 class="title">
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </h3>
+        {%- if post.date -%}
+          <p class="subtitle">
+            <time datetime="{{ post.date | dateymd }}">{{ post.date | datefriendly }}</time>
+          </p>
+        {%- endif -%}
+        <p>{% excerpt post %}</p>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif %}
