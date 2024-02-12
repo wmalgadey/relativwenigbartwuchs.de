@@ -1,0 +1,169 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "posts",
+      "pageBundle": true,
+      "previewPath": null,
+      "template": "rwb-vault/_data/templates/post (template).md",
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "Modified at",
+          "name": "modfied",
+          "type": "datetime",
+          "isModifiedDate": true
+        }
+      ]
+    },
+    {
+      "name": "note",
+      "pageBundle": false,
+      "template": "rwb-vault/_data/templates/note (template).md",
+      "fields": [
+        {
+          "title": "source",
+          "name": "source",
+          "type": "string"
+        },
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "rating",
+          "name": "rating",
+          "type": "string"
+        },
+        {
+          "title": "status",
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "type",
+          "name": "type",
+          "type": "string"
+        },
+        {
+          "title": "area",
+          "name": "area",
+          "type": "choice",
+          "choices": [
+            "Forschung-und-Portfolio"
+          ]
+        },
+        {
+          "title": "project",
+          "name": "project",
+          "type": "choice",
+          "choices": [
+            "APOSAN-Pacemaker"
+          ]
+        },
+        {
+          "title": "Publish date",
+          "name": "date",
+          "type": "datetime",
+          "isPublishDate": true
+        },
+        {
+          "title": "Modified at",
+          "name": "modfied",
+          "type": "datetime",
+          "isModifiedDate": true
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "11ty",
+  "frontMatter.preview.host": "http://localhost:8080",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "RWB Posts",
+      "path": "[[workspace]]/rwb-vault/blog/posts",
+      "contentTypes": [
+        "posts"
+      ]
+    },
+    {
+      "title": "RWB Categories",
+      "path": "[[workspace]]/rwb-vault/blog/kategorie",
+      "disableCreation": false
+    },
+    {
+      "title": "RWB Tags",
+      "path": "[[workspace]]/rwb-vault/blog/schlagwort",
+      "disableCreation": false
+    },
+    {
+      "title": "Obsidian Journal",
+      "path": "[[workspace]]/rwb-vault/journal/{{year}}",
+      "disableCreation": false
+    },
+    {
+      "title": "Obsidian Notes",
+      "path": "[[workspace]]/rwb-vault/notes",
+      "contentTypes": [
+        "notes"
+      ]
+    }
+  ],
+  "frontMatter.content.publicFolder": {
+    "path": "[[workspace]]/rwb-vault/assets",
+    "relative": false
+  },
+  "frontMatter.website.host": "https://relativwenigbartwuchs.de",
+  "frontMatter.dashboard.openOnStart": false,
+  "frontMatter.telemetry.disable": true,
+  "frontMatter.templates.enabled": true,
+  "frontMatter.templates.folder": "[[workspace]]/rwb-vault/_data/templates/"
+}

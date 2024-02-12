@@ -1,4 +1,7 @@
 build/
+_site/
+.obsidian/
+.cache/
 
 node_modules
 

@@ -3,102 +3,118 @@ const
   dev = global.dev = (process.env.ELEVENTY_ENV === 'development'),
   now = new Date();
 
-module.exports = config => {
+module.exports = eleventyConfig => {
 
   //#region PLUGINS
 
   // navigation
-  config.addPlugin(require('@11ty/eleventy-navigation'));
+  eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'));
 
   // needed for absoluteUrl feature
-  config.addPlugin(require('@11ty/eleventy-plugin-rss'));
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'));
+
+  // syntax highlight
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
+
+  // favicons
+  eleventyConfig.addPlugin(require('eleventy-plugin-gen-favicons'), {});
 
   //#endregion
 
 
   //#region TRANSFORMS
 
-  // inline assets
-  config.addTransform('inline', require('./lib/transforms/inline'));
-
   // minify HTML
   if (!dev) {
-    config.addTransform('htmlminify', require('./lib/transforms/htmlminify'));
+    eleventyConfig.addTransform('htmlminify', require('./lib/transforms/htmlminify'));
   }
 
   // CSS processing
-  config.addTemplateFormats('scss');
-  config.addExtension('scss', require('./lib/extensions/scss'));
-  config.addTransform('postcss', require('./lib/transforms/postcss'));
+  eleventyConfig.addTemplateFormats('scss');
+  eleventyConfig.addExtension('scss', require('./lib/extensions/scss'));
+  eleventyConfig.addTransform('postcss', require('./lib/transforms/postcss'));
 
   //#endregion
 
 
   //#region FILTERS
 
+  // open debugger
+  eleventyConfig.addFilter('debugger', function (...args) {
+    console.log(...args)
+    debugger;
+  });
+
   // format dates
   const dateformat = require('./lib/filters/dateformat');
-  config.addFilter('datefriendly', dateformat.friendly);
-  config.addFilter('dateymd', dateformat.ymd);
+  eleventyConfig.addFilter('datefriendly', dateformat.friendly);
+  eleventyConfig.addFilter('dateymd', dateformat.ymd);
 
   // format word count and reading time
-  config.addFilter('readtime', require('./lib/filters/readtime'));
+  eleventyConfig.addFilter('readtime', require('./lib/filters/readtime'));
+
+  eleventyConfig.addFilter('splitlines', require('./lib/filters/split-lines'));
 
   //#endregion
 
 
   //#region SHORTCODES
 
-  // page navigation
-  config.addShortcode('navlist', require('./lib/shortcodes/navlist.js'));
-  config.addShortcode('excerpt', require('./lib/shortcodes/excerpt.js'));
-  config.addAsyncShortcode('coverImageUri', require('./lib/shortcodes/coverImage.js'));
+  // extract first paragraph from post
+  eleventyConfig.addShortcode('excerpt', require('./lib/shortcodes/excerpt.js'));
+
+  // create preview images
+  eleventyConfig.addAsyncShortcode('preview', require('./lib/shortcodes/preview-image'));
 
   //#endregion
 
 
   //#region CUSTOM COLLECTIONS
 
-  // post collection (in src/posts)
-  config.addCollection('post', collection =>
-
+  // post collection (in rwb-vault/blog/posts)
+  eleventyConfig.addCollection('post', collection =>
     collection
-      .getFilteredByGlob('./src/posts/**/*.md')
+      .getFilteredByGlob('./rwb-vault/blog/posts/**/*.md')
       .filter(p => dev || (!p.data.draft && p.date <= now))
-
   );
 
-  // Tags
-  config.addCollection('schlagworte', require('./lib/collections/schlagworte'));
-
-  // Categories
-  config.addCollection('kategorien', require('./lib/collections/kategorien'));
+  eleventyConfig.addCollection('schlagworte', require('./lib/collections/schlagworte'));
+  eleventyConfig.addCollection('kategorien', require('./lib/collections/kategorien'));
 
   //#endregion
 
 
   //#region LIBRARIES
 
-  config.setLibrary('md', require('./lib/markdown-it'));
+  eleventyConfig.setLibrary('md', require('./lib/markdown-it'));
 
   //#endregion
 
 
   //#region WATCH FOLDERS
 
-  config.addWatchTarget('./src/css/');
-  config.addWatchTarget('./src/js/');
+  eleventyConfig.addWatchTarget('./rwb-vault/assets/css/');
+  eleventyConfig.addWatchTarget('./rwb-vault/assets/js/');
 
   //#endregion
 
+
+  // Copy any .jpg file to `_site`, via Glob pattern
+  // Keeps the same directory structure.
+  // eleventyConfig.addPassthroughCopy("**/*.jpeg");
+  // eleventyConfig.addPassthroughCopy("**/*.jpg");
+  // eleventyConfig.addPassthroughCopy("**/*.png");
+  eleventyConfig.addPassthroughCopy(".rwb-vault/assets/fonts/**/*");
+
+  eleventyConfig.on('eleventy.after', require('./lib/preview-image-hook'));
 
   //#region 11ty defaults
 
   return {
 
     dir: {
-      input: 'src',
-      output: 'build'
+      input: 'rwb-vault/blog/',
+      output: '_site'
     },
 
     templateFormats: ['njk', 'md', '11ty.js'],
