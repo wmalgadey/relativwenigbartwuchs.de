@@ -1,0 +1,1 @@
+[https://support.microsoft.com/de-de/help/4010182/archive-folder-is-automatically-added-to-your-office-365-mailbox](https://support.microsoft.com/de-de/help/4010182/archive-folder-is-automatically-added-to-your-office-365-mailbox)

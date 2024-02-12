@@ -1,0 +1,10 @@
+---
+source: https://www.linkedin.com/posts/robertson-hunter-stewart-90538b1a_kpi-kpis-leadership-activity-7040728905405628416-SMzn?utm_source=share&utm_medium=member_ios
+---
+![[assets/921ynb2z53z33mhm3061qvjag 2.|921ynb2z53z33mhm3061qvjag 2.]]
+
+No alternative text description for this image
+
+![[assets/9sun4diznbhgyelaeryxy75ur 2.|9sun4diznbhgyelaeryxy75ur 2.]]
+
+This book demonstrates how employee engagement can be improved through the proper running of one-to-one meetings. It gives very clear step-by-step guidance and instructions about everything that needs to be done to run these meetings in the most optimal way possible. This in turn leads to a situation where everyone wins: you as the manager, the employee and the organisation. Want to reduce turnover, increase productivity and have happier employees? Then don't hesitate to get your copy today! The links to the book are in the comments: [#leadership](https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2Fhashtag%2Fleadership&trk=public_post_main-feed-card-text) [#employeeengagement](https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2Fhashtag%2Femployeeengagement&trk=public_post_main-feed-card-text) [#management](https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2Fhashtag%2Fmanagement&trk=public_post_main-feed-card-text) [#linkedin](https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2Fhashtag%2Flinkedin&trk=public_post_main-feed-card-text) [#coaching](https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2Fhashtag%2Fcoaching&trk=public_post_main-feed-card-text) [#mentoring](https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2Fhashtag%2Fmentoring&trk=public_post_main-feed-card-text)

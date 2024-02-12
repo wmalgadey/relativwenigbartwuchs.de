@@ -1,0 +1,17 @@
+{% include '../partials/htmlhead.njk' %}
+
+{% include '../partials/header.njk' %}
+
+<main class="site-main container is-max-widescreen" style="width: 100%;">
+
+  {% block content %}
+
+    {{ content | safe }}
+
+  {% endblock %}
+
+</main>
+
+{% include '../partials/footer.njk' %}
+
+{% include '../partials/htmlfoot.njk' %}

@@ -1,0 +1,43 @@
+---
+title: Seite nicht gefunden
+layout: info.njk
+permalink: 404.html
+eleventyExcludeFromCollections: true
+tags:
+type: page
+---
+
+<h2 class="has-text-centered title">Die Seite konnte nicht gefunden werden.</h2>
+<p>
+  Es sieht so aus, als ob an dieser Stelle nichts gefunden wurde. Möglicherweise hilft dir einer der nachfolgenden Links oder die Suchfunktion?
+</p>
+
+<h2>Neueste Beiträge</h2>
+{% set lastPosts = collections.post | reverse %}
+
+<ul>
+  {% for last in range(0, 5) -%}
+    {% set post = lastPosts[last] -%}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </li>
+  {%- endfor %}
+</ul>
+
+<h2>Oft verwendete Kategorien</h2>
+{% set mostUsed = collections.kategorien.all | sort(true, true, 'used') %}
+
+<ul>
+  {% for last in range(0, 5) -%}
+    {% set category = mostUsed[last] -%}
+    <li><a href="{{ category.path }}{{ category.title | slugify }}">{{ category.title }}</a> ({{ category.used }})</li>
+  {%- endfor %}
+</ul>
+
+<h2>Schlagwörter</h2>
+
+<ul class="tag-cloud">
+  {% for tag in collections.schlagworte.all -%}
+    <li><a href="{{ tag.path }}{{ tag.title | slugify }}" data-weight="{{ tag.weight }}">{{ tag.title }}</a></li>
+  {%- endfor %}
+</ul>

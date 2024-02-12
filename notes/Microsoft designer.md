@@ -1,0 +1,1 @@
+[](https://designer.microsoft.com/image-creator?p=A+perfect+%5Brainy%5D+evening+in+the+%5BPacific+Northwest%5D+%5Bcoding+on+my+Surface+laptop%5D%2C+reading+%5Ba+book+of+poetry%5D%2C+watching+%5Bcricket+on+TV%5D+and+%5Bdrinking+espresso%5D)
