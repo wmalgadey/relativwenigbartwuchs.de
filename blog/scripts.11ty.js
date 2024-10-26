@@ -10,7 +10,7 @@ module.exports = class {
 
   async render() {
     await esbuild.build({
-      entryPoints: ['./rwb-vault/blog/assets/js/main.js'],
+      entryPoints: ['./blog/assets/js/main.js'],
       bundle: true,
       minify: !dev,
       outdir: './_site/assets/js',

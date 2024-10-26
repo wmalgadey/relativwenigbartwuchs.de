@@ -93,8 +93,8 @@ module.exports = eleventyConfig => {
 
   //#region WATCH FOLDERS
 
-  eleventyConfig.addWatchTarget('./rwb-vault/assets/css/');
-  eleventyConfig.addWatchTarget('./rwb-vault/assets/js/');
+  eleventyConfig.addWatchTarget('./blog/assets/css/');
+  eleventyConfig.addWatchTarget('./blog/assets/js/');
 
   //#endregion
 
@@ -104,7 +104,7 @@ module.exports = eleventyConfig => {
   // eleventyConfig.addPassthroughCopy("**/*.jpeg");
   // eleventyConfig.addPassthroughCopy("**/*.jpg");
   // eleventyConfig.addPassthroughCopy("**/*.png");
-  eleventyConfig.addPassthroughCopy(".rwb-vault/assets/fonts/**/*");
+  eleventyConfig.addPassthroughCopy(".blog/assets/fonts/**/*");
 
   eleventyConfig.on('eleventy.after', require('./lib/preview-image-hook'));
 
