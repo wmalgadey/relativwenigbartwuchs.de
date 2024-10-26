@@ -4,6 +4,10 @@
   "description": "my personal weblog",
   "main": ".eleventy.js",
   "scripts": {
+    "start": "npm run clean && clear && ELEVENTY_ENV=development npx eleventy --serve",
+    "production": "npm run clean && npx eleventy",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "clean": "rm -rf _site"
   },
   "author": "Wolfgang Malgadey",
   "license": "ISC",
