@@ -1,0 +1,21 @@
+{% include '../partials/htmlhead.njk' %}
+
+{% include '../partials/header.njk' %}
+
+<main class="info" style="position: inherit">
+  <div class="wrap container">
+    <div class="columns is-flex">
+      <div class="column">
+        {% block content %}
+
+          {{ content | safe }}
+
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</main>
+
+{% include '../partials/footer.njk' %}
+
+{% include '../partials/htmlfoot.njk' %}

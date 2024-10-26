@@ -1,0 +1,18 @@
+{% if pagination.href.previous or pagination.href.next -%}
+  <nav class="level">
+    <div class="level-left">
+      {%- if pagination.href.previous -%}
+        <p class="level-item">
+          <a href="{{ pagination.href.previous }}">Neuere Beiträge</a>
+        </p>
+      {%- endif -%}
+    </div>
+    <div class="level-right">
+      {%- if pagination.href.next -%}
+        <p class="level-item">
+          <a href="{{ pagination.href.next }}">Ältere Beiträge</a>
+        </p>
+      {%- endif -%}
+    </div>
+  </nav>
+{%- endif %}

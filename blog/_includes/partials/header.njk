@@ -1,0 +1,60 @@
+{% import "macros/navlist.njk" as navlist with context %}
+
+<header>
+  <nav class="navbar is-transparent is-spaced" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item is-expanded is-size-5 has-text-centered" href="https://relativwenigbartwuchs.de">
+        relativ wenig bartwuchs
+      </a>
+    </div>
+  </nav>
+</header>
+
+<button class="menu-toggle hamburger" aria-controls="menu-primary" aria-expanded="false">
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <div>Menü</div>
+</button>
+
+<nav id="menu-primary" class="info menu-navigation animated" style="display:none;">
+  <div class="wrap animated container has-text-centered">
+    <div class="columns is-flex is-vcentered">
+      <div class="column">
+        <ul>
+          {%- for entry in collections.all | eleventyNavigation %}{{ navlist.renderNavItemPage(entry) }}{%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<button class="menu-toggle second-menu-toggle hamburger-dots" aria-controls="menu-secondary" aria-expanded="false">
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <div>Info</div>
+</button>
+
+<aside id="menu-secondary" class="info menu-navigation animated" style="display:none;">
+  <div class="wrap animated container">
+    <div class="columns is-flex">
+      <div class="column content">
+
+        <h3>Info</h3>
+
+        <p>Willkommen auf relativ wenig bartwuchs. Dem privaten Weblog von Wolfgang Malgadey.</p>
+
+        <h3>Kategorien</h3>
+        <ul>
+          {%- for entry in collections.kategorien.all %}{{ navlist.renderNavItem(entry) }}{%- endfor -%}
+        </ul>
+
+        <h3>Seiten</h3>
+        <ul>
+          {%- for entry in collections.all | eleventyNavigation %}{{ navlist.renderNavItemPage(entry) }}{%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</aside>

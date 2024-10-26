@@ -1,0 +1,25 @@
+{% macro renderNavItemPage(entry) -%}
+  {% if entry.url === page.url -%}
+  <li class="active">
+    <strong>{{ entry.title }}</strong>
+  </li>
+  {%- else -%}
+  <li>
+    <a href="{{ entry.url }}">{{ entry.title }}</a>
+  </li>
+  {%- endif %}
+{%- endmacro %}
+
+{% macro renderNavItem(entry) -%}
+  {% set entryUrl = entry.path + (entry.title | slugify) %}
+  {% if entryUrl === page.url -%}
+  <li class="active">
+    <strong>{{ entry.title }}</strong>
+  </li>
+  {%- else -%}
+  <li>
+    <a href="{{ entryUrl }}">{{ entry.title }}</a>
+  </li>
+  {%- endif %}
+{%- endmacro %}
+

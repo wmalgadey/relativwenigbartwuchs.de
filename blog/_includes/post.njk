@@ -1,0 +1,80 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+
+  <section class="content">
+
+    <header class="columns">
+      <div class="column">
+        <h1 class="title">{{ title }}</h1>
+
+        {% if date %}
+          <p class="subtitle">
+            <time datetime="{{ page.date | dateymd }}">{{ page.date | datefriendly }}</time>
+          </p>
+        {% endif %}
+      </div>
+      <div class="column is-narrow">
+        <div class="has-text-centered">
+          {% preview preview,
+          title %}
+
+          {{ content | wordcount | readtime }}
+        </div>
+      </div>
+    </header>
+
+    <div class="columns is-centered">
+      <div class="column is-three-fifths">
+        {{ content | safe }}
+      </div>
+    </div>
+
+    <footer class="columns is-multiline is-size-7">
+      <div class="column is-narrow">
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item is-flex-shrink-1">
+              <p>Beitrag veröffentlicht am
+                {{ page.date | datefriendly }}
+
+                {% if categories.length %}
+                  in
+
+                  {% set comma = joiner() %}
+                  {% for category in categories -%}
+                    {{ comma() }}
+                    <a href="/kategorie/{{ category | slugify }}">#{{ category }}</a>
+                  {%- endfor %}
+                  <br/>
+                {% endif %}
+                von
+                {{ author | default("Wolfgang", true) }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% if tags.length > 0 %}
+        <div class="column">
+          <div class="level">
+            <div class="level-left">&nbsp;</div>
+            <div class="level-right">
+              <div class="level-item">
+                <p>Schlagwörter</p>
+              </div>
+
+              {% for tag in tags %}
+                <div class="level-item">
+                  <a href="/schlagwort/{{ tag | slugify }}">#{{ tag }}</a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </footer>
+  </section>
+
+{% endblock %}

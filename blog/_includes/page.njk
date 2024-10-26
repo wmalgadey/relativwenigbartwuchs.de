@@ -1,0 +1,34 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+
+  <section class="content">
+
+    <header class="columns">
+      <div class="column">
+        <h1 class="title">{{ title }}</h1>
+
+        {% if date %}
+          <p class="subtitle">
+            Zuletzt bearbeitet am
+            <time datetime="{{ page.date | dateymd }}">{{ page.date | datefriendly }}</time>
+          </p>
+        {% endif %}
+      </div>
+      <div class="column is-narrow">
+        <div class="has-text-centered">
+          {% preview preview,
+          title %}
+        </div>
+      </div>
+    </header>
+
+    <div class="columns is-centered">
+      <div class="column is-three-fifths">
+        {{ content | safe }}
+      </div>
+    </div>
+
+  </section>
+
+{% endblock %}
