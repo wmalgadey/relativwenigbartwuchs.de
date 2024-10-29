@@ -2,5 +2,11 @@
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.framework.id": "11ty",
   "frontMatter.preview.host": "http://localhost:8080",
-  "frontMatter.content.pageFolders": []
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "blog",
+      "path": "[[workspace]]/rwb/blog"
+    }
+  ],
+  "frontMatter.git.enabled": false
 }
