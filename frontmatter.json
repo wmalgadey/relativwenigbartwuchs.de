@@ -2,10 +2,5 @@
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.framework.id": "11ty",
   "frontMatter.preview.host": "http://localhost:8080",
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "blog",
-      "path": "[[workspace]]/blog"
-    }
-  ]
+  "frontMatter.content.pageFolders": []
 }
