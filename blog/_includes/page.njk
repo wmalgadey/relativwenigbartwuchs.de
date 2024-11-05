@@ -8,10 +8,10 @@
       <div class="column">
         <h1 class="title">{{ title }}</h1>
 
-        {% if date %}
+        {% if dateCreated %}
           <p class="subtitle">
             Zuletzt bearbeitet am
-            <time datetime="{{ page.date | dateymd }}">{{ page.date | datefriendly }}</time>
+            <time datetime="{{ page.dateCreated | dateymd }}">{{ page.dateCreated | datefriendly }}</time>
           </p>
         {% endif %}
       </div>

@@ -1,6 +1,6 @@
 ---
 title: Volkes Stimme
-date: 2010-11-19
+date created: 2010-11-19
 categories:
   - Kommentar
 tags:
@@ -12,7 +12,7 @@ tags:
   - type/post
 type: post
 preview: images/google_streetview_1.png
-modified: 2024-02-04T18:04
+date modified: 2024-02-04T18:04
 ---
 
 Es ist schon äußerst beeindruckend, mit welcher Regelmäßigkeit man beobachten kann, wie dumm und lenkbar die Masse ist. Es reden alle von Sachwarmintelligenz, dabei ist der Schwarm eigentlich nur dumm. Er folgt den Parolen und Zurufen anderer und denkt nicht darüber nach, worin seine Entscheidung begründet ist.

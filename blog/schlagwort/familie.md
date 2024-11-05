@@ -1,7 +1,7 @@
 ---js
 {
   title: "Familie",
-  date: "git Last Modified",
+  date created: "git Last Modified",
   layout: "empty.njk",
   tags: ["type/moc"],
   pagination: {

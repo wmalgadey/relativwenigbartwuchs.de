@@ -14,8 +14,8 @@ eleventyComputed:
   title: Seite {{ pagination.pageNumber }}
 tags:
   - type/page
-date: git Last Modified
-modified: 2024-02-04T18:26
+date created: git Last Modified
+date modified: 2024-02-04T18:26
 type: page
 ---
 

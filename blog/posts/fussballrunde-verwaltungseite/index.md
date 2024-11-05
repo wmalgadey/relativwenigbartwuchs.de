@@ -1,6 +1,6 @@
 ---
 title: Fußballrunde-Verwaltungseite
-date: 2010-10-15
+date created: 2010-10-15
 categories:
   - Bericht
 tags:
@@ -13,7 +13,7 @@ tags:
   - type/post
 type: post
 preview: images/cologne-soccer_-_uebersicht.png
-modified: 2024-02-04T18:02
+date modified: 2024-02-04T18:02
 ---
 
 Die Verwaltungsseite zu unserer [Donnerstags-Fussballrunde](http://www.wotze.de/kick) ist fertig geworden. Mich treiben ja immer die unmöglichsten Gründe zu solchen Taten an. In diesem Fall wollte ich unbedingt eine INI-Datei als Datenquelle nutzen. Mir sind natürlich die Probleme einer dateibasierten Datenhaltung klar, aber irgendwie fand ich die Idee smart, meine einfach strukturierten Daten auch einfach zu halten. Und es funktioniert. Die Daten werden analysiert, in Arrays gespeichert und über globale PHP-Sessions persistiert. Bei relevanten Änderungen (in 3 von 9 Funktionen) wird beim nächsten Reload der Seite eine Analyse der INI-Datei durchgeführt. In 2 Tagen entstanden 1426 Programmzeilen in 18 Programmdateien. Das ganze Ding hat 7 von 9 Funktionen und 10 Seiten.

@@ -1,6 +1,6 @@
 ---
 title: Endlich Urlaub
-date: 2011-03-14
+date created: 2011-03-14
 categories:
   - Bericht
 tags:
@@ -13,7 +13,7 @@ tags:
   - type/post
 type: post
 preview: images/urlaub_frankreich.png
-modified: 2024-02-04T18:02
+date modified: 2024-02-04T18:02
 ---
 
 Mein Wunsch, dieses Blog mit Leben zu füllen kann man, glaube ich, als gescheitert betrachten... Während der Arbeit finde ich einfach gar keine Möglichkeit nur mal was zu notieren. Nach der Arbeit bin ich dann viel zu sehr abgelenkt, mit Familie, Freunden, Sport...

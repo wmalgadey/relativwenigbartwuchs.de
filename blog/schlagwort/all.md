@@ -13,8 +13,8 @@ eleventyComputed:
 tags:
   - type/moc
 type: moc
-date: git Last Modified
-modified: 2024-02-04T12:34
+date created: git Last Modified
+date modified: 2024-02-04T12:34
 title: Beiträge mit dem Schlagwort {{ tag }} {.title}
 ---
 

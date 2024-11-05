@@ -1,17 +1,17 @@
 ---
 title: Ich und mein angebissener Apfel
-date: 2011-03-30
+date created: 2011-03-30
 categories:
   - Bericht
 tags:
-  - apple
+  - Apple
   - blog
   - maschinen
   - wehret-den-anfängen
   - type/post
 type: post
 preview: images/apple-gericht-amazon.jpg
-modified: 2024-02-04T18:03
+date modified: 2024-02-04T18:03
 ---
 
 Zuletzt guckte meine Tochter mich recht erschrocken an und meinte: "Hast Du den jetzt ganz gegessen, Papa?" Sie meinte den Apfel, den ich kurz zuvor verspeist habe. Ausser der Körperform habe ich von meinem Vater noch eine weitere Eigenschaft übernommen. Ich esse einen Apfel samt Apfelkitch, also auch die Kerne und das Kerngehäuse. Das hört sich viel schlimmer an als es ist, wenn man zum einen früh genug das Kerngehäuse angeht und zum anderen den Innenteil des Apfels mit großen Bissen direkt herausbeist und dann gut zerkaut. Der Vorteil liegt auf der Hand, bzw. danach nicht mehr. Ich muss mir keinen Ort suchen den Apfelrest zu entsorgen...

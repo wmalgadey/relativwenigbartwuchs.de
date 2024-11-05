@@ -1,6 +1,6 @@
 ---
 title: 11ty
-date: 2023-05-17
+date created: 2023-05-17
 categories:
   - Artikel
 tags:
@@ -8,7 +8,7 @@ tags:
   - kommentar
   - type/post
 type: post
-modified: 2024-02-04T12:34
+date modified: 2024-02-04T12:34
 ---
 
 Seit Anfang Mai wird diese Webseite statisch generiert. Als Generator habe ich mich für [11ty](https://www.11ty.dev/) entschieden.

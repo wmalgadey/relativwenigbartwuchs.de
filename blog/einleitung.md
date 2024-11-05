@@ -1,7 +1,7 @@
 ---
 title: Einleitung
-date: git Last Modified
-modified: 2024-02-04T18:25
+date created: git Last Modified
+date modified: 2024-02-04T18:25
 layout: page.njk
 eleventyNavigation:
   key: einleitung

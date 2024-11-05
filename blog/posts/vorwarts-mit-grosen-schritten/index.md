@@ -1,6 +1,6 @@
 ---
 title: Vorwärts mit großen Schritten
-date: 2010-07-09
+date created: 2010-07-09
 categories:
   - Bericht
 tags:
@@ -9,7 +9,7 @@ tags:
   - wehret-den-anfängen
   - type/post
 type: post
-modified: 2024-02-04T12:34
+date modified: 2024-02-04T12:34
 ---
 
 Die Technik des Internets ist, so einfach sie aussieht, mit verdammt vielen Hürden versehen. [Ben\_'s Heimweh](http://anmutunddemut.de/2010/07/08/heimweh-der-quelltext-ist-meine-oberfla) ist da nur ein konsequenter Wunsch nach weniger Komplexität. Ich habe mich aktuell Schamlos an seinen Ideen und Entwicklungen bedient. Das soll aber nicht so bleiben. Mir gefällt der minimale Ansatz und er nimmt mir eine ganze menge Arbeit ab. Auf meiner letzten abgebrochene Reise hin zu malgadey.de hatte ich ähnliche Wünsche, aber keine Kraft diese umzusetzen. Ich hatte aber auch damals den Wunsch allen alles recht zu machen. Diesen Fehler mache ich nicht. Ich werde die Seite nicht mehr auf jedem Browser testen. Wer nicht sieht, was ich sehe hat Pech gehabt!

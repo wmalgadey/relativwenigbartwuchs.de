@@ -1,6 +1,6 @@
 ---
 title: Jochen Malmsheimer
-date: 2010-08-25
+date created: 2010-08-25
 categories:
   - Porträt
 tags:
@@ -13,7 +13,7 @@ tags:
   - type/post
 type: post
 preview: images/jochen_malmsheimer.jpg
-modified: 2024-02-04T18:03
+date modified: 2024-02-04T18:03
 ---
 
 # Jochen Malmsheimer

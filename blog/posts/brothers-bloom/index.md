@@ -1,6 +1,6 @@
 ---
 title: Brothers Bloom
-date: 2012-01-18
+date created: 2012-01-18
 categories:
   - Kritik
   - Film
@@ -13,7 +13,7 @@ tags:
   - type/post
 type: post
 preview: images/brothers_bloom_web.jpg
-modified: 2024-02-04T18:02
+date modified: 2024-02-04T18:02
 ---
 
 Ich liebe das öffentlich rechtliche TV-Programm. Immer wieder bekommt man dort Perlen zu sehen, die im Matsch des Restprogrammes unter gehen würden. Da ist zum einen das unaufdringliche Senderlogo. In meinem Fall das des WDR. Einfach nur ein Schriftzug. Keine Applikationen, keine Logos, keine Grafiken, unaufdringlich.

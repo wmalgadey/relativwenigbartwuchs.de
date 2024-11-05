@@ -1,6 +1,6 @@
 ---
 title: Das digitale Massaker
-date: 2011-07-12
+date created: 2011-07-12
 categories:
   - Bericht
 tags:
@@ -12,7 +12,7 @@ tags:
   - type/post
 type: post
 preview: images/kungfu.jpg
-modified: 2024-02-04T18:02
+date modified: 2024-02-04T18:02
 ---
 
 Es muss unseren Ur-Großvätern ähnlich gegangen sein. Die Industrielle-Revolution veränderte ihr Leben, ihr Denken, ihr Wesen. Das gewohnte Dasein wurde durch Maschinen, Lärm und Hektik bevölkert. Damals wie heute ist der Mensch sich vor und während der Umgestaltung nicht klar, dass er an einem Umbruch teil hat. Ähnlich muss es schon zu Zeiten der Glaubenskriege und anderer Reformationen gewesen sein.

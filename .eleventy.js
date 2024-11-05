@@ -75,7 +75,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addCollection('post', collection =>
     collection
       .getFilteredByGlob('./blog/posts/**/*.md')
-      .filter(p => dev || (!p.data.draft && p.date <= now))
+      .filter(p => dev || (!p.data.draft && p.dateCreated <= now))
   );
 
   eleventyConfig.addCollection('schlagworte', require('./lib/collections/schlagworte'));

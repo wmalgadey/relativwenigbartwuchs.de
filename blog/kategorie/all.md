@@ -12,8 +12,8 @@ eleventyComputed:
 tags:
   - type/moc
 type: moc
-date: git Last Modified
-modified: 2024-02-04T18:26
+date created: git Last Modified
+date modified: 2024-02-04T18:26
 title: Beiträge der Kategorie {{ kategorie }} {.title}
 ---
 

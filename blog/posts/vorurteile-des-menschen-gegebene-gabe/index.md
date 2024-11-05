@@ -1,6 +1,6 @@
 ---
 title: Vorurteile, des Menschen gegebene Gabe
-date: 2014-07-05
+date created: 2014-07-05
 categories:
   - Kommentar
 tags:
@@ -11,7 +11,7 @@ tags:
   - vorurteile
   - type/post
 type: post
-modified: 2024-02-04T12:34
+date modified: 2024-02-04T12:34
 ---
 
 \_ben, drüben bei [anmutunddemut.de](http://anmutunddemut.de/2014/07/05/its-a-necessity.html) hat mir einen schönen Anlass gegeben, mal über meine Position zum Thema Vorurteile zu schreiben.

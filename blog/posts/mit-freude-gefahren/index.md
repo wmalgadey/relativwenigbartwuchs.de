@@ -1,6 +1,6 @@
 ---
 title: Mit freude gefahren
-date: 2011-08-02
+date created: 2011-08-02
 categories:
   - Bericht
 tags:
@@ -10,7 +10,7 @@ tags:
   - type/post
 type: post
 preview: images/bmwi_i3_gallery_exterior_02-1.jpg
-modified: 2024-02-04T18:04
+date modified: 2024-02-04T18:04
 ---
 
 Am Wochenende bin ich mit meiner Familie, ein wenig durch Deutschland gefahren. Dabei bin ich natürlich auch irgendwo angekommen. In den Gesprächen am Zielort kamen wir dann oft auf die Fahrt selbst und die Mitfahrer zu sprechen. So Sätze wie: "Was? Eine so weite Strecke?" und "War das nicht stressig, mit den Kindern?" wurden mir quasi von allen um die Ohren gewortet. Ich will es hiermit nochmal aufschreiben. Kann man ja gar nicht oft genug sagen:

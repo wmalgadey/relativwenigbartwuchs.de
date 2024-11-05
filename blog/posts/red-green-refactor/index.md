@@ -1,6 +1,6 @@
 ---
 title: Red, Green, Refactor
-date: 2012-02-04
+date created: 2012-02-04
 categories:
   - Kommentar
 tags:
@@ -12,7 +12,7 @@ tags:
   - type/post
 type: post
 preview: images/red_green_refactor_tshirt.jpg
-modified: 2024-02-04T18:04
+date modified: 2024-02-04T18:04
 ---
 
 Für die, denen **red, green, refactor** nichts sagt. _Rot_ steht für einen fehlerhaften Test, _grün_ für einen der Läuft und _refactor_ macht man wenn man nix rotes sieht! Und das weiß ich, weil ich das sehr gut zu lesende Buch [Test-Driven Development by Kent Beck](http://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530) gelesen habe. Zum Buch sei kurz angemerkt, dass es sehr nett geschrieben ist. Herr Beck versteht es angenehm auflockernde Nebensätze einzubauen.

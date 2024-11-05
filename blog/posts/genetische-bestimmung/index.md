@@ -1,6 +1,6 @@
 ---
 title: Genetische Bestimmung
-date: 2010-09-04
+date created: 2010-09-04
 categories:
   - Kommentar
 tags:
@@ -11,7 +11,7 @@ tags:
   - type/post
 type: post
 preview: images/dna_zellen.jpg
-modified: 2024-02-04T18:03
+date modified: 2024-02-04T18:03
 ---
 
 # Genetische Bestimmung

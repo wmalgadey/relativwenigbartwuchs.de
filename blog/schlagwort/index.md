@@ -1,8 +1,8 @@
 ---
 title: Alle Schlagworte
 layout: page.njk
-date: git Last Modified
-modified: 2024-02-04T18:25
+date created: git Last Modified
+date modified: 2024-02-04T18:25
 eleventyNavigation:
   key: schlagworte
   order: 400

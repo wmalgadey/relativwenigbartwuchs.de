@@ -1,6 +1,6 @@
 ---
 title: Im Wasserland
-date: 2019-07-14
+date created: 2019-07-14
 categories:
   - Bericht
 preview: images/Im_Wasserland_1.png
@@ -10,7 +10,7 @@ tags:
   - type/post
   - familie
 type: post
-modified: 2024-02-04T18:03
+date modified: 2024-02-04T18:03
 ---
 
 # Im Wasserland

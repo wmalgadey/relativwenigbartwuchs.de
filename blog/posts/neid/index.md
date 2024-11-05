@@ -1,6 +1,6 @@
 ---
 title: Neid
-date: 2010-11-21
+date created: 2010-11-21
 categories:
   - Neuigkeit
 tags:
@@ -11,7 +11,7 @@ tags:
   - type/post
 type: post
 preview: images/envy_flickr.png
-modified: 2024-02-04T18:04
+date modified: 2024-02-04T18:04
 ---
 
 Das tolle am Schreiben ist ja, dass man damit seine Gedanken festhalten kann. Das tolle am Netz ist, dass es dafür eine Plattform gibt, die dieses Schreiben mit einer neuen Qualität verbindet. Ich könnte all dies auch auf Papier schreiben, oder lokal digitalisieren. Mir fällt digitales Schreiben zur Zeit einfacher als analoges Schreiben. Einen großen Teil meiner bisherigen Zeitdokumente habe ich meiner Frau geschrieben. Teils Liebesbriefe, teils Dokumentationen meiner Gefühle. Diese Dinge hätte ich niemals in ein Netz geschrieben. Ich hätte sie meiner Frau niemals in digitaler Form übermittelt obwohl ich einige der Dokumente auf einem PC geschrieben und sogar ausgedruckt habe.

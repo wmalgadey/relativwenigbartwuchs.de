@@ -1,6 +1,6 @@
 ---
 title: Red
-date: 2010-11-11
+date created: 2010-11-11
 categories:
   - Kritik
   - Film
@@ -13,7 +13,7 @@ tags:
   - type/post
 type: post
 preview: images/kinokarte_red.jpg
-modified: 2024-02-04T18:04
+date modified: 2024-02-04T18:04
 ---
 
 Mit dem äußerst innovativen deutschen Titel

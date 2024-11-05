@@ -1,6 +1,6 @@
 ---
 title: Die Taktik des Bundespräsidenten
-date: 2012-01-06
+date created: 2012-01-06
 categories:
   - Kommentar
 tags:
@@ -11,7 +11,7 @@ tags:
   - type/post
 type: post
 excerpt: Jedem, und da hau ich jetzt mal auf die Kacke, jedem auf diesem Planeten, muss doch begreiflich sein, das jede seiner Handlungen irgendwelche Resultate zur folge haben.
-modified: 2024-02-04T12:34
+date modified: 2024-02-04T12:34
 ---
 
 Jedem, und da hau ich jetzt mal auf die Kacke, jedem auf diesem Planeten, muss doch begreiflich sein, das jede seiner Handlungen irgendwelche Resultate zur folge haben. Es ist mir daher unbegreiflich, wie ein Mensch, der zum einen mit Medien umgehen können muss, zum anderen das bereits gelernt haben sollte. Der Mann ist immerhin Bundespräsident... Kann ja sein, dass man das ohne die Fähigkeit zur Reflexion besetzten kann, aber das glaube ich nicht. Also, es ist mir nicht klar, wie ein Mensch, der das Amt des Bundespräsidenten besetzt so bescheuert sein kann. Anstatt offen gegen die aufkeimenden Gerüchte vor zu gehen, und zum Beispiel das Gespräch zu veröffentlichen, kommt er mit irgendwelchen fadenscheinigen Ausreden und will verhindern, was ihn retten könnte... Ja wenn, ja wenn doch alles stimmt was er da als Ausrede da vorbringt, dann ist doch der O-Ton die beste Verteidigung!? Als ob das schlimmste ein paar in Rage geäußerte Worte währen.

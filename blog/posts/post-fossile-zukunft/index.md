@@ -1,6 +1,6 @@
 ---
 title: Post Fossile Zukunft
-date: 2011-07-28
+date created: 2011-07-28
 categories:
   - Bericht
 tags:
@@ -12,7 +12,7 @@ tags:
   - type/post
 type: post
 preview: images/antimatter.jpg
-modified: 2024-02-04T18:04
+date modified: 2024-02-04T18:04
 ---
 
 **Postfossile Zukunft** was ein Begriff... Er passt so gut zu Utopia, aber so schlecht in unsere Zeit. [Damals](http://relativwenigbartwuchs.de/2010/12/02/das-wiki-leaked) habe ich ja schonmal begonnen meinen Begriff von Utopia zu definieren. Hier will ich mal damit weiter machen.

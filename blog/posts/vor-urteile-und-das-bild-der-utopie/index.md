@@ -1,6 +1,6 @@
 ---
 title: (Vor-)Urteile und das Bild der Utopie
-date: 2017-09-03
+date created: 2017-09-03
 categories:
   - Kommentar
 tags:
@@ -12,7 +12,7 @@ tags:
   - vorurteile
   - type/post
 type: post
-modified: 2024-02-04T12:34
+date modified: 2024-02-04T12:34
 ---
 
 Mit meinen Kommentaren zur Utopie und meiner Vorstellung davon wollte ich ausdrücken, was ich in den letzten Tagen im Buch [Gesundes Kommunizieren](http://www.angela-dietz.de/consulting-beratung/gewaltfreie-kommunikation.html) gelesen habe.

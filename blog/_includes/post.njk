@@ -8,9 +8,9 @@
       <div class="column">
         <h1 class="title">{{ title }}</h1>
 
-        {% if date %}
+        {% if dateCreated %}
           <p class="subtitle">
-            <time datetime="{{ page.date | dateymd }}">{{ page.date | datefriendly }}</time>
+            <time datetime="{{ page.dateCreated | dateymd }}">{{ page.dateCreated | datefriendly }}</time>
           </p>
         {% endif %}
       </div>
@@ -36,7 +36,7 @@
           <div class="level-left">
             <div class="level-item is-flex-shrink-1">
               <p>Beitrag veröffentlicht am
-                {{ page.date | datefriendly }}
+                {{ page.dateCreated | datefriendly }}
 
                 {% if categories.length %}
                   in

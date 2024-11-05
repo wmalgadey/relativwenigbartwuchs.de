@@ -1,6 +1,6 @@
 ---
 title: Get productive
-date: 2015-02-01
+date created: 2015-02-01
 categories:
   - Bericht
 tags:
@@ -9,7 +9,7 @@ tags:
   - produktivität
   - wehret-den-anfängen
   - type/post
-modified: 2024-02-04T18:03
+date modified: 2024-02-04T18:03
 ---
 
 # Get productive

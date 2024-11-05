@@ -1,6 +1,6 @@
 ---
 title: The way it is used to be
-date: 2010-10-25
+date created: 2010-10-25
 categories:
   - Lesezeichen
 tags:
@@ -11,7 +11,7 @@ tags:
   - type/post
 type: post
 preview: images/amazon-shipping-robot.jpg
-modified: 2024-02-04T18:04
+date modified: 2024-02-04T18:04
 ---
 
 Es ist dunkel

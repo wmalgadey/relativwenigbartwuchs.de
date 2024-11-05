@@ -1,6 +1,6 @@
 ---
 title: Das Ende dieses Internets
-date: 2011-11-09
+date created: 2011-11-09
 categories:
   - Kommentar
 tags:
@@ -11,7 +11,7 @@ tags:
   - type/post
 type: post
 preview: images/dasendediesesinternets.png
-modified: 2024-02-04T18:02
+date modified: 2024-02-04T18:02
 ---
 
 > Herzlichen Glückwunsch! Sie haben das Ende dieses Internets erreicht. [Sie suchen nach einem anderen?](http://en.wikipedia.org/wiki/Interplanetary_Internet)
