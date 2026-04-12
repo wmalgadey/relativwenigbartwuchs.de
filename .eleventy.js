@@ -1,23 +1,39 @@
 // 11ty configuration
-const
-  dev = global.dev = (process.env.ELEVENTY_ENV === 'development'),
-  now = new Date();
+import navigation from '@11ty/eleventy-navigation';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import genFavicons from 'eleventy-plugin-gen-favicons';
+import htmlminify from './lib/transforms/htmlminify.js';
+import scssExtension from './lib/extensions/scss.js';
+import postcss from './lib/transforms/postcss.js';
+import { friendly as datefriendly, ymd as dateymd } from './lib/filters/dateformat.js';
+import readtime from './lib/filters/readtime.js';
+import splitlines from './lib/filters/split-lines.js';
+import excerpt from './lib/shortcodes/excerpt.js';
+import preview from './lib/shortcodes/preview-image/index.js';
+import schlagworte from './lib/collections/schlagworte.js';
+import kategorien from './lib/collections/kategorien.js';
+import markdownIt from './lib/markdown-it.js';
+import previewImageHook from './lib/preview-image-hook.js';
 
-module.exports = eleventyConfig => {
+const dev = globalThis.dev = (process.env.ELEVENTY_ENV === 'development');
+const now = new Date();
+
+export default async eleventyConfig => {
 
   //#region PLUGINS
 
   // navigation
-  eleventyConfig.addPlugin(require('@11ty/eleventy-navigation'));
+  eleventyConfig.addPlugin(navigation);
 
   // needed for absoluteUrl feature
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'));
+  const { default: rssPlugin } = await import('@11ty/eleventy-plugin-rss');
+  eleventyConfig.addPlugin(rssPlugin);
 
   // syntax highlight
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'));
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   // favicons
-  eleventyConfig.addPlugin(require('eleventy-plugin-gen-favicons'), {});
+  eleventyConfig.addPlugin(genFavicons, {});
 
   //#endregion
 
@@ -26,13 +42,13 @@ module.exports = eleventyConfig => {
 
   // minify HTML
   if (!dev) {
-    eleventyConfig.addTransform('htmlminify', require('./lib/transforms/htmlminify'));
+    eleventyConfig.addTransform('htmlminify', htmlminify);
   }
 
   // CSS processing
   eleventyConfig.addTemplateFormats('scss');
-  eleventyConfig.addExtension('scss', require('./lib/extensions/scss'));
-  eleventyConfig.addTransform('postcss', require('./lib/transforms/postcss'));
+  eleventyConfig.addExtension('scss', scssExtension);
+  eleventyConfig.addTransform('postcss', postcss);
 
   //#endregion
 
@@ -46,14 +62,13 @@ module.exports = eleventyConfig => {
   });
 
   // format dates
-  const dateformat = require('./lib/filters/dateformat');
-  eleventyConfig.addFilter('datefriendly', dateformat.friendly);
-  eleventyConfig.addFilter('dateymd', dateformat.ymd);
+  eleventyConfig.addFilter('datefriendly', datefriendly);
+  eleventyConfig.addFilter('dateymd', dateymd);
 
   // format word count and reading time
-  eleventyConfig.addFilter('readtime', require('./lib/filters/readtime'));
+  eleventyConfig.addFilter('readtime', readtime);
 
-  eleventyConfig.addFilter('splitlines', require('./lib/filters/split-lines'));
+  eleventyConfig.addFilter('splitlines', splitlines);
 
   //#endregion
 
@@ -61,10 +76,10 @@ module.exports = eleventyConfig => {
   //#region SHORTCODES
 
   // extract first paragraph from post
-  eleventyConfig.addShortcode('excerpt', require('./lib/shortcodes/excerpt.js'));
+  eleventyConfig.addShortcode('excerpt', excerpt);
 
   // create preview images
-  eleventyConfig.addAsyncShortcode('preview', require('./lib/shortcodes/preview-image'));
+  eleventyConfig.addAsyncShortcode('preview', preview);
 
   //#endregion
 
@@ -75,18 +90,18 @@ module.exports = eleventyConfig => {
   eleventyConfig.addCollection('post', collection =>
     collection
       .getFilteredByGlob('./blog/posts/**/*.md')
-      .filter(p => dev || (!p.data.draft && p.dateCreated <= now))
+      .filter(p => dev || (!p.data.draft && new Date(p.data['date created']) <= now))
   );
 
-  eleventyConfig.addCollection('schlagworte', require('./lib/collections/schlagworte'));
-  eleventyConfig.addCollection('kategorien', require('./lib/collections/kategorien'));
+  eleventyConfig.addCollection('schlagworte', schlagworte);
+  eleventyConfig.addCollection('kategorien', kategorien);
 
   //#endregion
 
 
   //#region LIBRARIES
 
-  eleventyConfig.setLibrary('md', require('./lib/markdown-it'));
+  eleventyConfig.setLibrary('md', markdownIt);
 
   //#endregion
 
@@ -104,9 +119,9 @@ module.exports = eleventyConfig => {
   // eleventyConfig.addPassthroughCopy("**/*.jpeg");
   // eleventyConfig.addPassthroughCopy("**/*.jpg");
   // eleventyConfig.addPassthroughCopy("**/*.png");
-  eleventyConfig.addPassthroughCopy(".blog/assets/fonts/**/*");
+  eleventyConfig.addPassthroughCopy("blog/assets/fonts/**/*");
 
-  eleventyConfig.on('eleventy.after', require('./lib/preview-image-hook'));
+  eleventyConfig.on('eleventy.after', previewImageHook);
 
   //#region 11ty defaults
 

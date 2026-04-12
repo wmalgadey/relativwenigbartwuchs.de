@@ -1,6 +1,6 @@
-const esbuild = require('esbuild')
+import esbuild from 'esbuild';
 
-module.exports = class {
+export default class {
   data() {
     return {
       permalink: false,
@@ -12,10 +12,10 @@ module.exports = class {
     await esbuild.build({
       entryPoints: ['./blog/assets/js/main.js'],
       bundle: true,
-      minify: !dev,
+      minify: !globalThis.dev,
       outdir: './_site/assets/js',
-      sourcemap: dev,
-      target: dev ? 'esnext' : 'es6',
+      sourcemap: globalThis.dev,
+      target: globalThis.dev ? 'esnext' : 'es6',
     })
   }
-};
+}
