@@ -91,6 +91,7 @@ export default async eleventyConfig => {
     collection
       .getFilteredByGlob('./blog/posts/**/*.md')
       .filter(p => dev || (!p.data.draft && new Date(p.data['date created']) <= now))
+      .sort((a, b) => new Date(a.data['date created']) - new Date(b.data['date created']))
   );
 
   eleventyConfig.addCollection('schlagworte', schlagworte);
