@@ -1,11 +1,8 @@
 @charset 'utf-8';
 
-@import 'bulma/sass/utilities/initial-variables';
-
-$family-serif: Montserrat, "Helvetica Neue", sans-serif;
-$family-primary: $family-serif;
-
-@import 'bulma/bulma';
+@use 'bulma/sass' as bulma with (
+  $family-primary: 'Montserrat, "Helvetica Neue", sans-serif'
+);
 
 
 //#region main
@@ -83,40 +80,72 @@ body {
 
 
   &.hamburger {
-    @include hamburger(1.5rem);
-
+    cursor: pointer;
+    display: block;
+    height: 1.5rem;
     width: 6.5em;
     position: absolute;
+
+    span {
+      background-color: currentColor;
+      display: block;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      transform-origin: center;
+      transition: background-color 86ms ease-out, opacity 86ms ease-out, transform 86ms ease-out;
+      width: 16px;
+
+      &:nth-child(1) { top: calc(50% - 6px); }
+      &:nth-child(2) { top: calc(50% - 1px); }
+      &:nth-child(3) { top: calc(50% + 4px); }
+    }
 
     div {
       margin-left: 17px;
     }
 
-    span {
-      left: auto;
+    &.is-active span {
+      &:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+      &:nth-child(2) { opacity: 0; }
+      &:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
     }
   }
 
   &.hamburger-dots {
-    @include hamburger(1.5rem);
-
+    cursor: pointer;
+    display: block;
+    height: 1.5rem;
     width: 6.5em;
     position: absolute;
 
-    div {
-      margin-left: 17px;
+    span {
+      background-color: currentColor;
+      display: block;
+      height: 2px;
+      left: 20px;
+      position: absolute;
+      transform-origin: center;
+      transition: background-color 86ms ease-out, opacity 86ms ease-out, transform 86ms ease-out;
+      width: 3px;
+
+      &:nth-child(1) { top: calc(50% - 6px); }
+      &:nth-child(2) { top: calc(50% - 1px); }
+      &:nth-child(3) { top: calc(50% + 4px); }
     }
 
-    span {
-      left: 20px;
-      width: 3px;
-      height: 2px;
+    div {
+      margin-left: 17px;
     }
 
     &.is-active span {
       height: 1px;
       left: 10px;
       width: 17px;
+
+      &:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+      &:nth-child(2) { opacity: 0; }
+      &:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
     }
   }
 }
