@@ -5,7 +5,7 @@
   "main": ".eleventy.js",
   "scripts": {
     "start": "npm run clean && clear && ELEVENTY_ENV=development NODE_NO_WARNINGS=1 npx eleventy --serve",
-    "production": "npm run clean && NODE_NO_WARNINGS=1 npx eleventy",
+    "production": "npm run clean && NODE_NO_WARNINGS=1 npx eleventy && npx pagefind --site _site",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "clean": "rm -rf _site"
   },
@@ -34,6 +34,7 @@
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-regexp": "^0.4.0",
+    "pagefind": "^1.5.2",
     "postcss": "^8.4.21",
     "postcss-advanced-variables": "^5.0.0",
     "postcss-nested": "^7.0.2",

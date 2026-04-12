@@ -1,0 +1,23 @@
+---
+title: Suche
+layout: page.njk
+eleventyNavigation:
+  key: suche
+  order: 450
+eleventyExcludeFromCollections: true
+permalink: /suche/
+date created: 2026-04-12
+date modified: 2026-04-12
+type: page
+tags:
+  - type/page
+---
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<div id="search"></div>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    new PagefindUI({ element: '#search', showSubResults: true });
+  });
+</script>
