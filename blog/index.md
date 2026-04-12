@@ -1,6 +1,6 @@
 ---
 title: Was gibt es neues?
-layout: empty.njk
+layout: partials/empty.njk
 eleventyNavigation:
   key: start
   order: 100

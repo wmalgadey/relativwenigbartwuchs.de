@@ -1,8 +1,8 @@
 ---js
 {
   title: "Familie",
-  date created: "git Last Modified",
-  layout: "empty.njk",
+  "date created": "git Last Modified",
+  layout: "partials/empty.njk",
   tags: ["type/moc"],
   pagination: {
     data: "collections",

@@ -5,7 +5,7 @@ pagination:
   alias: kategorie
   filter:
     - all
-layout: empty.njk
+layout: partials/empty.njk
 permalink: /kategorie/{{ kategorie | slugify }}/
 eleventyComputed:
   title: Kategorie {{ kategorie }}

@@ -6,9 +6,9 @@
         <h3 class="title">
           <a href="{{ post.url }}">{{ post.data.title }}</a>
         </h3>
-        {%- if post.dateCreated -%}
+        {%- if post.data['date created'] -%}
           <p class="subtitle">
-            <time datetime="{{ post.dateCreated | dateymd }}">{{ post.dateCreated | datefriendly }}</time>
+            <time datetime="{{ post.data['date created'] | dateymd }}">{{ post.data['date created'] | datefriendly }}</time>
           </p>
         {%- endif -%}
         <p>{% excerpt post %}</p>

@@ -4,23 +4,15 @@
 
   <section class="content">
 
-    <header class="columns">
-      <div class="column">
-        <h1 class="title">{{ title }}</h1>
+    <header>
+      <h1 class="title">{{ title }}</h1>
 
-        {% if dateCreated %}
-          <p class="subtitle">
-            Zuletzt bearbeitet am
-            <time datetime="{{ page.dateCreated | dateymd }}">{{ page.dateCreated | datefriendly }}</time>
-          </p>
-        {% endif %}
-      </div>
-      <div class="column is-narrow">
-        <div class="has-text-centered">
-          {% preview preview,
-          title %}
-        </div>
-      </div>
+      {% if dateCreated %}
+        <p class="subtitle">
+          Zuletzt bearbeitet am
+          <time datetime="{{ dateCreated | dateymd }}">{{ dateCreated | datefriendly }}</time>
+        </p>
+      {% endif %}
     </header>
 
     <div class="columns is-centered">

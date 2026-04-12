@@ -6,7 +6,7 @@ pagination:
   addAllPageToCollections: true
   filter:
     - familie
-layout: empty.njk
+layout: partials/empty.njk
 permalink: /schlagwort/{{ tag | slugify }}/
 eleventyComputed:
   title: Schlagwort {{ tag }}
