@@ -10,6 +10,7 @@ import readtime from './lib/filters/readtime.js';
 import splitlines from './lib/filters/split-lines.js';
 import excerpt from './lib/shortcodes/excerpt.js';
 import preview from './lib/shortcodes/preview-image/index.js';
+import post from './lib/collections/post.js';
 import schlagworte from './lib/collections/schlagworte.js';
 import kategorien from './lib/collections/kategorien.js';
 import markdownIt from './lib/markdown-it.js';
@@ -87,12 +88,7 @@ export default async eleventyConfig => {
   //#region CUSTOM COLLECTIONS
 
   // post collection (in blog/posts)
-  eleventyConfig.addCollection('post', collection =>
-    collection
-      .getFilteredByGlob('./blog/posts/**/*.md')
-      .filter(p => dev || (!p.data.draft && new Date(p.data['date created']) <= now))
-      .sort((a, b) => new Date(a.data['date created']) - new Date(b.data['date created']))
-  );
+  eleventyConfig.addCollection('post', collection => post(collection, { dev, now }));
 
   eleventyConfig.addCollection('schlagworte', schlagworte);
   eleventyConfig.addCollection('kategorien', kategorien);

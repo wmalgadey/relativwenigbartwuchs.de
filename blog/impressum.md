@@ -11,8 +11,6 @@ tags:
 type: page
 ---
 
-# Impressum
-
 Persönliche Textsammlung. Impressumfrei nach § 55 RStV. Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 
 Autor: Wolfgang Malgadey | E-Mail: mail@malgadey.de

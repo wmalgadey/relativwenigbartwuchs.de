@@ -11,8 +11,6 @@ tags:
 type: page
 ---
 
-# Einleitung
-
 Das ist eine Webseite von [Wolfgang Malgadey](http://malgadey.de). Die Informationen zur Anbieter-Kennzeichnung finden sich auf [malgadey.de](http://malgadey.de/impressum).
 
 ## Feeds

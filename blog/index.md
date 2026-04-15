@@ -9,7 +9,7 @@ pagination:
   alias: pagelist
   reverse: true
   size: 12
-permalink: /{% if pagination.pageNumber > 0 %}seite/{{ pagination.pageNumber }}/{% endif %}/index.html
+permalink: /{% if pagination.pageNumber > 0 %}seite/{{ pagination.pageNumber }}/{% endif %}index.html
 eleventyComputed:
   title: Seite {{ pagination.pageNumber }}
 tags:

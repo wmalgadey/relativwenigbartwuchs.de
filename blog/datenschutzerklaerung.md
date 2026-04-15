@@ -11,8 +11,6 @@ tags:
 type: page
 ---
 
-# Datenschutzerklärung
-
 Die Nutzung dieser Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf der Webseite personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adresse) erhoben werden, erfolgt dies stets auf freiwilliger Basis.
 
 ## Welche personenbezogenen Daten wir sammeln und warum wir sie sammeln

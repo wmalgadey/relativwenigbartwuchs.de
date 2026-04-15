@@ -1,6 +1,6 @@
 {% macro renderNavItemPage(entry) -%}
   {% if entry.url === page.url -%}
-  <li class="active">
+  <li class="active" aria-current="page">
     <strong>{{ entry.title }}</strong>
   </li>
   {%- else -%}
@@ -13,7 +13,7 @@
 {% macro renderNavItem(entry) -%}
   {% set entryUrl = entry.path + (entry.title | slugify) %}
   {% if entryUrl === page.url -%}
-  <li class="active">
+  <li class="active" aria-current="page">
     <strong>{{ entry.title }}</strong>
   </li>
   {%- else -%}

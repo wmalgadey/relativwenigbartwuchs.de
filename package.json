@@ -4,7 +4,7 @@
   "description": "my personal weblog",
   "main": ".eleventy.js",
   "scripts": {
-    "start": "npm run clean && clear && ELEVENTY_ENV=development NODE_NO_WARNINGS=1 npx eleventy --serve",
+    "start": "ELEVENTY_ENV=development NODE_NO_WARNINGS=1 npx eleventy --serve",
     "production": "npm run clean && NODE_NO_WARNINGS=1 npx eleventy && npx pagefind --site _site",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "clean": "rm -rf _site"
@@ -21,6 +21,7 @@
     "@11ty/eleventy-navigation": "^1.0.5",
     "@11ty/eleventy-plugin-rss": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@pagefind/component-ui": "^1.5.2",
     "bulma": "^1.0.4",
     "cssnano": "^7.1.4",
     "cssom": "^0.5.0",

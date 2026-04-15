@@ -13,11 +13,8 @@ tags:
   - type/page
 ---
 
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-<div id="search"></div>
-<script src="/pagefind/pagefind-ui.js"></script>
-<script>
-  window.addEventListener('DOMContentLoaded', function () {
-    new PagefindUI({ element: '#search', showSubResults: true });
-  });
-</script>
+<link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+
+<pagefind-config lang="de"></pagefind-config>
+<pagefind-searchbox></pagefind-searchbox>
