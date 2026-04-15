@@ -1,5 +1,5 @@
 ---
-title: Meine 5Cent
+title: Meine 5 Cent
 date created: 2012-04-19
 categories:
   - Kommentar
@@ -14,7 +14,9 @@ type: post
 date modified: 2024-02-04T12:34
 ---
 
-Diskussionen sind ja irgendwie total mühsam. So viele enden, wie sie begonnen haben. Das sind auch meistens die hitzigsten. Keiner läst sich überzeugen, weil die Standpunkte fest sind. So scheint mir die Politik von heute. Ich kann mich gar nicht daran erinnern, wann der letzte Politiker mal eine Meinung bewußt revidiert hat, weil er vom Gegenteil überzeugt war. Die eigene Meinung ist natürlich vom aktuellen Standpunkt beeinflußt. Über den Tellerrand zu schauen ist mühsam und dadurch fällt es schwerer sich auf die Meinung aus der Sicht eines anderen Standpunktes überhaupt nur einzulassen. Begriffe wie "Unbegreiflich" oder "Blödsinn" zeigen mir, dass man nicht bereit ist, sich auf die andere Seite zu setzen und mal dort zu schauen, wie es denn anders aussehen könnte.
+Diskussionen sind ja irgendwie total mühsam. So viele enden, wie sie begonnen haben. Das sind auch meistens die hitzigsten. Keiner läst sich überzeugen, weil die Standpunkte fest sind. 
+
+So scheint mir die Politik von heute. Ich kann mich gar nicht daran erinnern, wann der letzte Politiker mal eine Meinung bewußt revidiert hat, weil er vom Gegenteil überzeugt war. Die eigene Meinung ist natürlich vom aktuellen Standpunkt beeinflußt. Über den Tellerrand zu schauen ist mühsam und dadurch fällt es schwerer sich auf die Meinung aus der Sicht eines anderen Standpunktes überhaupt nur einzulassen. Begriffe wie "Unbegreiflich" oder "Blödsinn" zeigen mir, dass man nicht bereit ist, sich auf die andere Seite zu setzen und mal dort zu schauen, wie es denn anders aussehen könnte.
 
 Ich bin nur mit einem Funken Kreativität ausgestattet und zusätzlich noch mit einem Hauch Fixiertheit. Für mich sind alle geometrischen, ordentlichen bzw. ausgerichteten Strukturen ansehnlich und interessant (Man hat mich auch schon den Formator genannt). Dennoch kann ich nachvollziehen, wieso man Unordnung oder besser kreative Unordnung interessant finden kann. Ich würde niemals vor einem Kunstwerk stehen und mich fragen: "Was ein Scheiß... Sowas ist doch keine Kunst". Kunst ist, was Du als Kunst empfindest. Für den einen ist es ein Grafitti an der Hauswand, für den anderen ein DaVinci im Wohnzimmer. Wenn im Film "Ziemlich beste Freunde" nur ein Punkt enthalten war, den man für sein Leben mitnehmen kann, dann der, dass der Betrag, den man für Kunst zu zahlen bereit ist, niemals am Wert des Werkes festgemacht werden kann, sondern immer an der Bereitschaft, wieviel man für etwas ausgeben möchte. Ich würde noch gelten lassen, dass man es auch gut verkaufen muss. Aber das sehe ich nur als Mittel zum Zweck. Wenn nicht jeder Mensch im inneren ein Schotte wäre, bräuchten wir nicht feilchen.
 

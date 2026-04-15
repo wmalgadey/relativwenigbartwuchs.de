@@ -15,7 +15,9 @@ date modified: 2024-02-04T18:03
 
 # Im Wasserland
 
-Es war einmal in einem kleinem Dorf. Dort waren alle Menschen normale, nur ein Mädchen war nicht ganz normal, sie hat ein Wasserjuwel von ihrer Oma geschenkt bekommen. Also konnte sie Portale öffnen und konnte in andere Welten reisen, als sie in einer anderen Welt war, wusste sie nicht genau wo sie war. Da sah sie ganz viele Wasserpark und da wusste sie das sie in Wasserland war.
+Es war einmal in einem kleinem Dorf...
+
+Dort waren alle Menschen normale, nur ein Mädchen war nicht ganz normal, sie hat ein Wasserjuwel von ihrer Oma geschenkt bekommen. Also konnte sie Portale öffnen und konnte in andere Welten reisen, als sie in einer anderen Welt war, wusste sie nicht genau wo sie war. Da sah sie ganz viele Wasserpark und da wusste sie das sie in Wasserland war.
 
 Sie wusste das , weil ihre Oma ihr ganz viele Geschichten erzählen hat. Als sie wieder nach Hause gekommen ist. Setzte sie sich direkt vor den Fernseher und guckte den Film die Schule der magischen Tiere Der Film war sehr lustig hat sie gesagt. Als sie das zweite mal ein Portal geöffnet hat. Hat sie die Königin getroffen. Eher gesagt die Königin von Wasserland. Die Königin fragte wie heißt du sie antwortete ich heiße Frida. Das heißt ich darf dich Frida nennen. Frida antwortete klar doch. Gehen wir in eine Wasserpark? Fragte Frida. Die Königin antwortete klar können wir in einen Wasserpark gehen! Dann gehen wir in in den den Wasserpark der vor uns ist sagte Frida.Ok sagte die Königin.Als sie im Wasserpark waren.Sind sie auf alle Rutschen gegangen und in alle Becken. Außerdem sind sie von alle Sprungbrettern gesprungen . Das hat Super Spaß gemacht. Als sie wieder aus dem Wasserpark zurück waren Wurde Zeit für sie zu gehen.Als sie zuhause war ist sie sofort ins Bett gegangen.
 

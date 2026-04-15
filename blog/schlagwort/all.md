@@ -3,9 +3,10 @@ pagination:
   data: collections.schlagworte
   size: 1
   alias: tag
-  addAllPageToCollections: true
+  addAllPagesToCollections: true
   filter:
     - all
+    - familie
 layout: partials/empty.njk
 permalink: /schlagwort/{{ tag | slugify }}/
 eleventyComputed:
