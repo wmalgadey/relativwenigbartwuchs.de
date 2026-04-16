@@ -65,9 +65,11 @@
               </div>
 
               {% for tag in tags %}
-                <div class="level-item">
-                  <a href="/schlagwort/{{ tag | slugify }}">#{{ tag }}</a>
-                </div>
+                {% if not tag.startsWith('type/') and not tag.startsWith('journal/') and tag != 'posts' and tag != 'all' %}
+                  <div class="level-item">
+                    <a href="/schlagwort/{{ tag | slugify }}">#{{ tag }}</a>
+                  </div>
+                {% endif %}
               {% endfor %}
             </div>
           </div>
