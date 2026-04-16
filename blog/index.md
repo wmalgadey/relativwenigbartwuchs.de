@@ -11,7 +11,7 @@ pagination:
   size: 12
 permalink: /{% if pagination.pageNumber > 0 %}seite/{{ pagination.pageNumber }}/{% endif %}index.html
 eleventyComputed:
-  title: Seite {{ pagination.pageNumber }}
+  title: "{% if pagination.pageNumber > 0 %}Wo waren wir? Seite {{ pagination.pageNumber }}{% else %}Was gibt es neues?{% endif %}"
 tags:
   - type/page
 date created: git Last Modified
