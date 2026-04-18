@@ -11,6 +11,7 @@ tags:
   - type/post
 type: post
 draft: true
+preview: images/preview.jpg
 ---
 
 Ich finde die Idee interessant, das mit generativer KI und vor allem mit der KI die noch vor uns liegt, etwas neues kommt.
