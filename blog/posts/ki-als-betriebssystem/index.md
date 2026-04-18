@@ -27,6 +27,8 @@ Durch einen Post von [Felix Schlenther](https://www.linkedin.com/in/felixschlent
 
 > **Hinweis:** Build Your Own OpenClaw stammt nicht von Felix Schlenther — das ist ein separates Tutorial. Entweder trennen: _"Durch einen Post von Felix Schlenther und durch das Tutorial Build Your Own OpenClaw…"_ — oder den Link erst im Praxis-Abschnitt erwähnen.
 
+Eigene Erfahrung mit 25 Agenten habe ich keine. Aber intuitiv habe ich den domänenspezifischen Ansatz immer vermieden. Statt einem Agenten zu sagen "Du bist jetzt ein Senior Java Architekt" habe ich lieber spezifische Prompts geschrieben — was einem Skill, wie ich heute weiß, ziemlich nahe kommt. Der Unterschied: Ich habe denselben Agenten gelenkt, statt per Rollenzuweisung darauf zu hoffen, dass er die passenden Fähigkeiten runterlädt. So wie in der Matrix, "it's magic". Das funktioniert aber nicht. LLMs arbeiten mit Wahrscheinlichkeiten — sie folgen dem, was wahrscheinlich als nächstes kommt, gegeben den Kontext. Nicht dem, was eine Berufsbezeichnung verspricht.
+
 ## Die Betriebssystem-Analogie
 
 Ein echtes Betriebssystem macht keine Arbeit. Es schafft die Voraussetzungen, dass Arbeit gemacht werden kann. Der Kernel ist nicht für Textverarbeitung zuständig — aber ohne ihn läuft kein Textprogramm.
