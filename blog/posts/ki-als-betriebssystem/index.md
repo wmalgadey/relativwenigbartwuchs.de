@@ -37,7 +37,7 @@ Ein echtes Betriebssystem macht keine Arbeit. Es schafft die Voraussetzungen, da
 | OS-Konzept | KI-Äquivalent |
 |---|---|
 | Kernel | LLM (Basis-Intelligenz) |
-| Konfigurationsdateien | CLAUDE.md, AGENTS.md, Governance |
+| Konfigurationsdateien | `CLAUDE.md`, `AGENTS.md`, Governance |
 | Filesystem | Kontext / Wissensbasis |
 | System Calls | Tools / APIs, CLI, MCP |
 | Prozesse | Skills / Agents |
