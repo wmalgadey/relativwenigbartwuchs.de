@@ -1,6 +1,6 @@
 ---
 title: KI als Betriebssystem
-date created: 2026-04-17
+date created: 2026-04-18
 date modified: 2026-04-18
 categories:
   - Artikel
@@ -78,7 +78,7 @@ Marvin läuft als sandboxed Container auf meiner Maschine, kommuniziert via Tele
 - **Skills** → Claude Code Skills in NanoClaw verwende ich Hauptsächlich, OpenClaw hat ein ähnliche Konzept, kein "Code-Review-Agent", sondern ein `review`-Skill der auf Anfrage läuft — mit dokumentierten Kriterien (was wird geprüft, was ist die Definition of Done)
 - **Kontext** → `/workspace/group/` als shared context, `wolfgang-projects.md` als lebendige Projektübersicht, Codebase-Verständnis via LSP/Indexierung, nicht je-Agent-Wissen; alle Agenten teilen dasselbe Verständnis der Architektur. Dedizierte Wikis mit speziellem Wissen je nach Domäne.
 - **Tools** → git, Blogwatcher CLI, agent-browser, Tailscale
-- **Governance** → CLAUDE.md (Persönlichkeit, Grenzen, Kommunikationsregeln), Architekturprinzipien als Regel, sehr Hilfreich hier auf bekannte Pattern zu verweisen z.B. "Hexagonal Architecture" oder "TDD Chicago Style"
+- **Governance** → `CLAUDE.md` (Persönlichkeit, Grenzen, Kommunikationsregeln), Architekturprinzipien als Regel, sehr Hilfreich hier auf bekannte Pattern zu verweisen z.B. "Hexagonal Architecture" oder "TDD Chicago Style"
 - **Agentic Layer** → Marvin + Zaphod + Claude Code, unterschiedliche Harness Implementierungen, um ein wenig zu spielen und mich etwas sicherer zu fühlen.
 - **Lernschleife** → kuratiertes Wissens-Wiki, tägliche Gesprächszusammenfassungen, wöchentliches Memory-Reviews, PR-Feedback fließt zurück in den `review`-Skill, Architekturentscheidungen landen im Kontext.
 
