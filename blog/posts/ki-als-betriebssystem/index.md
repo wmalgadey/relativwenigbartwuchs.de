@@ -10,7 +10,7 @@ tags:
   - ki
   - type/post
 type: post
-preview: images/preview.jpg
+preview: images/alter-computer.jpg
 preview_credit: 'Foto von <a href="https://unsplash.com/@mattgyver">Matt Benson</a> auf <a href="https://unsplash.com/de/fotos/ein-alter-computer-der-neben-einer-wand-auf-dem-boden-steht-rvfm_b1C6lc">Unsplash</a>'
 ---
 
@@ -91,6 +91,6 @@ Und um bei der OS-Metapher zu bleiben, das System verbessert sich nicht durch me
 
 ---
 
-_Titelbild: [Matt Benson](https://unsplash.com/@mattgyver) auf [Unsplash](https://unsplash.com/de/fotos/ein-alter-computer-der-neben-einer-wand-auf-dem-boden-steht-rvfm_b1C6lc)_
+_Titelbild: Alter Computer, [Matt Benson](https://unsplash.com/@mattgyver) auf [Unsplash](https://unsplash.com/de/fotos/ein-alter-computer-der-neben-einer-wand-auf-dem-boden-steht-rvfm_b1C6lc)_
 
 _Dieser Beitrag wurde als Entwurf mit KI generiert und von mir überarbeitet._
