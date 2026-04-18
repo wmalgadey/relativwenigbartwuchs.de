@@ -1,7 +1,7 @@
 ---
 title: KI als Betriebssystem
 date created: 2026-04-17
-date modified: 2026-04-17
+date modified: 2026-04-18
 categories:
   - Artikel
 tags:
@@ -13,17 +13,19 @@ type: post
 draft: true
 ---
 
-Ihr habt alle einen digitalen Mitarbeiter. Ihr braucht ein Betriebssystem.
+Ich finde die Idee interessant, das mit generativer KI und vor allem mit der KI die noch vor uns liegt, etwas neues kommt.
 
-Das klingt nach einem Slogan, der bei einem LinkedIn-Beitrag gut funktioniert. Aber je länger ich darüber nachdenke, desto mehr stimmt er. Und je länger ich mit KI arbeite, desto mehr merke ich: Der Unterschied zwischen beiden Denkmodellen macht den Unterschied zwischen "interessantem Experiment" und "echtem Hebel".
+Aktuell lese und sehe ich viel nach dem Motto "so haben wir es bisher gemacht, das gleiche machen wir jetzt mit KI", dabei sehe ich, wie sich meine eigene Nutzungsweise ändert.
 
 ## Was meistens passiert
 
-Jemand in einem Unternehmen entscheidet sich, KI einzusetzen. Erster Schritt: Ein Bot für den Support. Zweiter Schritt: Ein Agent für die Recherche. Dritter Schritt: Ein Assistent für das Marketing. Und schon hat man drei digitale Mitarbeiter — mit all dem, was das bedeutet.
+KI wird aktuell unterschiedlich eingesetzt. In bestehende Workflows als Entscheidungshilfe oder Antwortgeber, beim Coden als Coder, Reviewer, Tester, Architekt oder Requirements Writer (als Engineer hab ich es noch nicht gesehen). Für den Support nutzen wir KI als Anrufbeantworter, zur Triage, zur Recherche und zur Beantwortung von Fragen oder im Marketing zur Marktanalyse, als Contentcreator und als Social-Media Berater. Quasi digitale Mitarbeiter. Und weil Mitarbeiter geführt werden müssen, gibt es noch einen Chef oder Koordinator resp. Orchestrator im Neusprech!
 
-Silos. Jeder kennt nur seine Domäne. Was der Recherche-Agent gelernt hat, weiß der Schreib-Agent nicht. Koordinationsaufwand. Wer organisiert, was zuerst passiert? Wartung mal drei. Wenn sich die Firmenstrategie ändert, müssen alle drei Agenten angepasst werden.
+Mal davon abgesehen, dass wir uns damit obsolete machen und wir eben noch nicht bei einer AGI angekommen sind, sprich diese Mitarbeiter auch Fehler machen können, habe ich selbst nicht das Gefühl, dass diese Art LLMs zu nutzen die Richtige ist.
 
-Felix Schlenther hat das nach fast zwei Jahren mit 25 spezialisierten Agenten herausgefunden — und ist dann auf einen einzigen universellen Agenten umgestiegen. Nicht weil mehr Agenten schlechter wären, sondern weil das falsche Denkmodell dahinterstand.
+Durch einen Post von [Felix Schlenther](https://www.linkedin.com/in/felixschlenther/), [Build Your Own OpenClaw](https://build-your-own-openclaw.kiyo-n-zane.com/) bin ich auf die Idee "KI als Betriebssystem" gekommen. Felix ist nach fast zwei Jahren mit 25 spezialisierten Agenten auf einen einzigen universellen Agenten umgestiegen. Nicht weil Agenten schlecht sind, sondern weil das falsche Denkmodell dahinterstand.
+
+> **Hinweis:** Build Your Own OpenClaw stammt nicht von Felix Schlenther — das ist ein separates Tutorial. Entweder trennen: _"Durch einen Post von Felix Schlenther und durch das Tutorial Build Your Own OpenClaw…"_ — oder den Link erst im Praxis-Abschnitt erwähnen.
 
 ## Die Betriebssystem-Analogie
 
@@ -36,12 +38,12 @@ Ein echtes Betriebssystem macht keine Arbeit. Es schafft die Voraussetzungen, da
 | Kernel | LLM (Basis-Intelligenz) |
 | Konfigurationsdateien | CLAUDE.md, AGENTS.md, Governance |
 | Filesystem | Kontext / Wissensbasis |
-| System Calls | Tools / APIs |
+| System Calls | Tools / APIs, CLI, MCP |
 | Prozesse | Skills / Agents |
-| Scheduler | Agentic Layer / Orchestrierung |
+| Scheduler | Agentic Layer / Orchestrierung, Harness |
 | Logs | Feedback-Loop, Lernschleife |
 
-Der Agent ist dabei bewusst "dumm" gehalten. Das ist eine Design-Entscheidung, keine Schwäche. Die Intelligenz steckt nicht im Agenten selbst — sie steckt in den Skills, im Kontext und in der Governance. Der Agent nimmt aus diesen Bausteinen die Form an, wie die Aufgabe es erfordert.
+Der Agent hat das Weltverständnis, aber keine spezielle Funktion. Die Intelligenz steckt nicht im Agenten selbst sondern wird über Skills und in den Guidelines passend zur jeweiligen Domäne hinzugefügt. Der Agent nimmt aus diesen Bausteinen die Form an, wie die Aufgabe es erfordert.
 
 ## Die sechs Komponenten
 
@@ -51,42 +53,55 @@ Schlenther beschreibt sechs Bausteine seines KI-Betriebssystems:
 
 **Kontext** — die Landkarte für den Agenten. Wo liegen welche Daten? Wie hängen sie zusammen? Was ist wichtig zu wissen?
 
-**Tools** — Zugriff auf alle relevanten Systeme. CRM, E-Mail, Kalender, Datenbanken — mit Lese- und Schreibrechten.
+**Tools** — Zugriff auf alle relevanten Systeme. CRM, E-Mail, Kalender, Datenbanken — mit Lese- und Schreibrechten. Spezialisierte Tools um den Kontext zu optimieren, z.B. um große Wissenquellen zu durchsuchen oder komplexe Strukturen erkennbar zu machen (wie z.B. Abhängikeiten im Sourcecode).
 
-**Governance** — das Regelwerk. Mit Ampellogik geschrieben: Was darf der Agent automatisch? Was braucht Bestätigung? Was ist verboten? Wichtig: Das ist kein Dokument für Menschen, sondern für KI.
+**Governance** — das Regelwerk. Mit Ampellogik geschrieben: Was darf der Agent automatisch? Was braucht Bestätigung? Was ist verboten? Also ein Dokument für die KI, nicht zwingend für Menschen.
 
 **Agentic Layer** — Agenten, die dynamisch auf dem Betriebssystem arbeiten. Sie orchestrieren, delegieren, koordinieren.
 
-**Lernschleife** — Feedback fließt zurück. Skills werden gepatcht. Kontext wird geschärft. Das System wird besser, nicht nur größer.
+> **Frage:** Was unterscheidet den Agentic Layer von den spezialisierten Agenten, die zuvor als problematisch beschrieben wurden?
+>
+> Der Unterschied liegt darin, **wem der Kontext gehört**. Beim digitalen-Mitarbeiter-Modell besitzt jeder Agent seine eigene Domänenkompetenz — was der Marketing-Agent weiß, weiß der Support-Agent nicht. Silos entstehen automatisch. Im OS-Modell sind die Agenten im Agentic Layer bewusst "dumm": sie haben keine eingebackene Intelligenz, sondern greifen auf den gemeinsamen Kontext, die gemeinsamen Skills und die gemeinsame Governance zu. Die Intelligenz gehört dem System, nicht dem Agenten.
+
+**Lernschleife** — Feedback fließt zurück. Skills werden gepatcht. Kontext wird geschärft. Das System wird besser, nicht nur größer. Mein aktuelles Lieblingsbeispiel: Karpathys LLM Wiki Idee, aber auch LLM Dreaming.
 
 ## Wie das in der Praxis aussieht
 
+> **Todo:** Mehr Fakten für Software-Entwicklung ergänzen. Mögliche Beispiele:
+>
+> - **Skills** → kein "Code-Review-Agent", sondern ein `review`-Skill der auf Anfrage läuft — mit dokumentierten Kriterien (was wird geprüft, was ist die Definition of Done)
+> - **Kontext** → Codebase-Verständnis via LSP/Indexierung, nicht je-Agent-Wissen; alle Agenten teilen dasselbe Verständnis der Architektur
+> - **Governance** → Architekturprinzipien als Regel ("immer Hexagonal Architecture") — der Agent muss nicht wissen warum, er befolgt es
+> - **Lernschleife** → PR-Feedback fließt zurück in den `review`-Skill, Architekturentscheidungen landen im Kontext
+
 Ich baue seit einigen Monaten so ein System — ohne es anfangs bewusst so zu nennen.
 
-[Marvin](https://github.com/wmalgadey/parainoid) läuft als sandboxed Container auf meiner Maschine, kommuniziert via Telegram, hat Zugriff auf meinen Zettelkasten und ein Dutzend selbst entwickelte Skills: Blogwatcher, Status-Check, Browser-Automatisierung. Zaphod hat vollen Systemzugriff und erledigt alles, was direkten Host-Zugriff braucht. Claude Code arbeitet am Code.
+Marvin läuft als sandboxed Container auf meiner Maschine, kommuniziert via Telegram, hat Zugriff auf meinen Zettelkasten und ein Dutzend selbst entwickelte Skills: Blogwatcher, Status-Check, Browser-Automatisierung. Zaphod hat vollen Systemzugriff und erledigt alles, was direkten Host-Zugriff braucht. Claude Code arbeitet an Marvins Code.
 
 Übersetzt in das Betriebssystem-Modell:
 
-- **Skills** → NanoClaw Skills, CLAUDE.md-Regeln
+- **Skills** → NanoClaw/Claude Code Skills
 - **Kontext** → `/workspace/group/` als shared context, `wolfgang-projects.md` als lebendige Projektübersicht
 - **Tools** → git, Blogwatcher CLI, agent-browser, Tailscale
 - **Governance** → CLAUDE.md (Persönlichkeit, Grenzen, Kommunikationsregeln)
-- **Agentic Layer** → Marvin + Zaphod + Claude Code als Team
-- **Lernschleife** → kuratiertes Wissens-Wiki, tägliche Gesprächszusammenfassungen, wöchentliches Memory-Review
+- **Agentic Layer** → Marvin + Zaphod + Claude Code
+- **Lernschleife** → kuratiertes Wissens-Wiki, tägliche Gesprächszusammenfassungen, wöchentliches Memory-Reviews
 
-Das läuft. Nicht weil die KI besonders gut ist — sondern weil das Betriebssystem gut designed ist.
-
-## Was das bedeutet
+## ???
 
 Schlenther formuliert es so: Der Fokus verschiebt sich von "Ich mache die Arbeit" zu "Ich baue das System, das die Arbeit macht".
 
-Das klingt einfacher als es ist. Es bedeutet, komplett umzulernen, wie man eigentlich arbeitet. Und ehrlich gesagt: Das fällt auch mir noch schwer. Der Reflex, eine Aufgabe selbst zu erledigen statt einen Skill dafür zu bauen, ist hartnäckig.
+> **Todo:** Abschnittstitel fehlt noch — Vorschlag: "Was das bedeutet" oder einfach keinen Titel (als fließender Schlussabsatz).
+>
+> Zwei offene Gedanken:
+>
+> 1. _"für mich bedeutet das, nicht nur Anforderungen an Systeme zu erkennen (darin bin ich geübt) sondern wie man eigentlich arbeitet"_ — Der Kern ist: Als Entwickler/Architekt war man gut darin zu sagen **was** ein System tun soll. Jetzt muss man zusätzlich beschreiben **wie** der Agent arbeiten soll — Skills und Governance schreiben statt Code. Das ist ein anderer Muskel, und der Reflex ihn zu umgehen ("ich mach's schnell selbst") ist hartnäckig.
+>
+> 2. _"das Betriebssystem reifer wird"_ — Gemeint ist vermutlich: das System verbessert sich nicht durch mehr Agenten hinzufügen, sondern durch besser dokumentierte Skills und schärferen Kontext. Wachstum durch Qualität, nicht Quantität.
 
-Aber wenn es einmal läuft — dann skaliert es. Nicht weil man mehr Agenten hinzufügt, sondern weil das Betriebssystem reifer wird.
+todo... für mich bedeutet, nicht nur Anforderungen an Systeme zu erkennen (darin bin ich geübt) sondern wie man eigentlich arbeitet. Der Reflex, eine Aufgabe selbst zu erledigen statt einen Skill dafür zu bauen, ist hartnäckig, bzw. war 
 
----
-
-_Weiterführendes Material: [Felix Schlenther — AI FIRST](https://www.linkedin.com/in/felixschlenther/), [Build Your Own OpenClaw](https://build-your-own-openclaw.kiyo-n-zane.com/)_
+todo... das Betriebssystem reifer wird.
 
 ---
 
