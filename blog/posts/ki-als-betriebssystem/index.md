@@ -10,8 +10,8 @@ tags:
   - ki
   - type/post
 type: post
-draft: true
 preview: images/preview.jpg
+preview_credit: 'Foto von <a href="https://unsplash.com/@mattgyver">Matt Benson</a> auf <a href="https://unsplash.com/de/fotos/ein-alter-computer-der-neben-einer-wand-auf-dem-boden-steht-rvfm_b1C6lc">Unsplash</a>'
 ---
 
 Ich finde die Idee interessant, das mit generativer KI und vor allem mit der KI die noch vor uns liegt, etwas neues kommt.
@@ -107,5 +107,7 @@ todo... für mich bedeutet, nicht nur Anforderungen an Systeme zu erkennen (dari
 todo... das Betriebssystem reifer wird.
 
 ---
+
+_Titelbild: [Matt Benson](https://unsplash.com/@mattgyver) auf [Unsplash](https://unsplash.com/de/fotos/ein-alter-computer-der-neben-einer-wand-auf-dem-boden-steht-rvfm_b1C6lc)_
 
 _Dieser Beitrag wurde als Entwurf mit KI generiert und von mir überarbeitet._
