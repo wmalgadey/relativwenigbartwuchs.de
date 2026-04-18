@@ -69,3 +69,67 @@ Pagefind is run after production builds (`npx pagefind --site _site`). The searc
 ### JS bundling
 
 `blog/scripts.11ty.js` handles client-side JS via esbuild.
+
+---
+
+## Blog-Post-Erstellung (KI-generierte Artikel)
+
+### Workflow
+
+Generierte Artikel werden **immer als Branch** gepusht, nicht direkt in `main`. Wolfgang bearbeitet und merged sie selbst per Pull Request.
+
+```bash
+# Branch anlegen und pushen
+GIT_SSH_COMMAND="ssh -i /home/node/.ssh/github_marvin -o StrictHostKeyChecking=no" \
+  git subtree push --prefix=rwb relativwenigbartwuchs.de feature/<slug>
+```
+
+### Disclaimer (Pflicht bei KI-generierten Artikeln)
+
+Am Ende jedes KI-generierten Artikels **vor** den Tags einen Absatz einfügen:
+
+```markdown
+---
+
+_Dieser Beitrag wurde als Entwurf mit KI generiert und von mir überarbeitet._
+```
+
+Falls der Artikel **nicht** überarbeitet wurde und direkt aus der KI-Generierung stammt:
+
+```markdown
+---
+
+_Dieser Beitrag wurde mit KI generiert._
+```
+
+> Hinweis: Ein `de-ai-ify`-Skill soll zukünftig KI-Floskeln und -Phrasen aus Entwürfen entfernen, bevor sie bearbeitet werden.
+
+### Schreibstil
+
+Ziel ist es, Wolfgangs persönlichen Schreibstil zu imitieren — nicht "guten Blogpost-Stil" zu erzeugen.
+
+**Ton und Haltung:**
+- Erste Person, direkt und persönlich — "Ich habe...", "Mir war...", "Ich finde..."
+- Kein akademischer oder journalistischer Ton; eher wie ein Gespräch, das aufgeschrieben wurde
+- Selbstreflexiv und nachdenklich — Dinge werden hinterfragt, nicht nur beschrieben
+- Gelegentlich selbstironisch oder humorvoll, nie aufgesetzt ("Jucheeeee", "ok, jetzt nicht der Wahnsinnswurf")
+- Kann unfertig wirken — das ist keine Schwäche, sondern Stil
+
+**Struktur:**
+- Fließtext bevorzugt; Aufzählungen nur wenn der Inhalt es wirklich verlangt
+- Zwischenüberschriften sparsam, nicht als Gliederungsgerüst
+- Mittellange Absätze — kein Stakkato, kein Endlostext
+- Kein "Fazit"-Abschnitt der das Vorherige nochmal zusammenfasst
+
+**Sprache:**
+- Deutsch, leicht umgangssprachlich — nicht Hochdeutsch, nicht Slang
+- Englische Begriffe werden organisch eingebaut wenn sie natürlicher klingen als die deutsche Übersetzung ("outdated", "Tooling", "clean")
+- Direkte Rede und konkrete Erfahrungen statt abstrakter Aussagen
+- Keine KI-typischen Phrasen: kein "In der heutigen Zeit", kein "Es ist wichtig zu beachten", kein "Zusammenfassend lässt sich sagen"
+
+**Was zu vermeiden ist:**
+- Einleitungssätze die erklären was der Artikel tun wird
+- Überschriften die den Inhalt vorwegnehmen ("Warum X wichtig ist")
+- Adverbien zur Dramatisierung ("was folgte war beeindruckend...")
+- Listen wo Prosa natürlicher wäre
+- Superlative und Marketing-Sprache

@@ -87,3 +87,7 @@ Aber wenn es einmal läuft — dann skaliert es. Nicht weil man mehr Agenten hin
 ---
 
 _Weiterführendes Material: [Felix Schlenther — AI FIRST](https://www.linkedin.com/in/felixschlenther/), [Build Your Own OpenClaw](https://build-your-own-openclaw.kiyo-n-zane.com/)_
+
+---
+
+_Dieser Beitrag wurde als Entwurf mit KI generiert und von mir überarbeitet._
