@@ -3,7 +3,6 @@ title: Im Wasserland
 date created: 2019-07-14
 categories:
   - Bericht
-preview: images/Im_Wasserland_1.png
 author:
   - Sophie
 tags:
