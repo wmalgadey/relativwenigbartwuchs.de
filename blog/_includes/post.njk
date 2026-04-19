@@ -48,8 +48,9 @@
         <div class="level">
           <div class="level-left">
             <div class="level-item is-flex-shrink-1">
-              <p>Beitrag veröffentlicht am
-                {{ dateCreated | datefriendly }}
+              {%- set postDate = dateModified or dateCreated -%}
+              {%- set postDateText = "Beitrag geändert am " if dateModified else "Beitrag veröffentlicht am " -%}
+              <p>{{ postDateText }}{{ postDate | datefriendly }}
 
                 {% if categories.length %}
                   in
@@ -69,25 +70,25 @@
         </div>
       </div>
 
-      {% if tags.length > 0 %}
-        <div class="column">
-          <div class="level">
-            <div class="level-left">&nbsp;</div>
-            <div class="level-right">
-              <div class="level-item">
-                <p>Schlagwörter</p>
-              </div>
-
-              {% for tag in tags %}
-                {% if not tag.startsWith('type/') and not tag.startsWith('journal/') and tag != 'posts' and tag != 'all' %}
-                  <div class="level-item">
-                    <a href="/schlagwort/{{ tag | slugify }}">#{{ tag }}</a>
-                  </div>
-                {% endif %}
-              {% endfor %}
+      {%- if tags.length > 0 %}
+      <div class="column">
+        <div class="level">
+          <div class="level-left">&nbsp;</div>
+          <div class="level-right">
+            <div class="level-item">
+              <p>Schlagwörter</p>
             </div>
+
+            {% for tag in tags %}
+              {% if not tag.startsWith('type/') and not tag.startsWith('journal/') and tag != 'posts' and tag != 'all' %}
+                <div class="level-item">
+                  <a href="/schlagwort/{{ tag | slugify }}">#{{ tag }}</a>
+                </div>
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
+      </div>
       {% endif %}
     </footer>
   </section>
