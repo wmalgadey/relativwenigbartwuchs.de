@@ -2,6 +2,7 @@
   "name": "relativwenigbartwuchs.de",
   "version": "1.0.0",
   "description": "my personal weblog",
+  "type": "module",
   "main": ".eleventy.js",
   "scripts": {
     "start": "ELEVENTY_ENV=development NODE_NO_WARNINGS=1 npx eleventy --serve",
@@ -44,8 +45,7 @@
     "sass": "^1.99.0",
     "uhyphen": "^0.2.0"
   },
-  "type": "module",
-  "dependencies": {
+  "optionalDevDependencies": {
     "@img/sharp-libvips-darwin-x64": "^1.0.4"
   }
 }
