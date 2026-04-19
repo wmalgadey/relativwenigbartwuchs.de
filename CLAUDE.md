@@ -34,7 +34,7 @@ date created: 2023-05-17   # controls sort order and draft gating
 date modified: ...
 categories: [Artikel]       # → /kategorie/<slug>/
 tags: [entwicklung, type/post]  # → /schlagwort/<tag>/  (type/* and journal/* are filtered out)
-draft: true                 # hides post in production builds
+draft: true                 # hides post in production builds, not needed in branches!
 ```
 
 ### Collections
