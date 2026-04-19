@@ -1,0 +1,39 @@
+{% macro renderComment(comment) %}
+<article class="media" id="comment-{{ comment.data.id }}">
+  <figure class="media-left">
+    {% if comment.data.email_hash %}
+      {% set gravatarHash = comment.data.email_hash | replace("sha256:", "") %}
+      <p class="image is-48x48">
+        <img class="is-rounded" src="https://www.gravatar.com/avatar/{{ gravatarHash }}?s=48&d=identicon" width="48" height="48" alt="{{ comment.data.author }}">
+      </p>
+    {% else %}
+      <p class="image is-48x48">
+        <img class="is-rounded" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?s=48&d=mp" width="48" height="48" alt="{{ comment.data.author }}">
+      </p>
+    {% endif %}
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>
+          {% if comment.data.author_url %}
+            <a href="{{ comment.data.author_url }}" rel="nofollow noopener" target="_blank">{{ comment.data.author }}</a>
+          {% else %}
+            {{ comment.data.author }}
+          {% endif %}
+        </strong>
+        &nbsp;
+        <small>
+          <time datetime="{{ comment.data.created }}">{{ comment.data.created | dateymd }}</time>
+        </small>
+      </p>
+      {{ comment.templateContent | safe }}
+    </div>
+    {% if comment.children and comment.children.length > 0 %}
+      {% for child in comment.children %}
+        {{ renderComment(child) }}
+      {% endfor %}
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}

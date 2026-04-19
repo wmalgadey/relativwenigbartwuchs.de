@@ -31,10 +31,11 @@ Turnstile (Bot-Schutz), Bulma (Formular-Styling), vanilla JS (Submit).
 
 ## Datenmodell
 
-**Verzeichnis:** `src/comments/<url-slug>/<ISO-timestamp>-<short-id>.md`
+**Verzeichnis:** `blog/posts/<post-slug>/comments/<ISO-timestamp>-<short-id>.md`
 
-URL-Slug ist `page.url` mit Slashes durch `-` ersetzt, z.B.
-`/blog/mein-post/` → `blog-mein-post`.
+Kommentare liegen direkt im Ordner des zugehörigen Posts als `comments/`-Unterordner.
+Das erleichtert das Filtern aus der `post`-Collection (Glob-Pattern schließt
+`comments/**` aus) und hält inhaltlich zusammen, was zusammengehört.
 
 **Frontmatter:**
 
@@ -42,8 +43,9 @@ URL-Slug ist `page.url` mit Slashes durch `-` ersetzt, z.B.
 ---
 id: a3f9c2e1              # 8-Hex-Zeichen, random, stabil
 parent: null              # oder id eines Root-Kommentars
-post: /blog/mein-post/    # page.url des kommentierten Posts
+post: /mein-post/         # page.url des kommentierten Posts
 author: Wolfgang          # Klarname, nur im Frontmatter, nicht im Git-Author
+author_url: null          # optional, Website-URL des Kommentators
 email_hash: sha256:...    # optional, für Gravatar
 ip_hash: sha256:...       # für Blacklist
 created: 2026-04-19T14:23:11Z
@@ -85,6 +87,7 @@ TTL-basiert: Einträge älter als 1h werden beim Read gefiltert.
   "parent": null,
   "name": "Wolfgang",
   "email": "w@example.com",
+  "url": "https://relativwenigbartwuchs.de",
   "body": "Kommentartext",
   "turnstileToken": "...",
   "website": ""
@@ -104,6 +107,7 @@ TTL-basiert: Einträge älter als 1h werden beim Read gefiltert.
 6. Input-Validierung:
    - name: 1–100 Zeichen, trim
    - email: RFC-Regex
+   - url: HTTPS valid base URL (ohne Pfad oder Query-String)
    - body: 1–5000 Zeichen, trim
    - post: muss in Post-Manifest existieren (siehe unten)
    - parent: falls gesetzt, muss existieren und `parent: null` haben
@@ -184,7 +188,7 @@ eleventyConfig.on('eleventy.after', async ({ results }) => {
 
 ```js
 eleventyConfig.addCollection("commentsByPost", (collectionApi) => {
-  const comments = collectionApi.getFilteredByGlob("src/comments/**/*.md");
+  const comments = collectionApi.getFilteredByGlob("blog/posts/*/comments/*.md");
   const byPost = {};
 
   for (const c of comments) {
@@ -229,7 +233,7 @@ verschwinden. Kill-Switch ohne Code-Change.
 
 ### 6. Partial: Kommentar-Anzeige
 
-**Pfad:** `src/_includes/partials/comments.njk`
+**Pfad:** `blog/_includes/partials/comments.njk`
 
 ```njk
 {% if commentsGloballyEnabled and commentsEnabled %}
@@ -257,7 +261,7 @@ Styling mit Bulma: `media`, `media-content`, `box` o.ä.
 
 ### 7. Kommentar-Formular
 
-**Pfad:** `src/_includes/partials/comment-form.njk`
+**Pfad:** `blog/_includes/partials/comment-form.njk`
 
 Vanilla JS:
 
@@ -323,6 +327,8 @@ Absender: `comments@deine-domain.de` (Resend-verifizierte Domain nötig).
 .
 ├── .eleventy.js                          # Config, Collections, Manifest
 ├── netlify.toml
+├── scripts/
+│   └── import-wp-comments.py             # Einmal-Import aus WordPress-XML
 ├── netlify/
 │   └── functions/
 │       ├── comment-submit.ts
@@ -336,7 +342,7 @@ Absender: `comments@deine-domain.de` (Resend-verifizierte Domain nötig).
 │           ├── mail.ts                   # Resend Wrapper
 │           ├── jwt.ts                    # Delete-Token Sign/Verify
 │           └── validate.ts               # Input-Validierung
-├── src/
+├── blog/
 │   ├── _includes/
 │   │   └── partials/
 │   │       ├── comments.njk
@@ -345,9 +351,11 @@ Absender: `comments@deine-domain.de` (Resend-verifizierte Domain nötig).
 │   ├── assets/
 │   │   └── js/
 │   │       └── comment-form.js          # Vanilla JS Submit-Handler
-│   ├── comments/                         # von Function via Commit befüllt
-│   │   └── .gitkeep
-│   └── ...posts...
+│   └── posts/
+│       └── <post-slug>/
+│           ├── index.md
+│           └── comments/                 # von Function via Commit befüllt
+│               └── <ISO-timestamp>-<id>.md
 ├── package.json
 └── tsconfig.json
 ```
@@ -365,7 +373,7 @@ abgeschlossen.
 2. `.eleventy.js`: `commentsEnabled` computed data, `commentsByPost`
    collection, `commentsGloballyEnabled` aus ENV, Manifest-Generator.
 3. Partials: `comments.njk`, `comment.njk` (ohne Formular erstmal).
-4. Test: Manuell eine Markdown-Datei in `src/comments/...` anlegen,
+4. Test: Manuell eine Markdown-Datei in `blog/posts/<slug>/comments/` anlegen,
    prüfen ob sie im HTML landet.
 
 ### Phase 2: Formular + Vanilla JS
