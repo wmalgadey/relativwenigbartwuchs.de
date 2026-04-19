@@ -34,6 +34,7 @@
     "linkedom": "^0.18.12",
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
+    "markdown-it-footnote": "^4.0.0",
     "markdown-it-regexp": "^0.4.0",
     "pagefind": "^1.5.2",
     "postcss": "^8.4.21",
@@ -43,5 +44,8 @@
     "sass": "^1.99.0",
     "uhyphen": "^0.2.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@img/sharp-libvips-darwin-x64": "^1.0.4"
+  }
 }

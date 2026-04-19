@@ -16,7 +16,11 @@
       </div>
       <div class="column is-narrow is-one-third">
         <div class="has-text-centered">
-          {% preview preview, title %}
+          {% if preview %}
+          <div class="post-preview">
+            {% preview preview, title %}
+          </div>
+          {% endif %}
 
           {{ content | wordcount | readtime }}
         </div>
@@ -28,6 +32,16 @@
         {{ content | safe }}
       </div>
     </div>
+
+    {% if credits %}
+    <div class="columns is-centered">
+      <div class="column is-three-fifths is-size-7 has-text-grey">
+        {% for credit in credits %}
+          <p>{{ credit | md | safe }}</p>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
 
     <footer class="columns is-multiline is-size-7">
       <div class="column is-narrow">

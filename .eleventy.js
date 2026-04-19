@@ -15,6 +15,7 @@ import schlagworte from './lib/collections/schlagworte.js';
 import kategorien from './lib/collections/kategorien.js';
 import markdownIt from './lib/markdown-it.js';
 import previewImageHook from './lib/preview-image-hook.js';
+import footnote_plugin from 'markdown-it-footnote';
 
 const dev = globalThis.dev = (process.env.ELEVENTY_ENV === 'development');
 const now = new Date();
@@ -70,6 +71,7 @@ export default async eleventyConfig => {
   eleventyConfig.addFilter('readtime', readtime);
 
   eleventyConfig.addFilter('splitlines', splitlines);
+  eleventyConfig.addFilter('md', (str) => markdownIt.renderInline(str));
 
   //#endregion
 
@@ -98,7 +100,7 @@ export default async eleventyConfig => {
 
   //#region LIBRARIES
 
-  eleventyConfig.setLibrary('md', markdownIt);
+  eleventyConfig.setLibrary('md', markdownIt.use(footnote_plugin));
 
   //#endregion
 

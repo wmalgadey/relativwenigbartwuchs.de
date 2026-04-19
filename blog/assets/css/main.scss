@@ -243,6 +243,10 @@ body {
   min-height: 300px;
 }
 
+.post-preview .preview-image {
+  aspect-ratio: auto;
+  img { height: auto; }
+}
 
 //#endregion
 
