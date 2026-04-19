@@ -17,7 +17,9 @@ preview: images/blackspace.png
 date modified: 2024-02-04T18:05
 ---
 
-Es ist immer das gleiche. Der Kopf ist voll. Voller Ideen! Hunderte Gedanken springen umher, ständig blitzt es irgendwo auf. Schlimmer wird es, wenn man sich nicht konzentriert. Wenn man einfach nur abgelenkt lauscht. Dann verbinden sich die aufblitzenden Gedanken mit den Umgebungsgeräuschen. Dann möchte man voller Tatendrang mit allem Möglichen beginnen. Bei mir sind das meist Gedanken über Softwareprojekte die ich starten könnte, weil ich sie cool finde. Oder neue Gadgets, die ich mir mal kaufen könnte, weil man so dolle Sachen damit machen kann. In letzter Zeit auch Gedanken über tolle Geschichten, die ich gerne aufschreiben möchte. Ich kann mich sogar daran erinnern, das ich mal eine Idee für ein Buch hatte. Leider will mir die Idee nicht mehr einfallen.
+Es ist immer das gleiche. Der Kopf ist voll. Voller Ideen!
+
+Hunderte Gedanken springen umher, ständig blitzt es irgendwo auf. Schlimmer wird es, wenn man sich nicht konzentriert. Wenn man einfach nur abgelenkt lauscht. Dann verbinden sich die aufblitzenden Gedanken mit den Umgebungsgeräuschen. Dann möchte man voller Tatendrang mit allem Möglichen beginnen. Bei mir sind das meist Gedanken über Softwareprojekte die ich starten könnte, weil ich sie cool finde. Oder neue Gadgets, die ich mir mal kaufen könnte, weil man so dolle Sachen damit machen kann. In letzter Zeit auch Gedanken über tolle Geschichten, die ich gerne aufschreiben möchte. Ich kann mich sogar daran erinnern, das ich mal eine Idee für ein Buch hatte. Leider will mir die Idee nicht mehr einfallen.
 
 Natürlich sind ein Großteil dieser Ideen bald wieder verflüchtigt. Selten habe ich irgendetwas, womit ich die Idee festhalten könnte. Obwohl in vielen dieser Gedanken sogar ein gewisses Potential vorhanden ist, ihn weiter zu entwickeln. Die flüchtigen Gedanken bauen auch schonmal Gedachtem auf. Machmal werden die Gedanken sogar kombiniert.
 
