@@ -49,8 +49,14 @@ body {
 //#region navbar
 
 @media screen and (max-width: 768px) {
+  .navbar {
+    padding-top: 0.5rem;
+  }
+
   .navbar .navbar-brand > .navbar-item {
-    font-size: 0.85rem !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 1px !important;
+    padding-top: 0.75rem;
   }
 
   .menu-toggle div {
