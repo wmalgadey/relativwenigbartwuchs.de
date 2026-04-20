@@ -237,10 +237,10 @@ body {
     vertical-align: bottom;
     box-sizing: border-box;
   }
-}
 
-.preview-image-placeholder {
-  min-height: 300px;
+  &.social-image img {
+    object-fit: contain;
+  }
 }
 
 .post-preview .preview-image {
