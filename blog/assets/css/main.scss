@@ -63,7 +63,9 @@ body {
       margin-bottom: 0.5rem;
     }
 
-    .menu-toggle {
+    .menu-toggle,
+    .menu-toggle.hamburger,
+    .menu-toggle.hamburger-dots {
       position: static;
       order: 1;
     }
