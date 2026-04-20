@@ -48,6 +48,32 @@ body {
 
 //#region navbar
 
+.site-header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .navbar-brand {
+      order: -1;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-toggle {
+      position: static;
+      order: 1;
+    }
+
+    .second-menu-toggle {
+      order: 2;
+    }
+  }
+}
+
 .navbar .navbar-brand {
   text-align: center;
   display: block;
