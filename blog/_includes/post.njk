@@ -16,7 +16,11 @@
       </div>
       <div class="column is-narrow is-one-third">
         <div class="has-text-centered">
-          {% preview preview, title %}
+          {% if preview %}
+          <div class="post-preview">
+            {% preview preview, title %}
+          </div>
+          {% endif %}
 
           {{ content | wordcount | readtime }}
         </div>
@@ -29,13 +33,24 @@
       </div>
     </div>
 
+    {% if credits %}
+    <div class="columns is-centered">
+      <div class="column is-three-fifths is-size-7 has-text-grey">
+        {% for credit in credits %}
+          <p>{{ credit | md | safe }}</p>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
     <footer class="columns is-multiline is-size-7">
       <div class="column is-narrow">
         <div class="level">
           <div class="level-left">
             <div class="level-item is-flex-shrink-1">
-              <p>Beitrag veröffentlicht am
-                {{ dateCreated | datefriendly }}
+              {%- set postDate = dateModified or dateCreated -%}
+              {%- set postDateText = "Beitrag geändert am " if dateModified else "Beitrag veröffentlicht am " -%}
+              <p>{{ postDateText }}{{ postDate | datefriendly }}
 
                 {% if categories.length %}
                   in
@@ -55,27 +70,29 @@
         </div>
       </div>
 
-      {% if tags.length > 0 %}
-        <div class="column">
-          <div class="level">
-            <div class="level-left">&nbsp;</div>
-            <div class="level-right">
-              <div class="level-item">
-                <p>Schlagwörter</p>
-              </div>
-
-              {% for tag in tags %}
-                {% if not tag.startsWith('type/') and not tag.startsWith('journal/') and tag != 'posts' and tag != 'all' %}
-                  <div class="level-item">
-                    <a href="/schlagwort/{{ tag | slugify }}">#{{ tag }}</a>
-                  </div>
-                {% endif %}
-              {% endfor %}
+      {%- if tags.length > 0 %}
+      <div class="column">
+        <div class="level">
+          <div class="level-left">&nbsp;</div>
+          <div class="level-right">
+            <div class="level-item">
+              <p>Schlagwörter</p>
             </div>
+
+            {% for tag in tags %}
+              {% if not tag.startsWith('type/') and not tag.startsWith('journal/') and tag != 'posts' and tag != 'all' %}
+                <div class="level-item">
+                  <a href="/schlagwort/{{ tag | slugify }}">#{{ tag }}</a>
+                </div>
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
+      </div>
       {% endif %}
     </footer>
   </section>
+
+  {% include "partials/comments.njk" %}
 
 {% endblock %}

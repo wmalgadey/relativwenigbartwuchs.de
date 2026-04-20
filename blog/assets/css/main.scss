@@ -237,12 +237,16 @@ body {
     vertical-align: bottom;
     box-sizing: border-box;
   }
+
+  &.social-image img {
+    object-fit: contain;
+  }
 }
 
-.preview-image-placeholder {
-  min-height: 300px;
+.post-preview .preview-image {
+  aspect-ratio: auto;
+  img { height: auto; }
 }
-
 
 //#endregion
 

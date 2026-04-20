@@ -11,7 +11,8 @@ tags:
   - type/post
 type: post
 preview: images/alter-computer.jpg
-preview_credit: 'Foto von <a href="https://unsplash.com/@mattgyver">Matt Benson</a> auf <a href="https://unsplash.com/de/fotos/ein-alter-computer-der-neben-einer-wand-auf-dem-boden-steht-rvfm_b1C6lc">Unsplash</a>'
+credits:
+  - 'Aufmacherbild von [Matt Benson](https://unsplash.com/@mattgyver) auf [Unsplash](https://unsplash.com/de/fotos/ein-alter-computer-der-neben-einer-wand-auf-dem-boden-steht-rvfm_b1C6lc)'
 ---
 
 Ich finde die Idee interessant, das mit generativer KI und vor allem mit der KI die noch vor uns liegt, etwas neues kommt.
@@ -24,7 +25,7 @@ KI wird aktuell unterschiedlich eingesetzt. In bestehende Workflows als Entschei
 
 Mal davon abgesehen, dass wir uns damit obsolete machen und wir eben noch nicht bei einer AGI angekommen sind, sprich diese KI-Mitarbeiter auch Fehler machen können, habe ich selbst nicht das Gefühl, dass diese Art LLMs zu nutzen die Richtige ist.
 
-Durch einen Post von [Felix Schlenther](https://www.linkedin.com/posts/felixschlenther_fast-zwei-jahre-lang-haben-wir-bei-ai-first-activity-7441746610696413184-Jq5U?utm_source=share&utm_medium=member_ios&rcm=ACoAABuKfooBEehLRZAyqRcvAm_3MXKFgt79DKE), bin ich auf die Idee "KI als Betriebssystem" gekommen. Er ist nach fast zwei Jahren mit 25 spezialisierten Agenten auf einen universellen Agenten umgestiegen. Weil seiner Meinung nach das falsche Denkmodell dahinterstand.
+Durch einen Post von Felix Schlenther[^1], bin ich auf die Idee "KI als Betriebssystem" gekommen. Er ist nach fast zwei Jahren mit 25 spezialisierten Agenten auf einen universellen Agenten umgestiegen[^2]. Weil seiner Meinung nach das falsche Denkmodell dahinterstand.
 
 Eigene Erfahrung mit 25 Agenten habe ich keine. Aber intuitiv habe ich den domänenspezifischen Ansatz immer vermieden. Statt einem Agenten zu sagen "Du bist jetzt ein Senior C# Architekt" habe ich lieber spezifische Prompts geschrieben; was einem Skill, wie ich heute weiß, ziemlich nahe kommt. Ich habe denselben Agenten gelenkt, statt per Rollenzuweisung darauf zu hoffen, dass er die passenden Fähigkeiten runterlädt und dabei versucht den Kontext geschickt zu wählen, damit die Wahrscheinlichkeit steigt, dass das Ergebnis meinen Erwartungen entspricht. So wie in der Matrix, funktioniert das nämlich nicht. LLMs arbeiten mit Wahrscheinlichkeiten und ergänzen, was wahrscheinlich als nächstes kommt, gegeben den Kontext. Nicht dem, was eine Berufsbezeichnung verspricht. Sie laden sich keine Fähigkeiten aus der Matrix herunter :D.
 
@@ -34,15 +35,15 @@ Ein echtes Betriebssystem macht keine Arbeit. Es schafft die Voraussetzungen, da
 
 Überträgt man das auf KI, sieht ein KI-Betriebssystem ungefähr so aus:
 
-| OS-Konzept | KI-Äquivalent |
-|---|---|
-| Kernel | LLM (Basis-Intelligenz) |
-| Konfigurationsdateien | `CLAUDE.md`, `AGENTS.md`, Governance |
-| Filesystem | Kontext / Wissensbasis |
-| System Calls | Tools / APIs, CLI, MCP |
-| Prozesse | Skills / Agents |
-| Scheduler | Agentic Layer / Orchestrierung, Harness |
-| Logs | Feedback-Loop, Lernschleife |
+| OS-Konzept            | KI-Äquivalent                           |
+| --------------------- | --------------------------------------- |
+| Kernel                | LLM (Basis-Intelligenz)                 |
+| Konfigurationsdateien | `CLAUDE.md`, `AGENTS.md`, Governance    |
+| Filesystem            | Kontext / Wissensbasis                  |
+| System Calls          | Tools / APIs, CLI, MCP                  |
+| Prozesse              | Skills / Agents                         |
+| Scheduler             | Agentic Layer / Orchestrierung, Harness |
+| Logs                  | Feedback-Loop, Lernschleife             |
 
 Der Agent hat das Weltverständnis, aber keine spezielle Funktion. Die Intelligenz steckt nicht im Agenten selbst sondern wird über Skills und in den Guidelines passend zur jeweiligen Domäne hinzugefügt. Der Agent nimmt aus diesen Bausteinen die Inhalte (Funktionen), die die Aufgabe erfordert.
 
@@ -88,9 +89,5 @@ Für mich bedeutet das, nicht nur Anforderungen an Systeme aus Benutzersicht zu 
 
 Und um bei der OS-Metapher zu bleiben, das System verbessert sich nicht durch mehr Agenten, sondern durch besser dokumentierte Skills und schärferen Kontext, also durch Qualität, nicht Quantität. Das kommt mir irgendwie bekannt vor, selten hat es in meinen Projekten geholfen einfach nur mehr Leute auf ein Problem zu werfen.
 
----
-
-[Podcast von Felix Schlenther zum Thema](https://open.spotify.com/episode/6ZFvBga9VCnA0atmz9HXnz)
-
-_Titelbild: [Matt Benson](https://unsplash.com/@mattgyver) auf [Unsplash](https://unsplash.com/de/fotos/ein-alter-computer-der-neben-einer-wand-auf-dem-boden-steht-rvfm_b1C6lc)_
-
+[^1]: [Felix Schlenther auf LinkedIn](https://www.linkedin.com/posts/felixschlenther_fast-zwei-jahre-lang-haben-wir-bei-ai-first-activity-7441746610696413184-Jq5U?utm_source=share&utm_medium=member_ios&rcm=ACoAABuKfooBEehLRZAyqRcvAm_3MXKFgt79DKE)
+[^2]: [Podcast von Felix Schlenther zum Thema](https://open.spotify.com/episode/6ZFvBga9VCnA0atmz9HXnz)

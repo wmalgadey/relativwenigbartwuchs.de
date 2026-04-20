@@ -2,19 +2,22 @@
 import navigation from '@11ty/eleventy-navigation';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import genFavicons from 'eleventy-plugin-gen-favicons';
-import htmlminify from './lib/transforms/htmlminify.js';
-import scssExtension from './lib/extensions/scss.js';
-import postcss from './lib/transforms/postcss.js';
-import { friendly as datefriendly, ymd as dateymd } from './lib/filters/dateformat.js';
-import readtime from './lib/filters/readtime.js';
-import splitlines from './lib/filters/split-lines.js';
-import excerpt from './lib/shortcodes/excerpt.js';
-import preview from './lib/shortcodes/preview-image/index.js';
+import footnote_plugin from 'markdown-it-footnote';
+import commentsByPost from './lib/collections/commentsByPost.js';
+import kategorien from './lib/collections/kategorien.js';
 import post from './lib/collections/post.js';
 import schlagworte from './lib/collections/schlagworte.js';
-import kategorien from './lib/collections/kategorien.js';
+import scssExtension from './lib/extensions/scss.js';
+import { friendly as datefriendly, ymd as dateymd } from './lib/filters/dateformat.js';
+import firstMarkdownImage from './lib/filters/firstmarkdownimage.js';
+import readtime from './lib/filters/readtime.js';
+import splitlines from './lib/filters/split-lines.js';
 import markdownIt from './lib/markdown-it.js';
 import previewImageHook from './lib/preview-image-hook.js';
+import excerpt from './lib/shortcodes/excerpt.js';
+import preview from './lib/shortcodes/preview-image/index.js';
+import htmlminify from './lib/transforms/htmlminify.js';
+import postcss from './lib/transforms/postcss.js';
 
 const dev = globalThis.dev = (process.env.ELEVENTY_ENV === 'development');
 const now = new Date();
@@ -70,6 +73,8 @@ export default async eleventyConfig => {
   eleventyConfig.addFilter('readtime', readtime);
 
   eleventyConfig.addFilter('splitlines', splitlines);
+  eleventyConfig.addFilter('md', (str) => markdownIt.renderInline(str ?? ''));
+  eleventyConfig.addFilter('firstMarkdownImage', firstMarkdownImage);
 
   //#endregion
 
@@ -93,12 +98,23 @@ export default async eleventyConfig => {
   eleventyConfig.addCollection('schlagworte', schlagworte);
   eleventyConfig.addCollection('kategorien', kategorien);
 
+  // comments grouped by post URL
+  eleventyConfig.addCollection('commentsByPost', commentsByPost);
+
+  //#endregion
+
+
+  //#region GLOBAL DATA
+
+  const COMMENTS_GLOBALLY_ENABLED = process.env.COMMENTS_ENABLED !== 'false';
+  eleventyConfig.addGlobalData('commentsGloballyEnabled', COMMENTS_GLOBALLY_ENABLED);
+
   //#endregion
 
 
   //#region LIBRARIES
 
-  eleventyConfig.setLibrary('md', markdownIt);
+  eleventyConfig.setLibrary('md', markdownIt.use(footnote_plugin));
 
   //#endregion
 
@@ -109,6 +125,10 @@ export default async eleventyConfig => {
   eleventyConfig.addWatchTarget('./blog/assets/js/');
 
   //#endregion
+
+
+  // Prevent comment markdown files from being rendered as individual pages
+  eleventyConfig.ignores.add('blog/posts/*/comments/**');
 
 
   // Copy any .jpg file to `_site`, via Glob pattern

@@ -3,12 +3,12 @@ title: Im Wasserland
 date created: 2019-07-14
 categories:
   - Bericht
-preview: images/Im_Wasserland_1.png
 author:
   - Sophie
 tags:
   - type/post
   - familie
+  - fiction
 type: post
 date modified: 2024-02-04T18:03
 ---
