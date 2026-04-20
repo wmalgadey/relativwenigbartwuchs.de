@@ -48,31 +48,13 @@ body {
 
 //#region navbar
 
-.site-header-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@media screen and (max-width: 768px) {
+  .navbar .navbar-brand > .navbar-item {
+    font-size: 0.85rem !important;
+  }
 
-  @media screen and (max-width: 768px) {
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    .navbar-brand {
-      order: -1;
-      width: 100%;
-      margin-bottom: 0.5rem;
-    }
-
-    .menu-toggle,
-    .menu-toggle.hamburger,
-    .menu-toggle.hamburger-dots {
-      position: static;
-      order: 1;
-    }
-
-    .second-menu-toggle {
-      order: 2;
-    }
+  .menu-toggle div {
+    display: none;
   }
 }
 
