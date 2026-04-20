@@ -2,7 +2,8 @@
 
 {% include '../partials/header.njk' %}
 
-<main class="site-main container is-max-widescreen" style="width: 100%;">
+<main class="site-main section py-4">
+  <div class="container is-max-widescreen">
 
   {% block content %}
 
@@ -10,6 +11,7 @@
 
   {% endblock %}
 
+  </div>
 </main>
 
 {% include '../partials/footer.njk' %}
