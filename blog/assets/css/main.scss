@@ -149,7 +149,8 @@ body {
       background-color: currentColor;
       display: block;
       height: 2px;
-      left: 20px;
+      right: 0;
+      left: auto;
       position: absolute;
       transform-origin: center;
       transition: background-color 86ms ease-out, opacity 86ms ease-out, transform 86ms ease-out;
@@ -162,11 +163,13 @@ body {
 
     div {
       margin-left: 17px;
+      margin-right: 21px;
     }
 
     &.is-active span {
       height: 1px;
-      left: 10px;
+      right: 0;
+      left: auto;
       width: 17px;
 
       &:nth-child(1) { transform: translateY(5px) rotate(45deg); }
@@ -179,6 +182,31 @@ body {
 .second-menu-toggle {
   left: auto;
   right: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding-top: 0.5rem;
+  }
+
+  .navbar .navbar-brand > .navbar-item {
+    font-size: 0.8rem !important;
+    letter-spacing: 1px !important;
+    padding-top: 0.75rem;
+  }
+
+  .menu-toggle div {
+    display: none;
+  }
+
+  .menu-toggle.hamburger,
+  .menu-toggle.hamburger-dots {
+    width: 1.5rem;
+  }
+
+  .second-menu-toggle {
+    right: 16px;
+  }
 }
 
 //#endregion
