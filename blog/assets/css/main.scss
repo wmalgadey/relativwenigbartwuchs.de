@@ -63,6 +63,11 @@ body {
     display: none;
   }
 
+  .menu-toggle.hamburger,
+  .menu-toggle.hamburger-dots {
+    width: 1.5rem;
+  }
+
   .second-menu-toggle {
     right: 8px;
   }
