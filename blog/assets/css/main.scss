@@ -54,13 +54,17 @@ body {
   }
 
   .navbar .navbar-brand > .navbar-item {
-    font-size: 0.75rem !important;
+    font-size: 0.8rem !important;
     letter-spacing: 1px !important;
     padding-top: 0.75rem;
   }
 
   .menu-toggle div {
     display: none;
+  }
+
+  .second-menu-toggle {
+    right: 8px;
   }
 }
 
