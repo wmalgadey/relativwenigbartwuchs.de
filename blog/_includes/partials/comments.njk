@@ -1,17 +1,20 @@
 {% if commentsGloballyEnabled %}
 {% import "partials/comment.njk" as commentMacros %}
-<section class="comments">
-  {% set thread = collections.commentsByPost[page.url] %}
+<section class="comments" data-post-url="{{ page.url }}">
   <div class="columns is-centered">
     <div class="column is-three-fifths">
-    {% if thread and thread.length > 0 %}
-      <h2 class="title is-4">Kommentare</h2>
-      {% for comment in thread %}
-        {{ commentMacros.renderComment(comment) }}
-      {% endfor %}
-    {% else %}
-      <p class="has-text-grey-light is-size-7">Noch keine Kommentare.</p>
-    {% endif %}
+      <div id="static-comments">
+        {% set comments = collections.commentsByPost[page.url] %}
+        {% if comments and comments.length > 0 %}
+          <h2 class="title is-4">Kommentare</h2>
+          {% for comment in comments %}
+            {{ commentMacros.renderComment(comment) }}
+          {% endfor %}
+        {% else %}
+          <p id="no-comments-msg" class="has-text-grey-light is-size-7">Noch keine Kommentare.</p>
+        {% endif %}
+      </div>
+      <div id="pending-comments"></div>
     </div>
   </div>
 </section>
