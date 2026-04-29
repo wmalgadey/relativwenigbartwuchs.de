@@ -2,13 +2,20 @@
 
 ## Überblick
 
-Git-basiertes Kommentarsystem für eine statische 11ty-Site auf Netlify.
-Kommentare werden als Markdown-Dateien ins Repo committet, 11ty rendert sie
-beim Build ins HTML. Keine externe DB, keine JS-Laufzeit für Anzeige.
+Hybrides Kommentarsystem für eine statische 11ty-Site auf Netlify.
+Kommentare werden **sofort in Netlify Blobs gespeichert** und sind ohne Build
+sichtbar. Einmal täglich exportiert eine Scheduled Function alle ausstehenden
+Blobs-Kommentare als Markdown-Dateien ins Repo und triggert damit den Build.
+Nach dem Build liegen die Kommentare statisch im HTML; die Blobs-Einträge werden
+gelöscht.
 
-**Stack:** Netlify Functions (TypeScript), Netlify Blobs (Rate-Limit,
-Blacklist), GitHub Contents API (Commits), Resend (Mail), Cloudflare
-Turnstile (Bot-Schutz), Bulma (Formular-Styling), vanilla JS (Submit).
+**Vorteil gegenüber reinem Git-Flow:** Kein Build pro Kommentar.
+Kein Warten. Kommentare erscheinen sofort.
+
+**Stack:** Netlify Functions (TypeScript), Netlify Blobs (Kommentar-Store,
+Rate-Limit, Blacklist), GitHub Contents API (täglicher Batch-Commit), Resend
+(Mail), Cloudflare Turnstile (Bot-Schutz), Bulma (Formular-Styling), vanilla JS
+(Submit + Pending-Fetch).
 
 ## Architektur-Entscheidungen
 
@@ -16,45 +23,73 @@ Turnstile (Bot-Schutz), Bulma (Formular-Styling), vanilla JS (Submit).
   Markdown-Body, Mail nur als gesalteter SHA-256-Hash im Frontmatter
   (optional für Gravatar). Kein PII im Git-Commit-Author (generischer
   `comments-bot`).
-- **Threading:** 1 Ebene. `parent` im Frontmatter referenziert Root-ID.
-  Function erzwingt, dass Parent existiert und selbst kein Parent hat.
+- **Flache Kommentare:** Kein Threading. Alle Kommentare sind gleichwertig
+  unter dem Post. Kein `parent`-Feld, keine Antwort-Funktion.
 - **Moderation:** Keine proaktive. Reaktiv via signiertem Lösch-Link in
   Benachrichtigungsmail.
 - **Spam-Schutz:** Honeypot + Turnstile + Rate-Limit + Blacklist
   (IP-Hash, Mail-Hash).
-- **Rebuild:** Automatisch, weil Netlify auf `main` lauscht und die
-  Function direkt auf `main` pusht. Kein separater Build-Hook.
-- **UX:** Ehrlich – "Dein Kommentar erscheint in wenigen Minuten" nach
-  Submit. Kein Optimistic UI.
-- **Post-Identifikation:** `page.url` als Key. Caveat: URL-Änderung bricht
-  Zuordnung. Falls später stabilere ID nötig, Migration via Script möglich.
+- **Sofortige Anzeige:** Nach Submit speichert die Function den Kommentar in
+  Netlify Blobs. Die Seite lädt pending Kommentare per `fetch()` nach und
+  rendert sie client-side unter den statisch gebauten. Der Nutzer sieht seinen
+  Kommentar sofort.
+- **Täglicher Export:** Scheduled Function um 03:00 UTC liest alle Blobs,
+  schreibt Markdown-Dateien ins Repo (Batch-Commit), löscht exportierte
+  Blobs-Einträge. Netlify baut dadurch einmal täglich statt bei jedem Kommentar.
+- **Duplikat-Vermeidung:** Nach dem Export-Commit und dem darauffolgenden Build
+  sind die Blobs-Einträge gelöscht. Zwischen Commit und Build-Ende (~2 Min)
+  gibt es eine kurze Lücke (03:00–03:02 Uhr) — akzeptabler Trade-off.
+- **Lösch-Pfad:** Delete-Token kodiert `storage: "blob" | "git"`.
+  - `blob`: Direktlöschung aus Blobs.
+  - `git`: Löschung via GitHub Contents API (wie bisher).
+- **Post-Identifikation:** `page.url` als Key.
 
 ## Datenmodell
 
-**Verzeichnis:** `blog/posts/<post-slug>/comments/<ISO-timestamp>-<short-id>.md`
+### Netlify Blobs – Pending-Kommentare
 
-Kommentare liegen direkt im Ordner des zugehörigen Posts als `comments/`-Unterordner.
-Das erleichtert das Filtern aus der `post`-Collection (Glob-Pattern schließt
-`comments/**` aus) und hält inhaltlich zusammen, was zusammengehört.
+**Store:** `comments` (Netlify Blobs Store-Name)
+
+**Key:** `pending:<post-slug>:<id>`
+
+Beispiel: `pending:/blog/mein-post/:a3f9c2e1`
+
+**Value (JSON):**
+
+```json
+{
+  "id": "a3f9c2e1",
+  "post": "/blog/mein-post/",
+  "author": "Wolfgang",
+  "author_url": null,
+  "email_hash": "sha256:...",
+  "ip_hash": "sha256:...",
+  "created": "2026-04-19T14:23:11Z",
+  "body": "Kommentartext als Markdown."
+}
+```
+
+### Markdown-Dateien – Exportierte Kommentare
+
+**Verzeichnis:** `blog/posts/<post-slug>/comments/<ISO-timestamp>-<id>.md`
 
 **Frontmatter:**
 
 ```yaml
 ---
-id: a3f9c2e1              # 8-Hex-Zeichen, random, stabil
-parent: null              # oder id eines Root-Kommentars
-post: /mein-post/         # page.url des kommentierten Posts
-author: Wolfgang          # Klarname, nur im Frontmatter, nicht im Git-Author
-author_url: null          # optional, Website-URL des Kommentators
-email_hash: sha256:...    # optional, für Gravatar
-ip_hash: sha256:...       # für Blacklist
+id: a3f9c2e1
+post: /blog/mein-post/
+author: Wolfgang
+author_url: null
+email_hash: sha256:...
+ip_hash: sha256:...
 created: 2026-04-19T14:23:11Z
 ---
 
 Kommentartext als Markdown.
 ```
 
-**Blacklist** (Netlify Blobs, Key `blocklist`):
+### Blacklist (Netlify Blobs, Key `blocklist`)
 
 ```json
 {
@@ -63,7 +98,7 @@ Kommentartext als Markdown.
 }
 ```
 
-**Rate-Limit** (Netlify Blobs, Key `ratelimit:<ip_hash>`):
+### Rate-Limit (Netlify Blobs, Key `ratelimit:<ip_hash>`)
 
 ```json
 { "timestamps": [1729341791, 1729341823, ...] }
@@ -99,55 +134,93 @@ TTL-basiert: Einträge älter als 1h werden beim Read gefiltert.
 **Ablauf:**
 
 1. Method/Origin-Check
-2. Honeypot: `website !== ""` → 200 OK ohne Aktion (Bot soll denken, es
-   hat geklappt)
-3. Turnstile-Token verifizieren via `https://challenges.cloudflare.com/turnstile/v0/siteverify`
+2. Honeypot: `website !== ""` → 200 OK ohne Aktion
+3. Turnstile-Token verifizieren
 4. Rate-Limit: Max 5 Kommentare pro IP-Hash pro Stunde
 5. Blacklist-Check (IP-Hash, Mail-Hash)
-6. Input-Validierung:
+6. Input-Validierung (Zod):
    - name: 1–100 Zeichen, trim
    - email: RFC-Regex
-   - url: HTTPS valid base URL (ohne Pfad oder Query-String)
+   - url: HTTPS valid base URL
    - body: 1–5000 Zeichen, trim
-   - post: muss in Post-Manifest existieren (siehe unten)
-   - parent: falls gesetzt, muss existieren und `parent: null` haben
-7. Post-Comments-Check: Post-Frontmatter lesen, wenn `comments: false` → 403
-8. Markdown-Body generieren:
+   - post: muss im Post-Manifest existieren
+7. Post-Comments-Check: Manifest lesen, wenn `commentsEnabled: false` → 403
+8. Comment-Objekt generieren:
    - `id` via `crypto.randomBytes(4).toString('hex')`
    - Hashes mit stabilem Salt aus `HASH_SALT` ENV
-   - Dateiname: `${ISO-Timestamp}-${id}.md`
-9. Commit via GitHub Contents API
-   (`PUT /repos/{owner}/{repo}/contents/...`)
-   - Author: `comments-bot <comments@deine-domain.de>`
-   - Message: `comment: <post> by <name>`
-10. Benachrichtigungsmail an Blog-Owner via Resend (siehe unten)
-11. 201 Response mit Info-Message
+9. **Speichern in Netlify Blobs** (Store `comments`, Key `pending:<post>:<id>`)
+   - Kein GitHub-Commit mehr pro Kommentar
+10. Benachrichtigungsmail an Blog-Owner via Resend
+    - Lösch-Link enthält `storage: "blob"` im JWT
+11. 201 Response: `{ "message": "Dein Kommentar ist jetzt sichtbar." }`
 
-### 2. Netlify Function: `comment-delete`
+### 2. Netlify Function: `comment-pending`
+
+**Pfad:** `netlify/functions/comment-pending.ts`
+
+**Endpoint:** `GET /.netlify/functions/comment-pending?post=<url-encoded-post-url>`
+
+Gibt alle Blobs-Kommentare für einen Post als JSON zurück.
+Wird client-seitig aufgerufen und in die Seite eingebaut.
+
+**Ablauf:**
+
+1. `post`-Parameter aus Query lesen, URL-decode
+2. Blobs-Store mit Prefix `pending:<post>` listen
+3. Alle Einträge laden, nach `created` sortieren
+4. 200 Response: JSON-Array der Kommentare (flach, chronologisch)
+
+**CORS:** Nur für die eigene Domain, kein öffentliches API.
+
+**Caching:** `Cache-Control: no-store` – immer frisch.
+
+### 3. Netlify Scheduled Function: `comment-export`
+
+**Pfad:** `netlify/functions/comment-export.ts`
+
+**Schedule:** täglich 03:00 UTC (`@daily` oder Cron-Ausdruck)
+
+**Ablauf:**
+
+1. Alle Blobs mit Prefix `pending:` listen
+2. Falls keine Kommentare vorhanden → Exit (kein Commit, kein Build)
+3. Für jeden Blob:
+   - Markdown-Datei generieren (Frontmatter + Body)
+   - Dateiname: `${ISO-timestamp}-${id}.md`
+   - Post-Slug aus `post`-Feld ableiten → Pfad bestimmen
+4. Alle Dateien in **einem Batch-Commit** via GitHub Contents API committen
+   - `PUT /repos/{owner}/{repo}/contents/...` für jede Datei einzeln,
+     oder via Trees API für atomaren Multi-File-Commit
+5. Blobs-Einträge der exportierten Kommentare löschen
+6. Netlify baut automatisch, weil Commit auf `main` triggert
+
+**Fehlerbehandlung:** Bei GitHub-API-Fehler → Blobs bleiben erhalten,
+nächster Lauf versucht es erneut. Idempotent durch Prüfung ob Datei bereits
+im Repo existiert (via Contents API `GET`).
+
+### 4. Netlify Function: `comment-delete`
 
 **Pfad:** `netlify/functions/comment-delete.ts`
 
 **Endpoint:** `GET /.netlify/functions/comment-delete?token=<jwt>`
 
+**JWT-Payload:** `{ path, id, post, storage: "blob" | "git" }`
+
 **Ablauf:**
 
 1. JWT verifizieren (Secret aus `DELETE_TOKEN_SECRET`)
-2. Payload enthält `path` der zu löschenden Datei
-3. Via GitHub Contents API `DELETE`
-4. Optional: Auch alle Kommentare mit `parent: <id>` löschen (Kaskade)
-5. Response: HTML-Seite "Kommentar gelöscht"
+2. Je nach `storage`:
+   - `"blob"`: Blob-Key `pending:<post>:<id>` löschen
+   - `"git"`: Via GitHub Contents API `DELETE` auf `path`
+3. Response: HTML-Seite "Kommentar gelöscht"
 
-**Token-Generierung** geschieht in `comment-submit` vor Mail-Versand.
-Gültigkeit: 30 Tage.
+**Token-Generierung:** in `comment-submit`, Gültigkeit 30 Tage.
 
-### 3. Post-Manifest
+### 5. Post-Manifest
 
-Problem: `comment-submit` muss wissen, welche Posts existieren und welche
-Kommentare deaktiviert haben. Post-Frontmatter bei jedem Request aus Git
-lesen ist langsam.
+Problem: Function muss wissen, welche Posts Kommentare erlauben.
 
-**Lösung:** 11ty schreibt beim Build ein Manifest nach
-`public/comments-manifest.json`:
+**Lösung:** 11ty schreibt beim Build nach `_site/comments-manifest.json`:
 
 ```json
 {
@@ -156,33 +229,9 @@ lesen ist langsam.
 }
 ```
 
-Function lädt es via `fetch('https://deine-domain.de/comments-manifest.json')`
-mit 5-Min-Cache (in-memory oder via Netlify Blobs).
+Function lädt es via `fetch` mit 5-Min-Cache (Netlify Blobs oder in-memory).
 
-**Generierung in `.eleventy.js`:**
-
-```js
-eleventyConfig.addGlobalData("eleventyComputed", {
-  commentsEnabled: (data) => {
-    // Default: true, Post kann per Frontmatter opt-out
-    if (data.comments === false) return false;
-    return true;
-  }
-});
-
-// Nach Build Manifest schreiben
-eleventyConfig.on('eleventy.after', async ({ results }) => {
-  const manifest = {};
-  for (const r of results) {
-    if (r.data?.commentsEnabled !== undefined) {
-      manifest[r.url] = { commentsEnabled: r.data.commentsEnabled };
-    }
-  }
-  fs.writeFileSync('_site/comments-manifest.json', JSON.stringify(manifest));
-});
-```
-
-### 4. 11ty Collection für Kommentar-Anzeige
+### 6. 11ty Collection: `commentsByPost`
 
 **In `.eleventy.js`:**
 
@@ -196,100 +245,119 @@ eleventyConfig.addCollection("commentsByPost", (collectionApi) => {
     (byPost[postUrl] ||= []).push(c);
   }
 
-  // Threading aufbauen
   for (const postUrl in byPost) {
-    const all = byPost[postUrl];
-    const byId = Object.fromEntries(all.map(c => [c.data.id, c]));
-
-    for (const c of all.filter(c => c.data.parent)) {
-      const parent = byId[c.data.parent];
-      if (parent) (parent.children ||= []).push(c);
-    }
-
-    byPost[postUrl] = all
-      .filter(c => !c.data.parent)
-      .sort((a,b) => a.data.created.localeCompare(b.data.created));
+    byPost[postUrl].sort((a, b) => a.data.created.localeCompare(b.data.created));
   }
 
   return byPost;
 });
 ```
 
-### 5. Globaler Kill-Switch via Plugin/Filter
-
-Globale Deaktivierung per ENV-Variable, die 11ty beim Build liest:
+### 7. Globaler Kill-Switch
 
 **In `.eleventy.js`:**
 
 ```js
 const COMMENTS_GLOBALLY_ENABLED = process.env.COMMENTS_ENABLED !== 'false';
-
-eleventyConfig.addGlobalData("commentsGloballyEnabled",
-  COMMENTS_GLOBALLY_ENABLED);
+eleventyConfig.addGlobalData("commentsGloballyEnabled", COMMENTS_GLOBALLY_ENABLED);
 ```
 
-In Netlify-ENV `COMMENTS_ENABLED=false` setzen → Rebuild → Formulare
-verschwinden. Kill-Switch ohne Code-Change.
-
-### 6. Partial: Kommentar-Anzeige
+### 8. Partial: Kommentar-Anzeige
 
 **Pfad:** `blog/_includes/partials/comments.njk`
 
 ```njk
 {% if commentsGloballyEnabled and commentsEnabled %}
-  <section class="comments">
+  <section class="comments" data-post-url="{{ page.url }}">
     <h2 class="title is-4">Kommentare</h2>
-    {% set thread = collections.commentsByPost[page.url] %}
-    {% if thread and thread.length > 0 %}
-      {% for comment in thread %}
-        {% include "partials/comment.njk" %}
-      {% endfor %}
-    {% else %}
-      <p>Noch keine Kommentare.</p>
-    {% endif %}
+
+    <div id="static-comments">
+      {% set thread = collections.commentsByPost[page.url] %}
+      {% if thread and thread.length > 0 %}
+        {% for comment in thread %}
+          {% include "partials/comment.njk" %}
+        {% endfor %}
+      {% else %}
+        <p id="no-comments-msg">Noch keine Kommentare.</p>
+      {% endif %}
+    </div>
+
+    <div id="pending-comments">
+      <!-- Wird per JS befüllt -->
+    </div>
 
     {% include "partials/comment-form.njk" %}
   </section>
 {% endif %}
 ```
 
-Einzelner Kommentar (`partials/comment.njk`) rendert Name, Datum, Body
-(Markdown → HTML), ggf. Antwort-Button mit `data-parent-id`, dann
-rekursiv Kinder (nur 1 Ebene).
+Einzelner Kommentar (`comment.njk`) rendert Name, Datum und Body.
+Styling mit Bulma: `media`, `media-content`.
 
-Styling mit Bulma: `media`, `media-content`, `box` o.ä.
+### 9. Client-side JS: Pending-Kommentare laden
 
-### 7. Kommentar-Formular
+Teil von `blog/assets/js/comment-form.js`:
+
+```js
+async function loadPendingComments() {
+  const section = document.querySelector('.comments[data-post-url]');
+  if (!section) return;
+
+  const postUrl = section.dataset.postUrl;
+  const staticIds = new Set(
+    [...section.querySelectorAll('[data-comment-id]')].map(el => el.dataset.commentId)
+  );
+
+  const res = await fetch(
+    `/.netlify/functions/comment-pending?post=${encodeURIComponent(postUrl)}`
+  );
+  if (!res.ok) return;
+
+  const pending = await res.json();
+  const newComments = pending.filter(c => !staticIds.has(c.id));
+
+  if (newComments.length === 0) return;
+
+  document.getElementById('no-comments-msg')?.remove();
+
+  const container = document.getElementById('pending-comments');
+  for (const comment of newComments) {
+    container.appendChild(renderComment(comment)); // DOM-Render-Funktion
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadPendingComments);
+```
+
+Die `data-comment-id`-Attribute werden in `comment.njk` gesetzt,
+damit statische und pending Kommentare dedupliziert werden können.
+
+### 10. Kommentar-Formular
 
 **Pfad:** `blog/_includes/partials/comment-form.njk`
 
 Vanilla JS:
 
-- Turnstile-Widget einbinden
+- Turnstile-Widget
 - Submit-Handler: `fetch()` auf Function-Endpoint, JSON-Payload
-- Bei Erfolg: Formular ausblenden, Hinweis "Dein Kommentar erscheint
-  nach dem nächsten Build (wenige Minuten)."
-- Bei Antwort-Button-Click: `parent` im Formular setzen, Formular
-  unter den entsprechenden Kommentar scrollen.
-
-Bulma-Klassen: `field`, `control`, `input`, `textarea`, `button
-is-primary`.
+- Bei Erfolg: Formular zurücksetzen, neuen Kommentar sofort in DOM einfügen
+  (Optimistic: er kommt ja direkt aus dem Blob zurück oder wird aus dem Response gebaut)
+- Erfolgsmeldung: "Dein Kommentar ist jetzt sichtbar."
 
 Honeypot: `<input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">`
 
-### 8. Benachrichtigungsmail
+### 11. Benachrichtigungsmail
 
-**Via Resend SDK in der Function:**
+**Via Resend SDK in `comment-submit`:**
 
 Inhalt:
 
 - Post (Link)
 - Name, Body-Preview (200 Zeichen)
 - Zeitstempel
-- Link zur Datei im GitHub-Repo
 - **Löschen-Link:** `https://deine-domain.de/.netlify/functions/comment-delete?token=<jwt>`
 
-Absender: `comments@deine-domain.de` (Resend-verifizierte Domain nötig).
+JWT kodiert: `{ path, id, post, storage: "blob" }` (nach Export: `"git"`).
 
 ## Netlify-Konfiguration
 
@@ -303,27 +371,42 @@ Absender: `comments@deine-domain.de` (Resend-verifizierte Domain nötig).
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+  schedule = "comment-export"  # wird in der Function per @netlify/functions deklariert
 
 [[redirects]]
   from = "/api/comment"
   to = "/.netlify/functions/comment-submit"
   status = 200
+
+[[redirects]]
+  from = "/api/comment/pending"
+  to = "/.netlify/functions/comment-pending"
+  status = 200
+```
+
+Scheduled Functions werden via `schedule` Export in der Function-Datei
+deklariert (nicht in `netlify.toml`):
+
+```ts
+// netlify/functions/comment-export.ts
+export const config = { schedule: "0 3 * * *" };
 ```
 
 **Environment-Variablen (Netlify UI):**
 
-- `GITHUB_TOKEN` – fine-grained PAT, scope: contents:write auf ein Repo
+- `GITHUB_TOKEN` – fine-grained PAT, scope: contents:write
 - `GITHUB_REPO` – `owner/repo`
 - `HASH_SALT` – zufälliger String, nie rotieren
 - `TURNSTILE_SECRET` – aus Cloudflare-Dashboard
 - `RESEND_API_KEY`
-- `NOTIFY_EMAIL` – deine Mailadresse
-- `DELETE_TOKEN_SECRET` – zufälliger String für JWT-Signing
+- `NOTIFY_EMAIL` – Mailadresse des Blog-Owners
+- `DELETE_TOKEN_SECRET` – für JWT-Signing
 - `COMMENTS_ENABLED` – `true`/`false`, globaler Kill-Switch
+- `SITE_URL` – für Manifest-Fetch (`https://relativwenigbartwuchs.de`)
 
 ## Projekt-Struktur
 
-```
+```text
 .
 ├── .eleventy.js                          # Config, Collections, Manifest
 ├── netlify.toml
@@ -331,17 +414,20 @@ Absender: `comments@deine-domain.de` (Resend-verifizierte Domain nötig).
 │   └── import-wp-comments.py             # Einmal-Import aus WordPress-XML
 ├── netlify/
 │   └── functions/
-│       ├── comment-submit.ts
-│       ├── comment-delete.ts
+│       ├── comment-submit.ts             # Validate → Blob speichern → Mail
+│       ├── comment-pending.ts            # GET: Blobs für einen Post als JSON
+│       ├── comment-export.ts             # Scheduled: Blobs → Markdown → Git-Commit
+│       ├── comment-delete.ts             # JWT → Blob oder Git-Datei löschen
 │       └── lib/
-│           ├── github.ts                 # Contents API Wrapper
+│           ├── github.ts                 # Contents API + Trees API Wrapper
 │           ├── hash.ts                   # SHA-256 mit Salt
 │           ├── turnstile.ts              # Token-Verify
 │           ├── ratelimit.ts              # Netlify Blobs
 │           ├── blocklist.ts              # Netlify Blobs
 │           ├── mail.ts                   # Resend Wrapper
 │           ├── jwt.ts                    # Delete-Token Sign/Verify
-│           └── validate.ts               # Input-Validierung
+│           ├── validate.ts               # Zod-Schema
+│           └── blobs.ts                  # Kommentar-Store Wrapper
 ├── blog/
 │   ├── _includes/
 │   │   └── partials/
@@ -350,11 +436,11 @@ Absender: `comments@deine-domain.de` (Resend-verifizierte Domain nötig).
 │   │       └── comment-form.njk
 │   ├── assets/
 │   │   └── js/
-│   │       └── comment-form.js          # Vanilla JS Submit-Handler
+│   │       └── comment-form.js          # Submit-Handler + Pending-Fetch + DOM-Render
 │   └── posts/
 │       └── <post-slug>/
 │           ├── index.md
-│           └── comments/                 # von Function via Commit befüllt
+│           └── comments/                 # befüllt durch täglichen Export
 │               └── <ISO-timestamp>-<id>.md
 ├── package.json
 └── tsconfig.json
@@ -362,76 +448,67 @@ Absender: `comments@deine-domain.de` (Resend-verifizierte Domain nötig).
 
 ## Umsetzungs-Reihenfolge
 
-Vorgeschlagene Reihenfolge für Claude Code. Jeder Schritt ist testbar
-abgeschlossen.
-
-### Phase 1: Skeleton + Anzeige
+### Phase 1: Skeleton + statische Anzeige
 
 1. Projekt-Setup: `package.json`, `tsconfig.json`, `netlify.toml`,
    Dependencies (`@netlify/functions`, `@netlify/blobs`, `@octokit/rest`,
-   `resend`, `jose` für JWT, `zod` für Validierung).
+   `resend`, `jose`, `zod`).
 2. `.eleventy.js`: `commentsEnabled` computed data, `commentsByPost`
-   collection, `commentsGloballyEnabled` aus ENV, Manifest-Generator.
-3. Partials: `comments.njk`, `comment.njk` (ohne Formular erstmal).
-4. Test: Manuell eine Markdown-Datei in `blog/posts/<slug>/comments/` anlegen,
-   prüfen ob sie im HTML landet.
+   collection, `commentsGloballyEnabled`, Manifest-Generator.
+3. Partials: `comments.njk`, `comment.njk` (ohne Formular).
+4. Test: Manuell Markdown-Datei anlegen, im HTML prüfen.
 
-### Phase 2: Formular + Vanilla JS
+### Phase 2: Formular + Submit → Blob
 
-5. `comment-form.njk` mit Bulma-Styling, Honeypot, Turnstile-Widget-Stub
-   (ohne Keys erstmal).
-6. `comment-form.js`: Submit-Handler, Antwort-Button-Logik, Success-State.
-7. Test: Formular rendert, Submit geht an Stub-Endpoint, zeigt Success.
+1. `comment-form.njk` mit Bulma-Styling, Honeypot, Turnstile-Stub.
+2. `lib/blobs.ts`, `lib/hash.ts`, `lib/validate.ts` (Zod).
+3. `comment-submit.ts` – Validierung → Blob speichern (kein Git-Commit).
+4. Test: Submit erzeugt Blob-Eintrag (Netlify CLI `blobs:get` prüfen).
 
-### Phase 3: Function Core
+### Phase 3: Pending-Anzeige client-side
 
-8. `lib/hash.ts`, `lib/validate.ts` (Zod-Schema), `lib/github.ts`.
-9. `comment-submit.ts` – End-to-End ohne Spam-Schutz:
-   Validierung → Commit → Erfolg.
-10. Test: Formular-Submit erzeugt tatsächlich einen Commit im Repo,
-    Netlify baut neu, Kommentar erscheint.
+1. `comment-pending.ts` – Blobs lesen, JSON zurückgeben.
+2. `comment-form.js`: `loadPendingComments()` + `renderComment()` +
+    Dedup-Logik via `data-comment-id`.
+3. Test: Kommentar absenden → sofort auf der Seite sichtbar,
+    ohne Rebuild.
 
-### Phase 4: Spam-Schutz
+### Phase 4: Täglicher Export
 
-11. Turnstile-Keys einrichten (Cloudflare-Dashboard), `lib/turnstile.ts`
-    einbauen, Frontend-Widget aktivieren.
-12. `lib/ratelimit.ts` via Netlify Blobs.
-13. `lib/blocklist.ts` – Blobs-basiert, manuell per Netlify CLI oder
-    Admin-Script befüllbar.
-14. Honeypot-Handling in `comment-submit.ts`.
-15. Test: Rapid-Fire-Submits werden rate-limited, Bot-Token fliegt raus.
+1. `lib/github.ts` (Trees API für Batch-Commit).
+2. `comment-export.ts` – Scheduled Function: Blobs → Markdown → Git-Commit → Blobs löschen.
+3. Test: Function manuell triggern (Netlify CLI `functions:invoke`),
+    Commit im Repo prüfen, Build startet, statisches HTML zeigt Kommentare.
 
-### Phase 5: Mail + Löschen
+### Phase 5: Löschen
 
-16. `lib/mail.ts` (Resend), `lib/jwt.ts` (jose).
-17. Mail-Versand nach Commit in `comment-submit.ts`.
-18. `comment-delete.ts` – JWT verifizieren, Datei via API löschen,
-    Kaskade für Kinder.
-19. Test: Kommentar abschicken → Mail kommt an → Löschen-Link klicken →
-    Kommentar verschwindet nach Rebuild.
+1. `lib/jwt.ts` (jose).
+2. Mail-Versand in `comment-submit.ts` mit Delete-JWT (`storage: "blob"`).
+3. `comment-delete.ts` – JWT → Blob oder Git-Datei löschen.
+4. Test: Mail empfangen → Löschen-Link → Blob weg, Seite aktualisiert.
 
-### Phase 6: Polish
+### Phase 6: Spam-Schutz
 
-20. Threading-UX: Antwort-Button, Formular-Positionierung.
-21. Markdown-Rendering im Kommentar-Body (Safe Subset, z.B. nur
-    `**bold**`, `_italic_`, Code, Links – keine Bilder, kein HTML).
-22. Leere States, Error States im Frontend.
-23. Dokumentation im Repo (`docs/comments.md`): Wie Blacklist pflegen,
-    wie Kommentare global abschalten, wie Kommentare manuell löschen.
+1. Turnstile-Keys (Cloudflare), `lib/turnstile.ts`.
+2. `lib/ratelimit.ts`, `lib/blocklist.ts`.
+3. Honeypot-Handling.
+4. Test: Rapid-Fire-Submits rate-limited, Bad-Token abgelehnt.
+
+### Phase 7: Polish
+
+1. Markdown-Rendering im Kommentar-Body (client-side: `marked` oder
+    `markdown-it` mit safe Preset; statisch: 11ty rendert Markdown normal).
+2. Leere States, Error States im Frontend.
+3. Dokumentation (`docs/comments.md`): Blacklist, Kill-Switch, manuelles Löschen.
 
 ## Offene Punkte für später
 
-- **Markdown-Sanitizing im Kommentar-Body** – welches Subset erlaubt?
-  Default: `markdown-it` mit disabled `html`, disabled `image`. Genug?
-- **Antworten auf Antworten** – aktuell nur 1 Ebene. Falls später tiefer
-  gewünscht: Function-Check anpassen, Rendering rekursiv machen.
-- **Akismet als zweiter Layer** – falls menschlicher Spam durchkommt.
-  API-Call vor Commit, bei `spam`-Verdict ablehnen.
-- **DSGVO** – Datenschutzerklärung muss erwähnen: Name im Klartext im
-  Git-Repo (öffentlich), Mail- und IP-Hash zur Missbrauchsprävention,
-  Löschanfragen an welche Adresse.
-- **Post-URL-Änderungen** – Migrations-Script schreiben, das bei
-  URL-Rename die Kommentare-Unterverzeichnisse mit umbenennt.
-- **Existierende Gravatars** – falls gewünscht, Mail-Hash als MD5
-  zusätzlich speichern (Gravatar nutzt MD5, nicht SHA-256). Alternativ:
-  Gravatar-URLs aus SHA-256 funktionieren seit 2022 auch.
+- **Markdown-Sanitizing** – `markdown-it` mit disabled `html`, disabled `image`.
+- **Antworten auf Antworten** – aktuell 1 Ebene. Tiefer: Function-Check + Rendering anpassen.
+- **Akismet als zweiter Layer** – API-Call vor Blob-Speicherung.
+- **DSGVO** – Datenschutzerklärung: Name im Klartext im Git-Repo, Hashes, Löschanfragen.
+- **Post-URL-Änderungen** – Migration-Script für Kommentar-Unterverzeichnisse.
+- **Gravatar** – MD5-Hash zusätzlich speichern (Gravatar nutzt MD5).
+- **Export-Zeitpunkt konfigurierbar** – aktuell hart 03:00 UTC. Ggf. ENV-Variable.
+- **Blobs-Größenlimit** – Netlify Blobs hat 10 MB pro Blob. Kein Problem für Kommentare,
+  aber beachten falls Blacklist sehr groß wird.

@@ -1,5 +1,5 @@
 {% macro renderComment(comment) %}
-<article class="media" id="comment-{{ comment.data.id }}">
+<article class="media" id="comment-{{ comment.data.id }}" data-comment-id="{{ comment.data.id }}">
   <figure class="media-left">
     {% if comment.data.email_hash %}
       {% set gravatarHash = comment.data.email_hash | replace("sha256:", "") %}
@@ -29,11 +29,6 @@
       </p>
       {{ comment.templateContent | safe }}
     </div>
-    {% if comment.children and comment.children.length > 0 %}
-      {% for child in comment.children %}
-        {{ renderComment(child) }}
-      {% endfor %}
-    {% endif %}
   </div>
 </article>
 {% endmacro %}

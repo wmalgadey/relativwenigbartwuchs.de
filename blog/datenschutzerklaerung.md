@@ -25,7 +25,7 @@ Gibt es hier nicht.
 Aktuell werden keine Cookies benötigt.
 
 ### Eingebettete Inhalte von anderen Websites
-Beiträge auf dieser Website können eingebettete Inhalte beinhalten (z. B. Videos, Bilder, Beiträge etc.). Eingebettete Inhalte von anderen Websites verhalten sich exakt so, als ob der Besucher die andere Website besucht hätte.
+Beiträge auf dieser Website können eingebettete Inhalte beinhalten (z. B. Videos von YouTube oder Vimeo, Bilder, Beiträge etc.). Eingebettete Inhalte von anderen Websites verhalten sich exakt so, als ob der Besucher die andere Website besucht hätte.
 
 Diese Websites können Daten über dich sammeln, Cookies benutzen, zusätzliche Tracking-Dienste von Dritten einbetten und deine Interaktion mit diesem eingebetteten Inhalt aufzeichnen, inklusive deiner Interaktion mit dem eingebetteten Inhalt, falls du ein Konto hast und auf dieser Website angemeldet bist.
 
@@ -33,8 +33,15 @@ Diese Websites können Daten über dich sammeln, Cookies benutzen, zusätzliche 
 Es gibt aktuell keine Analysen auf dieser Seite, von den Server-Logs abgesehen.
 
 ### Server-Logs
+**GitHub Datenschutzerklärung**
+Der Quellcode und alle Inhalte dieser Website werden in einem öffentlichen Repository bei GitHub gespeichert. Dienstanbieter ist GitHub Inc., ein Unternehmen der Microsoft Corporation, 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA.
+
+GitHub verarbeitet Daten u.a. auch in den USA. Als Grundlage der Datenverarbeitung bei Empfängern mit Sitz in Drittstaaten verwendet GitHub Standardvertragsklauseln gemäß Art. 46 Abs. 2 DSGVO.
+
+Mehr über die Daten, die durch die Verwendung von GitHub verarbeitet werden, erfahren Sie in der Privacy Policy auf [https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement](https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement).
+
 **Netlify Datenschutzerklärung**
-Wir verwenden für unsere Website den Webhosting-Anbieter Netlify. Dienstanbieter ist das amerikanische Unternehmen Netlify Inc., 2325 3rd Street, Suite 29, San Francisco, CA 94104, USA.
+Wir verwenden für unsere Website den Webhosting-Anbieter Netlify. Netlify baut die Website automatisch aus dem GitHub-Repository und liefert sie aus. Dienstanbieter ist das amerikanische Unternehmen Netlify Inc., 2325 3rd Street, Suite 29, San Francisco, CA 94104, USA.
 
 Netlify verarbeitet Daten von Ihnen u.a. auch in den USA. Wir weisen darauf hin, dass nach Meinung des Europäischen Gerichtshofs derzeit kein angemessenes Schutzniveau für den Datentransfer in die USA besteht. Dies kann mit verschiedenen Risiken für die Rechtmäßigkeit und Sicherheit der Datenverarbeitung einhergehen.
 
@@ -50,7 +57,7 @@ Mehr über die Daten, die durch die Verwendung von Netlify verarbeitet werden, e
 Mit niemandem.
 
 ### Wie lange wir deine Daten speichern
-Es werden keine Daten außerhalb des Providers gespeichert.
+Besucherdaten werden nur bei den oben genannten Providern (GitHub, Netlify) verarbeitet und nicht darüber hinaus gespeichert.
 
 ### Wohin wir deine Daten senden
 Nirgendwo hin.
@@ -66,9 +73,7 @@ Impressum: https://relativwenigbartwuchs.de/impressum/
 
 ## Weitere Informationen
 ### Wie wir deine Daten schützen
-Die Webseite wird statisch generiert. Das heißt, aktuell gibt es kein CMS dass die Daten speichert oder sonstwie verfügbar macht. Der Quellcode der Seite ist auf [github.com](https://github.com/wmalgadey/relativwenigbartwuchs.de) verfügbar.
-
-Es werden Videos von Youtube und Vimeo eingebettet.
+Die Webseite wird statisch generiert. Das heißt, aktuell gibt es kein CMS dass die Daten speichert oder sonstwie verfügbar macht. Der Quellcode der Seite ist auf [github.com](https://github.com/wmalgadey/relativwenigbartwuchs.de) öffentlich einsehbar.
 
 ### Welche automatisierte Entscheidungsfindung und/oder Profilerstellung wir mit Benutzerdaten durchführen
 Gar keine.
