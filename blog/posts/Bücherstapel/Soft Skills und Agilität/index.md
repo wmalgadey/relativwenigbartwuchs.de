@@ -9,7 +9,7 @@ tags:
   - kommentar
   - type/post
 type: post
-preview: images/IMG_9668.jpeg
+preview: ../images/IMG_9668.jpeg
 ---
 
 dasdasd

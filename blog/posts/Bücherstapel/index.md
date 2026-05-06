@@ -8,7 +8,7 @@ tags:
   - entwicklung
   - type/post
 type: post
-preview: images/IMG_9668.jpeg
+preview: images/IMG_9666.jpeg
 ---
 
 Da ich immer älter werde, wird die "Kluft" zwischen mir und meinen Kollegen immer größer. Und mich hat es dann doch ein wenig überrascht, als ich gefragt wurde "wie ich all das denn gelernt hätte". Die Antwort war ganz einfach und ich brauche dafür nur in mein Bücherregal zu schauen.
