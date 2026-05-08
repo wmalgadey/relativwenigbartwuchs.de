@@ -1,15 +1,15 @@
 ---
 title: Was mich wach hält
-date created: 2010-09-14
+date created: 2010-09-14T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - denken
   - gedanken
   - type/post
 type: post
 preview: images/images/der_gedanke.jpg
-date modified: 2024-02-04T18:04
+date modified: '2024-02-04T18:04'
 ---
 
 Über den Tag verteilt Strömen unglaublich viele Informationen auf mich ein. Das beginnt schon mit dem Aufstehen. Aktuell ist mein Sohn meist recht früh wach. Die Jüngste ist sowieso schon wach, noch wach oder schon wach gewesen. Somit strömen schon zu so früher Stunde etliche Gedanken durch meinen Kopf. Von "Papa steh doch endlich auf. Ich hab Dich schon 5 mal geweckt" über "Papa bei Viva Pinata habe ich jetzt auch ein Wirlm" bis zu "Mensch Sophie! Du musst schon ruhig sein, wenn Du was trinken willst".

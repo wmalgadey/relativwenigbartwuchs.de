@@ -1,9 +1,9 @@
 ---
 title: KI als Betriebssystem
-date created: 2026-04-17
-date modified: 2026-04-18
+date created: 2026-04-17T00:00:00.000Z
+date modified: 2026-04-18T00:00:00.000Z
 categories:
-  - Artikel
+  - formate/artikel
 tags:
   - entwicklung
   - agentic engineering

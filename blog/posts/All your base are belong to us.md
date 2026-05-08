@@ -1,15 +1,15 @@
 ---
 title: All your base are belong to us
-date created: 2010-09-15
+date created: 2010-09-15T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - internet
   - kultur
   - type/post
 type: post
 preview: images/all_your_base_are_belong_to_us.jpg
-date modified: 2024-02-04T18:02
+date modified: '2024-02-04T18:02'
 ---
 
 > **Engineer**: It appears that someone has planted a bomb.

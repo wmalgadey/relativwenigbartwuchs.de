@@ -1,8 +1,8 @@
 ---
 title: The way it is used to be
-date created: 2010-10-25
+date created: 2010-10-25T00:00:00.000Z
 categories:
-  - Lesezeichen
+  - formate/artikel
 tags:
   - denken
   - kinderreim
@@ -11,7 +11,7 @@ tags:
   - type/post
 type: post
 preview: images/amazon-shipping-robot.jpg
-date modified: 2024-02-04T18:04
+date modified: '2024-02-04T18:04'
 ---
 
 Es ist dunkel

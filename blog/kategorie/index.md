@@ -11,7 +11,14 @@ tags:
 type: moc
 ---
 
-{% import "macros/navlist.njk" as navlist %}
-<ul>
-  {%- for entry in collections.kategorien.all %}{{ navlist.renderNavItem(entry) }}{%- endfor -%}
+{% for parent in collections.categories.parents %}
+<h2 class="title is-5">{{ parent.label }}</h2>
+<ul class="mb-4">
+  {%- for child in parent.children %}
+  <li>
+    <a href="{{ child.url }}">{{ child.label }}</a>
+    <span class="has-text-grey is-size-7">({{ child.used }})</span>
+  </li>
+  {%- endfor %}
 </ul>
+{% endfor %}

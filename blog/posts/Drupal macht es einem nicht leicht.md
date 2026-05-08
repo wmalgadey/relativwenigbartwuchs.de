@@ -1,14 +1,14 @@
 ---
 title: Drupal macht es einem nicht leicht
-date created: 2010-07-14
+date created: 2010-07-14T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - drupal
   - maschinen
   - wehret-den-anfängen
   - type/post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 Ich habe das Theme hier auf dem ZEN-Framework/Theme basiert. Das schien mir irgendwie einfach...

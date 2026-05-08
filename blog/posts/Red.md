@@ -1,9 +1,8 @@
 ---
 title: Red
-date created: 2010-11-11
+date created: 2010-11-11T00:00:00.000Z
 categories:
-  - Kritik
-  - Film
+  - rezensionen/film
 status: Im Kino gesehen
 tags:
   - Bruce-Willis
@@ -13,7 +12,7 @@ tags:
   - type/post
 type: post
 preview: images/kinokarte_red.jpg
-date modified: 2024-02-04T18:04
+date modified: '2024-02-04T18:04'
 ---
 
 Mit dem äußerst innovativen deutschen Titel

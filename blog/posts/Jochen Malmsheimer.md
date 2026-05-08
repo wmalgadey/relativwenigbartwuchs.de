@@ -1,8 +1,8 @@
 ---
 title: Jochen Malmsheimer
-date created: 2010-08-25
+date created: 2010-08-25T00:00:00.000Z
 categories:
-  - Porträt
+  - formate/portrait
 tags:
   - comedian
   - Jochen-Malmsheimer
@@ -13,7 +13,7 @@ tags:
   - type/post
 type: post
 preview: images/jochen_malmsheimer.jpg
-date modified: 2024-02-04T18:03
+date modified: '2024-02-04T18:03'
 ---
 
 # Jochen Malmsheimer

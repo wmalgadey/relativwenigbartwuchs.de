@@ -1,14 +1,14 @@
 ---
 title: Mord Macht Tod und Shakespears Könige
-date created: 2015-06-14
+date created: 2015-06-14T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - kultur
   - shakespeare
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 Meine erste (und bis hierhin einzige) Berührung mit Shakespear hatte ich im English LK in der 11. Dort haben wir Macbeth lesen müssen. Und das in englisch. Behalten habe ich nicht viel davon, außer, dass die Sprache unglaublich kompliziert war.

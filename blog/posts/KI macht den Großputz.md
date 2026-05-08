@@ -1,8 +1,8 @@
 ---
 title: KI macht den Großputz
-date created: 2026-04-16
+date created: 2026-04-16T00:00:00.000Z
 categories:
-  - Artikel
+  - formate/artikel
 tags:
   - entwicklung
   - agentic engineering
@@ -10,7 +10,7 @@ tags:
   - 11ty
   - type/post
 type: post
-date modified: 2026-04-16
+date modified: 2026-04-16T00:00:00.000Z
 ---
 
 Vor drei Jahren habe ich diese Seite auf [11ty](https://www.11ty.dev/) umgestellt. Mittlerweile hat sich einiges geändert und meine Seite bzw. das Tooling war etwas outdated. Und da ich gerne wieder mehr veröffentlichen wollte, musste ich zuerst die Seite aktualisieren.

@@ -1,15 +1,16 @@
 ---
 title: Soft Skills und Agilität
-date created: 2026-06-01
+date created: 2026-06-01T00:00:00.000Z
 categories:
-  - Artikel
-  - Serie
+  - serie/bücherstapel
+  - rezensionen/bücher
 tags:
   - entwicklung
   - kommentar
   - type/post
 type: post
-preview: images/IMG_9668.jpeg
+preview: ../images/IMG_9668.jpeg
+draft: true
 ---
 
 Hier die Bücher:

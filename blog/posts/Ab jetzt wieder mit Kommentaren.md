@@ -1,8 +1,8 @@
 ---
 title: Ab jetzt wieder mit Kommentaren
-date created: 2026-04-19
+date created: 2026-04-19T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - blog
   - 11ty

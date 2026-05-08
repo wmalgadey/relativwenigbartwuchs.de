@@ -1,8 +1,8 @@
 ---
 title: Aus aktuellem Anlass
-date created: 2010-09-09
+date created: 2010-09-09T00:00:00.000Z
 categories:
-  - Kommentar
+  - formate/kommentar
 tags:
   - atomkraft
   - denken
@@ -11,7 +11,7 @@ tags:
   - type/post
 type: post
 preview: images/atomkraft-nein-danke.png
-date modified: 2024-02-04T18:02
+date modified: '2024-02-04T18:02'
 ---
 
 Ich lass die Katze jetzt aus dem Sack. Ich habe was gegen Atomkraft. Und zwar eine Meinung. Keine Gute, aber eine Meinung. Und da ich damals viel zu klein war und man heute ja nichts mehr auf sein Auto klebt (außer Deutschlandflaggen), mache ich das nun hier im Netz.

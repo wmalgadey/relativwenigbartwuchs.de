@@ -1,8 +1,8 @@
 ---
 title: Und am Anfang war das nichts
-date created: 2010-07-09
+date created: 2010-07-09T00:00:00.000Z
 categories:
-  - Neuigkeit
+  - formate/neuigkeit
 tags:
   - anfang
   - blog
@@ -12,7 +12,7 @@ tags:
   - wehret-den-anfängen
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 # Und am Anfang war das nichts

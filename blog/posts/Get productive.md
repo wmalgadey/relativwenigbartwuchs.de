@@ -1,15 +1,15 @@
 ---
 title: Get productive
-date created: 2015-02-01
+date created: 2015-02-01T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - denken
   - ohnmacht
   - produktivität
   - wehret-den-anfängen
   - type/post
-date modified: 2024-02-04T18:03
+date modified: '2024-02-04T18:03'
 ---
 
 # Get productive

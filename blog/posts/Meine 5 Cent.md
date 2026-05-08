@@ -1,8 +1,8 @@
 ---
 title: Meine 5 Cent
-date created: 2012-04-19
+date created: 2012-04-19T00:00:00.000Z
 categories:
-  - Kommentar
+  - formate/kommentar
 tags:
   - die-kulturflatrate
   - kommentar
@@ -11,7 +11,7 @@ tags:
   - urheberrecht
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 Diskussionen sind ja irgendwie total mühsam. So viele enden, wie sie begonnen haben. Das sind auch meistens die hitzigsten. Keiner läst sich überzeugen, weil die Standpunkte fest sind. 

@@ -1,8 +1,8 @@
 ---
 title: Digitaler Exhibitionismus
-date created: 2010-07-20
+date created: 2010-07-20T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - blog
   - drupal
@@ -10,7 +10,7 @@ tags:
   - netz
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 "Ich melde Vollzug"

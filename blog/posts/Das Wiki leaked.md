@@ -1,8 +1,8 @@
 ---
 title: Das Wiki leaked
-date created: 2010-12-01
+date created: 2010-12-01T00:00:00.000Z
 categories:
-  - Kommentar
+  - formate/kommentar
 tags:
   - denken
   - Götz-Werner
@@ -12,7 +12,7 @@ tags:
   - type/post
 type: post
 preview: images/dm.jpg
-date modified: 2024-02-04T18:02
+date modified: '2024-02-04T18:02'
 ---
 
 Das Blöde an Theorien oder, wie in meinem Fall, wirren Gedanken ist doch, dass wir nicht wirklich eine Möglichkeit haben einen Beweis zu erbringen. Sei es die Idee des [bedingungslosen Grundeinkommens](http://de.wikipedia.org/wiki/Bedingungsloses_Grundeinkommen) oder meine Vorstellung einer vollständig transparenten oder ehrlichen Regierung.

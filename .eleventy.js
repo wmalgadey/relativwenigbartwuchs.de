@@ -80,6 +80,12 @@ export default async eleventyConfig => {
   eleventyConfig.addFilter('md', (str) => markdownIt.renderInline(str ?? ''));
   eleventyConfig.addFilter('firstMarkdownImage', firstMarkdownImage);
 
+  // Display label for a hierarchical category slug, e.g. "formate/artikel" → "Artikel"
+  eleventyConfig.addFilter('categorylabel', (category) => {
+    const segment = String(category).split('/').pop();
+    return segment.charAt(0).toUpperCase() + segment.slice(1);
+  });
+
   //#endregion
 
 

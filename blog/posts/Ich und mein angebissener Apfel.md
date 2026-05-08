@@ -1,8 +1,8 @@
 ---
 title: Ich und mein angebissener Apfel
-date created: 2011-03-30
+date created: 2011-03-30T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - Apple
   - blog
@@ -11,7 +11,7 @@ tags:
   - type/post
 type: post
 preview: images/apple-gericht-amazon.jpg
-date modified: 2024-02-04T18:03
+date modified: '2024-02-04T18:03'
 ---
 
 Zuletzt guckte meine Tochter mich recht erschrocken an und meinte: "Hast Du den jetzt ganz gegessen, Papa?" 

@@ -1,8 +1,8 @@
 ---
 title: Meine Bindungen
-date created: 2012-02-20
+date created: 2012-02-20T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - coden
   - denken
@@ -11,7 +11,7 @@ tags:
   - leben
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 Ab und zu hab ich das Gefühl, dass es einfach zu viel wird. [ben\_](http://anmutunddemut.de/2012/02/18/computer-sind-scheise.html) macht es mir da leider nicht einfacher. Er hat recht damit, dass die Digitalisierung wenig besser macht, nur komplizierter. Computer vereinfachen uns nicht unser Leben. Wir lösen Probleme, die wir vorher nicht hatten. Wir interessieren uns für Dinge, die zumindest in Frage gestellt werden können. Genau wie der Kapitalismus ist die Digitalisierung höchst fragwürdig.
