@@ -1,23 +1,23 @@
 ---
 pagination:
-  data: collections.kategorien
+  data: collections.categories
   size: 1
-  alias: kategorie
+  alias: category
   filter:
     - all
 layout: partials/empty.njk
-permalink: /kategorie/{{ kategorie | slugify }}/
+permalink: /kategorie/{{ category | slugify }}/
 eleventyComputed:
-  title: Kategorie {{ kategorie }}
+  title: Kategorie {{ category }}
 tags:
   - type/moc
 type: moc
 date created: git Last Modified
 date modified: 2024-02-04T18:26
-title: Beiträge der Kategorie {{ kategorie }} {.title}
+title: Beiträge der Kategorie {{ category }} {.title}
 ---
 
-## Beiträge der Kategorie <em>{{ kategorie }}</em> {.title}
+## Beiträge der Kategorie <em>{{ category }}</em> {.title}
 
-{% set pagelist = collections.kategorien[kategorie] %}
+{% set pagelist = collections.categories[category] %}
 {% include "partials/pagelist.njk" %}

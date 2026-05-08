@@ -32,6 +32,7 @@
     "glob": "^13.0.6",
     "html-minifier": "^4.0.0",
     "inline-source": "^8.0.2",
+    "kleur": "^4.1.5",
     "linkedom": "^0.18.12",
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",

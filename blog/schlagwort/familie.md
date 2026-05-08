@@ -5,7 +5,7 @@
   layout: "partials/empty.njk",
   tags: ["type/moc"],
   pagination: {
-    data: "collections.schlagworte",
+    data: "collections.tags",
     size: 4,
     reverse: true,
     alias: "tag",
@@ -21,5 +21,5 @@
 Ich komme aus einer großen Familie, vielleicht ist mir deshalb meine eigene Familie so wichtig.
 
 
-{% set pagelist = collections.schlagworte[tag] %}
+{% set pagelist = collections.tags[tag] %}
 {% include "partials/pagelist.njk" %}

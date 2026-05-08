@@ -24,8 +24,10 @@ The Eleventy config lives in `.eleventy.js` (ESM). Input is `blog/`, output is `
 
 ### Content
 
-- **Posts**: `blog/posts/<slug>/index.md` — each post in its own folder so images live alongside it
-- **Pages**: `blog/*.md` and `blog/*.njk` (impressum, datenschutz, einleitung, suche, feed, 404)
+- **Posts**: `blog/posts/<Titel im Klartext>.md` — Dateiname ist die URL (mit slugify - automatisch durch 11ty), Titel steht im Frontmatter
+- **Post-Assets**: `blog/posts/<Titel im Klartext>/` — gleichnamiger Ordner neben der `.md`-Datei, enthält `images/` und `comments/`
+- **Series/Unterordner**: `blog/posts/<Serie>/<Titel>.md` — Posts können in einem Serienordner liegen; Assets dann direkt unter `blog/posts/<Serie>/`
+- **Pages**: `blog/*.md` und `blog/*.njk` (impressum, datenschutz, einleitung, suche, feed, 404)
 
 Post frontmatter fields:
 ```yaml
@@ -34,14 +36,15 @@ date created: 2023-05-17   # controls sort order and draft gating
 date modified: ...
 categories: [Artikel]       # → /kategorie/<slug>/
 tags: [entwicklung, type/post]  # → /schlagwort/<tag>/  (type/* and journal/* are filtered out)
+preview: images/foto.jpg    # preview image, relative to the sibling assets folder
 draft: true                 # hides post in production builds, not needed in branches!
 ```
 
 ### Collections
 
-- `post` — all published posts sorted by `date created`
-- `schlagworte` (`lib/collections/schlagworte.js`) — tag cloud with weighted usage counts; excludes `posts`, `all`, `type/*`, `journal/*` tags
-- `kategorien` (`lib/collections/kategorien.js`) — reads post files directly via `globSync` (bypasses Eleventy's collection build-order dependency issue in v3)
+- `post` — all published posts sorted by `date created`; glob: `./blog/posts/*.md` + `./blog/posts/*/*.md`
+- `tags` (`lib/collections/tags.js`) — tag cloud with weighted usage counts; excludes `posts`, `all`, `type/*`, `journal/*` tags
+- `categories` (`lib/collections/categories.js`) — reads post files directly via `globSync` (bypasses Eleventy's collection build-order dependency issue in v3)
 
 ### Templates
 
@@ -58,9 +61,10 @@ Nunjucks templates in `blog/_includes/`:
 
 ### Image pipeline
 
-- `{% preview %}` async shortcode (`lib/shortcodes/preview-image/index.js`) — resizes images to multiple widths/formats (JPEG + WebP), caches per `page.url:imageSrc` to avoid duplicate work
-- After each build, `lib/preview-image-hook.js` runs as `eleventy.after` hook, finds all `_site/**/preview.svg` files and converts them to JPEG+WebP
-- Images are stored next to the post in `blog/posts/<slug>/images/`
+- `{% preview %}` async shortcode (`lib/shortcodes/preview-image.js`) — resizes images to multiple widths/formats (JPEG + WebP), caches per `page.url:imageSrc` to avoid duplicate work
+- Image paths in the `preview` frontmatter field are relative to the **sibling assets folder** (`blog/posts/<Titel>/images/`), not to the `.md` file's own directory
+- After each build, `social-image.js` runs as `eleventy.after` hook, finds all `_site/**/preview.svg` files and converts them to JPEG+WebP
+- Images are stored in the sibling folder: `blog/posts/<Titel>/images/`
 
 ### Search
 

@@ -1,24 +1,28 @@
 // 11ty configuration
 import navigation from '@11ty/eleventy-navigation';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+
 import genFavicons from 'eleventy-plugin-gen-favicons';
 import footnote_plugin from 'markdown-it-footnote';
-import commentsByPost from './lib/collections/commentsByPost.js';
-import kategorien from './lib/collections/kategorien.js';
+
+import categories from './lib/collections/categories.js';
+import commentsByPost from './lib/collections/comments-by-post.js';
 import post from './lib/collections/post.js';
-import schlagworte from './lib/collections/schlagworte.js';
+import tags from './lib/collections/tags.js';
 import scssExtension from './lib/extensions/scss.js';
-import { friendly as datefriendly, ymd as dateymd } from './lib/filters/dateformat.js';
-import firstMarkdownImage from './lib/filters/firstmarkdownimage.js';
-import readtime from './lib/filters/readtime.js';
+import { friendly as datefriendly, ymd as dateymd } from './lib/filters/date-format.js';
+import firstMarkdownImage from './lib/filters/first-markdown-image.js';
+import readtime from './lib/filters/read-time.js';
 import splitlines from './lib/filters/split-lines.js';
 import markdownIt from './lib/markdown-it.js';
-import previewImageHook from './lib/preview-image-hook.js';
 import excerpt from './lib/shortcodes/excerpt.js';
-import preview from './lib/shortcodes/preview-image/index.js';
+import previewImage from './lib/shortcodes/preview-image.js';
+import socialImage from './lib/social-image.js';
 import htmlminify from './lib/transforms/htmlminify.js';
 import postcss from './lib/transforms/postcss.js';
+import ConsoleLogger from './lib/utils/logger.js';
 
+const log = new ConsoleLogger('eleventy');
 const dev = globalThis.dev = (process.env.ELEVENTY_ENV === 'development');
 const now = new Date();
 
@@ -61,7 +65,7 @@ export default async eleventyConfig => {
 
   // open debugger
   eleventyConfig.addFilter('debugger', function (...args) {
-    console.log(...args)
+    log.debug(...args);
     debugger;
   });
 
@@ -85,7 +89,7 @@ export default async eleventyConfig => {
   eleventyConfig.addShortcode('excerpt', excerpt);
 
   // create preview images
-  eleventyConfig.addAsyncShortcode('preview', preview);
+  eleventyConfig.addAsyncShortcode('preview', previewImage);
 
   //#endregion
 
@@ -95,8 +99,8 @@ export default async eleventyConfig => {
   // post collection (in blog/posts)
   eleventyConfig.addCollection('post', collection => post(collection, { dev, now }));
 
-  eleventyConfig.addCollection('schlagworte', schlagworte);
-  eleventyConfig.addCollection('kategorien', kategorien);
+  eleventyConfig.addCollection('tags', tags);
+  eleventyConfig.addCollection('categories', categories);
 
   // comments grouped by post URL
   eleventyConfig.addCollection('commentsByPost', commentsByPost);
@@ -138,7 +142,7 @@ export default async eleventyConfig => {
   // eleventyConfig.addPassthroughCopy("**/*.png");
   eleventyConfig.addPassthroughCopy("blog/assets/fonts/**/*");
 
-  eleventyConfig.on('eleventy.after', previewImageHook);
+  eleventyConfig.on('eleventy.after', socialImage);
 
   //#region 11ty defaults
 
