@@ -11,14 +11,14 @@
 {%- endmacro %}
 
 {% macro renderNavItem(entry) -%}
-  {% set entryUrl = entry.path + (entry.title | slugify) %}
+  {% set entryUrl = entry.url or (entry.path + (entry.title | slugify)) %}
   {% if entryUrl === page.url -%}
   <li class="active" aria-current="page">
-    <strong>{{ entry.title }}</strong>
+    <strong>{{ entry.label or entry.title }}</strong>
   </li>
   {%- else -%}
   <li>
-    <a href="{{ entryUrl }}">{{ entry.title }}</a>
+    <a href="{{ entryUrl }}">{{ entry.label or entry.title }}</a>
   </li>
   {%- endif %}
 {%- endmacro %}
