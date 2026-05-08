@@ -1,9 +1,10 @@
 ---
 title: Bücherstapel
-date created: 2026-05-06
+date created: 2026-05-06T00:00:00.000Z
 categories:
-  - Artikel
-  - Serie
+  - serie/bücherstapel
+  - formate/artikel
+  - rezensionen/bücher
 tags:
   - entwicklung
   - type/post

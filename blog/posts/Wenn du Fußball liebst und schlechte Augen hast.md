@@ -1,15 +1,15 @@
 ---
 title: Wenn du Fußball liebst und schlechte Augen hast
-date created: 2010-07-13
+date created: 2010-07-13T00:00:00.000Z
 categories:
-  - Zitat
+  - formate/zitat
 tags:
   - fußball
   - Karl-Heinz-Karius
   - kultur
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 > Wenn du Fußball liebst und schlechte Augen hast, solltest du keine Karriere als Torwart anstreben... Werde Schiedsrichter...

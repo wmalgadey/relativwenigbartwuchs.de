@@ -1,15 +1,15 @@
 ---
 title: Unruhe
-date created: 2011-11-26
+date created: 2011-11-26T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - essay
   - leben
   - unruhe
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 Ich drehe mich um mich selbst, ständig um ein und den selben Punkt. Die Tage vergehen, doch die Zeit bleibt stehen, denn ich bin unglücklich. Ich wünsche mir eine Zukunft, die es niemals geben wird!

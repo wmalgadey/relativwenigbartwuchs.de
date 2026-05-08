@@ -1,13 +1,13 @@
 ---
 title: 2010 macht dicht
-date created: 2011-01-01
+date created: 2011-01-01T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - leben
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 ...und die Familie Malgadey liegt mit einer dicken Grippe im Bett. Aber ruhig von vorne...

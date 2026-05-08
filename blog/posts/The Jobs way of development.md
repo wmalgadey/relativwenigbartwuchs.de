@@ -1,8 +1,8 @@
 ---
 title: The Jobs way of development
-date created: 2011-06-06
+date created: 2011-06-06T00:00:00.000Z
 categories:
-  - Kommentar
+  - formate/kommentar
 tags:
   - Apple
   - denken
@@ -13,7 +13,7 @@ tags:
   - type/post
 type: post
 preview: images/ios5.jpeg
-date modified: 2024-02-04T18:04
+date modified: '2024-02-04T18:04'
 ---
 
 Ich kann mir nicht helfen. Aaaaber ich bin schwer beeindruckt, mit welcher Power Apple seine Produkte zur Zeit weiterentwickelt. Alle naslang liest man die vielen Stimmen, die die neu hinzugefügte Features mit "Alt" oder "Hab ich bei Android schon lange" besingen. Aber scheinbar ist nicht vielen bewußt, was Apple mit den iOS-Geräten geschaffen hat.

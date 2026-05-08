@@ -58,7 +58,7 @@
                   {% set comma = joiner() %}
                   {% for category in categories -%}
                     {{ comma() }}
-                    <a href="/kategorie/{{ category | slugify }}">#{{ category }}</a>
+                    <a href="/kategorie/{{ category | slugify }}">#{{ category | categorylabel }}</a>
                   {%- endfor %}
                   <br/>
                 {% endif %}

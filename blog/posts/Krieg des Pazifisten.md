@@ -1,8 +1,8 @@
 ---
 title: Krieg des Pazifisten
-date created: 2010-08-09
+date created: 2010-08-09T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - denken
   - killerspiele
@@ -12,7 +12,7 @@ tags:
   - type/post
 type: post
 preview: images/paintball_oberarm.jpg
-date modified: 2024-02-04T18:04
+date modified: '2024-02-04T18:04'
 ---
 
 Mein Opa war im 2ten Weltkrieg. Gefangen in Rußland und von dort zu Fuß nach Hause, nach Dortmund. Zeit seines Lebens war er gegen Waffen. Uns Kinder hat er konsequent davon fern gehalten. Kein "Peng, Peng!" mit den Fingern, keine Wasserpistolen oder schießen auf der Kirmes.

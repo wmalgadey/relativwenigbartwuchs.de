@@ -1,8 +1,8 @@
 ---
 title: Genetische Bestimmung
-date created: 2010-09-04
+date created: 2010-09-04T00:00:00.000Z
 categories:
-  - Kommentar
+  - formate/kommentar
 tags:
   - biologie
   - denken
@@ -11,7 +11,7 @@ tags:
   - type/post
 type: post
 preview: images/dna_zellen.jpg
-date modified: 2024-02-04T18:03
+date modified: '2024-02-04T18:03'
 ---
 
 # Genetische Bestimmung

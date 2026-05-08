@@ -1,8 +1,8 @@
 ---
 title: Es ist kalt im Lande
-date created: 2010-10-15
+date created: 2010-10-15T00:00:00.000Z
 categories:
-  - Neuigkeit
+  - formate/neuigkeit
 tags:
   - blog
   - familie
@@ -10,7 +10,7 @@ tags:
   - nachricht
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 Ich könnte und müsste jetzt über Ziele philosophieren, aber mir ist zu kalt. Ich überlege immer noch, wie ich meinen Wunsch, mehr zu schreiben, mehr zu lesen und dabei Spaß zu haben, umsetzen kann. Sophie schläft endlich (heute wollte Sie uns wohl ärgern) aber klare Gedanken kann ich nicht fassen. So ging es mir in den letzten Tagen häufig. Oft unkonzentriert und irgendwie hibbelig.

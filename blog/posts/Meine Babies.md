@@ -1,15 +1,15 @@
 ---
 title: Meine Babies
-date created: 2010-08-24
+date created: 2010-08-24T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - familie
   - leben
   - type/post
 type: post
 preview: images/sophie_poster-02.png
-date modified: 2024-02-04T18:04
+date modified: '2024-02-04T18:04'
 ---
 
 Seit dem 17. August bin ich Vater von 3 Kindern.

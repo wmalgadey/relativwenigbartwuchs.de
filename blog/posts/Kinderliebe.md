@@ -1,15 +1,15 @@
 ---
 title: Kinderliebe
-date created: 2013-01-11
+date created: 2013-01-11T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - familie
   - leben
   - type/post
 type: post
 preview: images/childhood.png
-date modified: 2024-02-04T18:03
+date modified: '2024-02-04T18:03'
 ---
 
 Letztens entstand folgender SMS-Dialog zwischen mir und meiner Frau. Ich war auf einer kleinen Geschäftsreise und saß in einem kleinen Gasthaus, als meine Frau versuchte unsere Jüngste ins Bett zu bringen.

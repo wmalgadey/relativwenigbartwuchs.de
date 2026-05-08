@@ -1,8 +1,8 @@
 ---
 title: Im Wasserland
-date created: 2019-07-14
+date created: 2019-07-14T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/fiktion
 author:
   - Sophie
 tags:
@@ -10,7 +10,7 @@ tags:
   - familie
   - fiction
 type: post
-date modified: 2024-02-04T18:03
+date modified: '2024-02-04T18:03'
 ---
 
 Es war einmal in einem kleinem Dorf...

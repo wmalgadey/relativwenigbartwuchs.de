@@ -1,15 +1,15 @@
 ---
 title: Wundervolles Leben
-date created: 2010-07-24
+date created: 2010-07-24T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - emotion
   - familie
   - leben
   - type/post
 type: post
-date modified: 2024-02-04T12:34
+date modified: '2024-02-04T12:34'
 ---
 
 Mittlerweile bin ich Papa. So voll und ganz, mit allem was dazu gehört. Ich bin 32 Jahre und war bei allen Geburten dabei. Die vierte Geburt steht in absehbarer Zeit bevor.

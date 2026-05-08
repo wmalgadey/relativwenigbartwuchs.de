@@ -1,8 +1,8 @@
 ---
 title: Wenn ich mal groß bin
-date created: 2011-11-26
+date created: 2011-11-26T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - denken
   - essay
@@ -14,7 +14,7 @@ tags:
   - type/post
 type: post
 preview: images/blackspace.png
-date modified: 2024-02-04T18:05
+date modified: '2024-02-04T18:05'
 ---
 
 Es ist immer das gleiche. Der Kopf ist voll. Voller Ideen!

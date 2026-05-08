@@ -1,8 +1,8 @@
 ---
 title: Wie sich Urlaub anfühlt
-date created: 2011-03-16
+date created: 2011-03-16T00:00:00.000Z
 categories:
-  - Bericht
+  - formate/bericht
 tags:
   - entwicklung
   - familie
@@ -13,7 +13,7 @@ tags:
   - type/post
 type: post
 preview: images/snow.jpg
-date modified: 2024-02-04T17:42
+date modified: '2024-02-04T17:42'
 ---
 
 Urlaub ist schon eine komische Sache. Kurz vor dem Urlaub, kann man es kaum abwarten endlich Frei zu haben, mitten drin ist es dann oft andersherum. Wobei... Kinder, Projekte, Kochen... Ich hab genug zu tun!

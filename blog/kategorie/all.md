@@ -5,10 +5,11 @@ pagination:
   alias: category
   filter:
     - all
+    - parents
 layout: partials/empty.njk
-permalink: /kategorie/{{ category | slugify }}/
+permalink: /kategorie/{{ category }}/
 eleventyComputed:
-  title: Kategorie {{ category }}
+  title: Kategorie {{ category | categorylabel }}
 tags:
   - type/moc
 type: moc
