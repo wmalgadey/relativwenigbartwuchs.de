@@ -12,7 +12,7 @@ type: moc
 ---
 
 <ul class="tag-cloud">
-  {% for tag in collections.schlagworte.all -%}
+  {% for tag in collections.tags.all -%}
     <li><a href="/schlagwort/{{ tag.title | slugify }}" data-weight="{{ tag.weight }}">{{ tag.title }}</a></li>
   {%- endfor %}
 </ul>

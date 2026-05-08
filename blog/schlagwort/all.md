@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: collections.schlagworte
+  data: collections.tags
   size: 1
   alias: tag
   addAllPagesToCollections: true
@@ -21,5 +21,5 @@ title: Beiträge mit dem Schlagwort {{ tag }} {.title}
 
 ## Beiträge mit dem Schlagwort <em>{{ tag }}</em> {.title}
 
-{% set pagelist = collections.schlagworte[tag] %}
+{% set pagelist = collections.tags[tag] %}
 {% include "partials/pagelist.njk" %}
