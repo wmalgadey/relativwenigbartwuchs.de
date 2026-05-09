@@ -19,13 +19,4 @@ Hier die Bücher:
 
 ## Was da drinsteckt und warum wir das noch brauchen
 
-...
-
-## Weitere Teile der Serie
-
-- [Handwerkszeug und Architektur](/buecherstapel)
-- Prozesse automatisieren
-- Die Web-Anfänge
-- Hardcore-Coding und Legacy
-- Geek-Stuff und der Tellerrand
-- Die DevOps-Transformation
+Teil 2: Soft Skills und Agilität gehört zu IMG_9668.jpeg. Auf diesem Bild sind exakt die passenden Bücher wie Gewaltfreie Kommunikation, Die 5 Dysfunktionen eines Teams und Personal Kanban zu erkennen

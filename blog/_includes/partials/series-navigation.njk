@@ -1,0 +1,21 @@
+{%- set seriesPosts = categories | seriesPosts(collections.post) -%}
+{%- if seriesPosts.length > 1 -%}
+<div class="columns is-centered">
+  <div class="column is-three-fifths">
+    <div class="series-navigation content">
+      <p><strong>Weitere Teile der Serie</strong></p>
+      <ul>
+        {%- for post in seriesPosts -%}
+          <li>
+            {%- if post.url == page.url -%}
+              <strong>{{ post.data.title }}</strong>
+            {%- else -%}
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>
+{%- endif -%}
