@@ -30,7 +30,7 @@ Ich habe meine alten Bücher vor mir aufgereiht und in Stapel unterteilt. Sie do
 - Hexagonal Architecture Explained (Alistair Cockburn, Juan Manuel Garrido de Paz)
 - Unifying User Stories, Use Cases, Story Maps, The power of verbs (Alistair Cockburn)
 
-Ich könnte jetzt viel aus den Inhalten der Bücher zitieren oder davon schwärmen, aber das machen andere schon zur genüge und es gibt hunderte "Ein Senior Entwickler muss diese 10 Bücher gelesen haben"-Beiträge. Für mich waren diese Autoren super interessant. Sie waren an der Entstehung meines Handwerks beteiligt und haben es maßgeblich geprägt. Es sind Stars meiner Jugend und immer noch wichtige Stimmen im Gewirr der vielen Meinungen.
+Ich könnte jetzt viel aus den Inhalten der Bücher zitieren oder davon schwärmen, aber das machen andere schon zur genüge und es gibt hunderte "Ein Software Entwickler muss diese 10 Bücher gelesen haben"-Beiträge. Für mich waren diese Autoren super interessant. Sie waren an der Entstehung meines Handwerks beteiligt und haben es maßgeblich geprägt. Es sind Stars meiner Jugend und immer noch wichtige Stimmen im Gewirr der vielen Meinungen.
 
 Die letzten Bücher in dieser Reihe sind erst in den letzten 5 Jahren dazu gekommen. Da habe ich schon lange Aufgaben ausgeführt, die mit dem reinen Coden nicht mehr viel zu tun hatten. Da habe ich mich schon deutlich eher als Architekt gesehen, anstatt als Coder.
 
