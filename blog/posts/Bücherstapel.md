@@ -1,6 +1,6 @@
 ---
 title: Bücherstapel
-date created: 2026-05-06T00:00:00.000Z
+date created: 2026-05-08T00:00:00.000Z
 categories:
   - serie/bücherstapel
   - formate/artikel
