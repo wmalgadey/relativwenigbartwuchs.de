@@ -37,12 +37,3 @@ Die letzten Bücher in dieser Reihe sind erst in den letzten 5 Jahren dazu gekom
 Die Bücher in diesem Stapel sind auch dazu gekommen, weil Bücher in anderen Stapeln wichtig waren. Auch wenn ich Audiobücher leider nicht im Bücherstapel habe, Kent Becks *Tidy First?* habe ich erst durch das Hörbuch *Clean Agile* von Robert C. Martin entdeckt und es passte wunderbar in mein Mindset und die Art wie ich arbeite.
 
 Jedes der Bücher hat mir entweder eine neue Sichtweise aufgezeigt, mich in eine neue Welt geführt, oder meine Arbeitsweise bestätigt und mir Argumente geliefert, warum es ein sinnvoller Weg war bisher. Manche haben mich auch etwas rätselnt zurück gelassen, wie *Der agile Festpreis*. Und beim Durchstöbern der Bücher ist mir dann auch aufgefallen, dass ich *The Lean Product Playbook* ehrlichgesagt noch nicht gelesen habe. Aber das ist ja auch ein guter Grund ein Buch noch im Schrank zu haben.
-
-## Weitere Teile der Serie
-
-- [Soft Skills und Agilität](/soft-skills-und-agilitaet)
-- Prozesse automatisieren
-- Die Web-Anfänge
-- Hardcore-Coding und Legacy
-- Geek-Stuff und der Tellerrand
-- Die DevOps-Transformation

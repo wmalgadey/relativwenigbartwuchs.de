@@ -80,6 +80,15 @@ export default async eleventyConfig => {
   eleventyConfig.addFilter('md', (str) => markdownIt.renderInline(str ?? ''));
   eleventyConfig.addFilter('firstMarkdownImage', firstMarkdownImage);
 
+  // Returns all posts belonging to the same serie/* category as the given categories array
+  eleventyConfig.addFilter('seriesPosts', (categories, allPosts) => {
+    const seriesCategory = (categories || []).find(cat => cat.startsWith('serie/'));
+    if (!seriesCategory) return [];
+    return (allPosts || [])
+      .filter(post => (post.data.categories || []).includes(seriesCategory) && (dev || !post.data.draft) )
+      .sort((a, b) => new Date(a.data['date created']) - new Date(b.data['date created']));
+  });
+
   // Display label for a hierarchical category slug, e.g. "formate/artikel" → "Artikel"
   eleventyConfig.addFilter('categorylabel', (category) => {
     const segment = String(category).split('/').pop();
