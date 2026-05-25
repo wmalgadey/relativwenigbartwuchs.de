@@ -49,7 +49,7 @@ draft: true                 # hides post in production builds, not needed in bra
 ### Templates
 
 Nunjucks templates in `blog/_includes/`:
-- `layouts/` — page skeletons (`main.njk`, `info.njk`, `empty.njk`)
+- `layouts/` — page skeletons (`main.njk`, `info.njk`)
 - `partials/` — header, footer, htmlhead/htmlfoot, pagelist, svgfonts
 - `macros/navlist.njk` — navigation item rendering
 

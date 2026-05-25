@@ -2,7 +2,7 @@
 {
   title: "Familie",
   "date created": "git Last Modified",
-  layout: "partials/empty.njk",
+  layout: "empty.njk",
   tags: ["type/moc"],
   pagination: {
     data: "collections.tags",
@@ -15,11 +15,12 @@
   }
 }
 ---
-
-## Familie {.title}
-
-Ich komme aus einer großen Familie, vielleicht ist mir deshalb meine eigene Familie so wichtig.
-
-
 {% set pagelist = collections.tags[tag] %}
+
+## Familie {.title .is-spaced}
+
+Ich komme aus einer großen Familie, vielleicht ist mir deshalb meine Eigene so wichtig.
+
+## Alle {{ pagelist.length }} Beiträge... {.subtitle .is-4}
+
 {% include "partials/pagelist.njk" %}
