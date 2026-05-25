@@ -374,12 +374,14 @@ body {
 //#endregion
 
 
-//#region responsive post footer
+//#region post footer
 
-.level-is-shrinkable .level-left,
-.level-is-shrinkable .level-item,
-.level-is-shrinkable .level-right {
-  flex-shrink: 1;
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 //#endregion
