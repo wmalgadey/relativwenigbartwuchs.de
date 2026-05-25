@@ -4,7 +4,7 @@ date created: 2026-05-25T10:00:00.000Z
 categories:
   - formate/zitat
 tags:
-  - Ben_
+  - ben_
   - kultur
   - künstliche intelligenz
 preview: images/simone-pellegrini-L3QG_OBluT0-unsplash.jpg
