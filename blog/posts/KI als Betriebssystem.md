@@ -7,7 +7,7 @@ categories:
 tags:
   - entwicklung
   - agentic engineering
-  - ki
+  - künstliche intelligenz
   - type/post
 type: post
 preview: images/alter-computer.jpg
