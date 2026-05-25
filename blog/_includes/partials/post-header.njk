@@ -1,0 +1,22 @@
+<header class="columns">
+  <div class="column">
+    <h1 class="title">{{ title }}</h1>
+
+    {% if dateCreated %}
+      <p class="subtitle">
+        <time datetime="{{ dateCreated | dateymd }}">{{ dateCreated | datefriendly }}</time>
+      </p>
+    {% endif %}
+  </div>
+  <div class="column is-narrow is-one-third">
+    <div class="has-text-centered">
+      {% if preview %}
+      <div class="post-preview">
+        {% preview preview, title %}
+      </div>
+      {% endif %}
+
+      {{ content | wordcount | readtime }}
+    </div>
+  </div>
+</header>

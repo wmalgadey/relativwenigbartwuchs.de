@@ -1,0 +1,35 @@
+<footer class="columns is-multiline is-size-7">
+  <div class="column is-half">
+    {%- set postDate = dateModified or dateCreated -%}
+    {%- set postDateText = "Beitrag geändert am " if dateModified else "Beitrag veröffentlicht am " -%}
+    <p>{{ postDateText }}{{ postDate | datefriendly }}
+
+      {% if categories.length %}
+        in
+
+        {% set comma = joiner() %}
+        {% for category in categories -%}
+          {{ comma() }}
+          <a href="/kategorie/{{ category }}">#{{ category | categorylabel }}</a>
+        {%- endfor %}
+        <br/>
+      {% endif %}
+      von
+      {{ author | default("Wolfgang", true) }}
+    </p>
+  </div>
+
+  {%- if tags.length > 0 %}
+  <div class="column is-half">
+    <div class="post-tags">
+      <span>Schlagwörter</span>
+
+      {% for tag in tags %}
+        {% if not tag.startsWith('type/') and not tag.startsWith('journal/') and tag != 'posts' and tag != 'all' %}
+          <a href="/schlagwort/{{ tag | slugify }}">#{{ tag }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</footer>

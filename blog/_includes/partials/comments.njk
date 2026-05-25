@@ -1,6 +1,13 @@
-{% if commentsGloballyEnabled %}
-{% import "partials/comment.njk" as commentMacros %}
+{% import "macros/comment.njk" as commentMacros %}
 <section class="comments" data-post-url="{{ page.url }}">
+  <hr>
+  {% if commentsGloballyEnabled -%}
+  <div class="columns is-centered">
+    <div class="column is-three-fifths">
+      <p><a href="mailto:wolfgang@malgadey.de?subject={{ title | urlencode }}" class="reply-by-mail">Per E-Mail antworten</a></p>
+    </div>
+  </div>
+  {% endif -%}
   <div class="columns is-centered">
     <div class="column is-three-fifths">
       <div id="static-comments">
@@ -10,12 +17,9 @@
           {% for comment in comments %}
             {{ commentMacros.renderComment(comment) }}
           {% endfor %}
-        {% else %}
-          <p id="no-comments-msg" class="has-text-grey-light is-size-7">Noch keine Kommentare.</p>
         {% endif %}
       </div>
       <div id="pending-comments"></div>
     </div>
   </div>
 </section>
-{% endif %}

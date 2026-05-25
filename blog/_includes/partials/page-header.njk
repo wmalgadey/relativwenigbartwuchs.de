@@ -1,0 +1,10 @@
+<header>
+  <h1 class="title">{{ title }}</h1>
+
+  {% if dateCreated %}
+    <p class="subtitle">
+      Zuletzt bearbeitet am
+      <time datetime="{{ dateCreated | dateymd }}">{{ dateCreated | datefriendly }}</time>
+    </p>
+  {% endif %}
+</header>
