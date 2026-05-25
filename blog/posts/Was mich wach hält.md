@@ -8,7 +8,7 @@ tags:
   - gedanken
   - type/post
 type: post
-preview: images/images/der_gedanke.jpg
+preview: images/der_gedanke.jpg
 date modified: '2024-02-04T18:04'
 ---
 
