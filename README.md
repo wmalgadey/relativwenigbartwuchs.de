@@ -126,11 +126,90 @@ draft: true           # versteckt in Production
 
 ---
 
+## Deployment
+
+> **Aktueller Stand:** Die Seite wird noch über GitHub + Netlify deployt (Badge oben). Die GitLab-Pipeline ist vorbereitet, aber noch nicht aktiv.
+
+Die Seite soll über eine GitLab CI/CD Pipeline gebaut und per SSH auf den Webspace deployt werden. Production nutzt ein **Blue/Green-Verfahren**, Merge Requests bekommen automatisch eine eigene **Review App** als Subdomain.
+
+### Pipeline
+
+Definiert in [`.gitlab-ci.yml`](.gitlab-ci.yml):
+
+| Job             | Auslöser                  | Beschreibung                                             |
+| --------------- | ------------------------- | -------------------------------------------------------- |
+| `build`         | Push auf `main` oder MR   | `npm install` + `npm run production` → Artefakt `_site/` |
+| `deploy`        | nach `build` auf `main`   | Synct Build in inaktiven Slot, tauscht Symlink atomar    |
+| `rollback`      | manuell                   | Tauscht Symlink zurück auf den vorherigen Slot           |
+| `deploy:review` | MR geöffnet/aktualisiert  | Legt Subdomain an, deployt Build dort                    |
+| `stop:review`   | manuell (MR geschlossen)  | Löscht Subdomain + Verzeichnis                           |
+
+### Server-Struktur
+
+```text
+~/sites/relativwenigbartwuchs.de/blue/     ← Production Slot A
+~/sites/relativwenigbartwuchs.de/green/    ← Production Slot B
+~/sites/relativwenigbartwuchs.de/.slot     ← enthält "blue" oder "green"
+~/sites/relativwenigbartwuchs.de/current   ← Symlink → aktiver Slot (Document Root in cPanel)
+
+~/sites/relativwenigbartwuchs.de/mr-{IID}/                  ← Review App pro MR
+```
+
+Review Apps sind erreichbar unter `mr-{IID}.relativwenigbartwuchs.de` — die Subdomain wird per cPanel API automatisch angelegt und abgeräumt.
+
+> **⚠️ Bekanntes Problem: Review Apps funktionieren nicht auf HostEurope cPanel Webhosting**
+>
+> Der Plan setzt voraus, dass `*.relativwenigbartwuchs.de` per Wildcard-DNS-Eintrag (A-Record) auf die cPanel-Server-IP zeigt, damit jede dynamisch angelegte Subdomain (`mr-1.`, `mr-2.`, …) automatisch auflöst. HostEurope erlaubt Wildcard-Einträge im KIS zwar technisch, schränkt aber explizit ein:
+>
+> > *„Wildcard-Einträge auf Produkten, bei welchen die Administration durch uns erfolgt, sind nicht erreichbar. Sie müssen Wildcard-Einträge immer auf einen anderen (externen) Server verweisen."*
+>
+> Das bedeutet: `*.relativwenigbartwuchs.de → cPanel-IP` wird vom Webserver blockiert. Die cPanel UAPI (`SubDomain/addsubdomain`) legt zwar den Apache-VirtualHost korrekt an, aber ohne DNS-Auflösung ist die Subdomain nicht erreichbar.
+>
+> **Konsequenz:** Die Jobs `deploy:review` und `stop:review` sind in der Pipeline definiert, aber nicht funktionsfähig. Review Apps müssten auf einer externen Plattform (z.B. Netlify, GitLab Pages) betrieben werden, die eigenes DNS-Management mitbringt.
+
+### Ersteinrichtung
+
+SSH-Key ohne Passphrase generieren und den öffentlichen Teil auf dem Webspace eintragen:
+
+```bash
+ssh-keygen -t ed25519 -f deploy_key -N ""
+# deploy_key.pub in ~/.ssh/authorized_keys auf dem Server eintragen
+```
+
+Verzeichnisstruktur und Symlink auf dem Webspace anlegen:
+
+```bash
+ssh -p PORT user@host 'bash -s' < scripts/server-setup.sh
+```
+
+In cPanel den Document Root der Domain `relativwenigbartwuchs.de` auf `~/sites/relativwenigbartwuchs.de/current` setzen.
+
+### GitLab-Variablen
+
+Unter *Settings → CI/CD → Variables* eintragen:
+
+| Variable          | Beschreibung                           | Typ             |
+| ----------------- | -------------------------------------- | --------------- |
+| `SSH_PRIVATE_KEY` | Inhalt von `deploy_key`                | File, protected |
+| `SSH_KNOWN_HOSTS` | Ausgabe von `ssh-keyscan -p PORT HOST` | Variable        |
+| `DEPLOY_HOST`     | Hostname des Webspaces                 | Variable        |
+| `DEPLOY_USER`     | SSH-Benutzername                       | Variable        |
+| `SSH_PORT`        | SSH-Port (Standard: `22`)              | Variable        |
+| `CPANEL_USER`     | cPanel-Benutzername                    | Variable        |
+| `CPANEL_TOKEN`    | cPanel API Token                       | Variable, masked|
+
+### Rollback
+
+Im GitLab-Interface unter *CI/CD → Pipelines* den `rollback`-Job manuell auslösen. Der alte Slot wird nur aktiviert, wenn er Inhalt hat.
+
+---
+
 ## Resources
 
 - [11ty Docs](https://www.11ty.dev/docs/)
 - [Bulma Docs](https://bulma.io/documentation/)
 - [11ty Rocks](https://11ty.rocks/)
+- [Bundles of 11ty know-how](https://11tybundle.dev/)
 - [Pagefind](https://pagefind.app/)
 
 ### Tools used during setup

@@ -1,0 +1,245 @@
+stages:
+  - build
+  - deploy
+
+# ── CI variables (set in GitLab → Settings → CI/CD → Variables) ──────────────
+#
+#   SSH_PRIVATE_KEY   — private key (type: File, protected, masked)
+#   SSH_KNOWN_HOSTS   — output of: ssh-keyscan -p $SSH_PORT $DEPLOY_HOST
+#   DEPLOY_HOST       — hostname des Webspaces
+#   DEPLOY_USER       — SSH-Benutzername
+#   SSH_PORT          — SSH-Port (Standard: 22)
+#   CPANEL_USER       — cPanel-Benutzername (für Subdomain-API)
+#   CPANEL_TOKEN      — cPanel API Token (für Subdomain-API)
+#
+# ─────────────────────────────────────────────────────────────────────────────
+
+variables:
+  SSH_PORT: "22"
+  SITE_DIR: "sites/relativwenigbartwuchs.de"
+  REVIEW_DIR: "sites/relativwenigbartwuchs.de/review"
+
+# ── SSH-Setup (shared anchor) ─────────────────────────────────────────────────
+
+.ssh_setup: &ssh_setup
+  - apk add --no-cache openssh-client rsync bash curl
+  - eval $(ssh-agent -s)
+  - printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+  - printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+
+# ── Build ─────────────────────────────────────────────────────────────────────
+
+build:
+  stage: build
+  image: node:18-alpine
+  cache:
+    key:
+      files:
+        - package.json
+    paths:
+      - node_modules/
+  script:
+    # package-lock.json ist gitignored → npm install statt npm ci
+    - npm install --prefer-offline
+    - npm run production
+  artifacts:
+    paths:
+      - _site/
+    expire_in: 4 hours
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+# ── Deploy: Production (Blue/Green) ──────────────────────────────────────────
+#
+#   Server-Struktur:
+#     ~/sites/relativwenigbartwuchs.de/blue/    ← Slot A
+#     ~/sites/relativwenigbartwuchs.de/green/   ← Slot B
+#     ~/sites/relativwenigbartwuchs.de/.slot    ← enthält "blue" oder "green"
+#     ~/sites/relativwenigbartwuchs.de/current  ← Symlink auf aktiven Slot (Document Root)
+#
+#   Jeder Deploy:
+#     1. Liest aktiven Slot
+#     2. Synct _site/ in den inaktiven Slot
+#     3. Tauscht current-Symlink atomar (mv -T)
+#     4. Schreibt neuen Slot in .slot
+#
+#   Der alte Slot bleibt erhalten → Rollback jederzeit möglich.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+
+deploy:
+  stage: deploy
+  image: alpine:latest
+  needs:
+    - job: build
+      artifacts: true
+  before_script:
+    - *ssh_setup
+  script:
+    - |
+      set -e
+
+      SSH="ssh -p $SSH_PORT $DEPLOY_USER@$DEPLOY_HOST"
+      SLOT_FILE="\$HOME/$SITE_DIR/.slot"
+
+      # Aktuellen Slot lesen (Fallback: blue beim ersten Deploy)
+      CURRENT=$($SSH "cat $SLOT_FILE 2>/dev/null || echo blue")
+
+      if [ "$CURRENT" = "blue" ]; then
+        NEXT="green"
+      else
+        NEXT="blue"
+      fi
+
+      echo "Aktiver Slot: $CURRENT → deploye nach: $NEXT"
+
+      $SSH "mkdir -p \$HOME/$SITE_DIR/$NEXT"
+
+      rsync -avz --delete --checksum \
+        -e "ssh -p $SSH_PORT" \
+        _site/ "$DEPLOY_USER@$DEPLOY_HOST:~/$SITE_DIR/$NEXT/"
+
+      $SSH "
+        set -e
+        ln -sfn \$HOME/$SITE_DIR/$NEXT \$HOME/$SITE_DIR/.current_next
+        mv -T \$HOME/$SITE_DIR/.current_next \$HOME/$SITE_DIR/current
+        printf '%s' $NEXT > $SLOT_FILE
+      "
+
+      echo "Deploy abgeschlossen. Aktiv: $NEXT — alter Build in ~/$SITE_DIR/$CURRENT bleibt erhalten."
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  environment:
+    name: production
+    url: https://relativwenigbartwuchs.de
+
+# ── Rollback: Production (manuell) ───────────────────────────────────────────
+
+rollback:
+  stage: deploy
+  image: alpine:latest
+  needs: []
+  before_script:
+    - *ssh_setup
+  script:
+    - |
+      set -e
+
+      SSH="ssh -p $SSH_PORT $DEPLOY_USER@$DEPLOY_HOST"
+      SLOT_FILE="\$HOME/$SITE_DIR/.slot"
+
+      CURRENT=$($SSH "cat $SLOT_FILE 2>/dev/null || echo blue")
+
+      if [ "$CURRENT" = "blue" ]; then
+        PREV="green"
+      else
+        PREV="blue"
+      fi
+
+      echo "Rollback: $CURRENT → $PREV"
+
+      $SSH "
+        if [ ! -d \$HOME/$SITE_DIR/$PREV ] || [ -z \"\$(ls -A \$HOME/$SITE_DIR/$PREV 2>/dev/null)\" ]; then
+          echo 'FEHLER: ~/$SITE_DIR/$PREV ist leer oder existiert nicht.' >&2
+          exit 1
+        fi
+      "
+
+      $SSH "
+        set -e
+        ln -sfn \$HOME/$SITE_DIR/$PREV \$HOME/$SITE_DIR/.current_next
+        mv -T \$HOME/$SITE_DIR/.current_next \$HOME/$SITE_DIR/current
+        printf '%s' $PREV > $SLOT_FILE
+      "
+
+      echo "Rollback auf $PREV abgeschlossen."
+  rules:
+    - when: manual
+  allow_failure: false
+  environment:
+    name: production
+    url: https://relativwenigbartwuchs.de
+
+# ── Deploy: Review App (Merge Requests) ──────────────────────────────────────
+#
+#   Pro MR wird eine Subdomain angelegt:
+#     mr-{IID}.relativwenigbartwuchs.de → ~/sites/review/mr-{IID}/
+#
+#   Subdomain-Verwaltung über cPanel UAPI (API Token, kein Passwort nötig).
+#   stop:review räumt Subdomain + Verzeichnis beim Schließen des MR ab.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+
+deploy:review:
+  stage: deploy
+  image: alpine:latest
+  needs:
+    - job: build
+      artifacts: true
+  before_script:
+    - *ssh_setup
+  script:
+    - |
+      set -e
+
+      SUBDOMAIN="mr-${CI_MERGE_REQUEST_IID}"
+      TARGET_DIR="$REVIEW_DIR/${SUBDOMAIN}"
+      SSH="ssh -p $SSH_PORT $DEPLOY_USER@$DEPLOY_HOST"
+
+      # Subdomain anlegen (idempotent – schlägt nicht fehl wenn sie existiert)
+      curl -sf "https://$DEPLOY_HOST:2083/execute/SubDomain/addsubdomain" \
+        -H "Authorization: cpanel $CPANEL_USER:$CPANEL_TOKEN" \
+        --data-urlencode "domain=${SUBDOMAIN}" \
+        --data-urlencode "rootdomain=relativwenigbartwuchs.de" \
+        --data-urlencode "dir=${TARGET_DIR}" \
+        | tee /tmp/cpanel_response.json
+      grep -q '"status":1' /tmp/cpanel_response.json \
+        || grep -q 'already exists' /tmp/cpanel_response.json \
+        || (echo "cPanel API Fehler" && cat /tmp/cpanel_response.json && exit 1)
+
+      $SSH "mkdir -p \$HOME/$TARGET_DIR"
+
+      rsync -avz --delete --checksum \
+        -e "ssh -p $SSH_PORT" \
+        _site/ "$DEPLOY_USER@$DEPLOY_HOST:~/$TARGET_DIR/"
+
+      echo "Review App verfügbar: https://${SUBDOMAIN}.relativwenigbartwuchs.de"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  environment:
+    name: review/$CI_MERGE_REQUEST_IID
+    url: https://mr-$CI_MERGE_REQUEST_IID.relativwenigbartwuchs.de
+    on_stop: stop:review
+
+stop:review:
+  stage: deploy
+  image: alpine:latest
+  needs: []
+  before_script:
+    - *ssh_setup
+  script:
+    - |
+      set -e
+
+      SUBDOMAIN="mr-${CI_MERGE_REQUEST_IID}"
+      TARGET_DIR="$REVIEW_DIR/${SUBDOMAIN}"
+      SSH="ssh -p $SSH_PORT $DEPLOY_USER@$DEPLOY_HOST"
+
+      # Subdomain löschen
+      curl -sf "https://$DEPLOY_HOST:2083/execute/SubDomain/delsubdomain" \
+        -H "Authorization: cpanel $CPANEL_USER:$CPANEL_TOKEN" \
+        --data-urlencode "domain=${SUBDOMAIN}.relativwenigbartwuchs.de"
+
+      # Verzeichnis aufräumen
+      $SSH "rm -rf \$HOME/$TARGET_DIR"
+
+      echo "Review App ${SUBDOMAIN}.relativwenigbartwuchs.de entfernt."
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: manual
+  environment:
+    name: review/$CI_MERGE_REQUEST_IID
+    action: stop
