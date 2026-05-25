@@ -12,7 +12,6 @@ tags:
   - type/post
 type: post
 preview: images/kinokarte_red.jpg
-date modified: '2024-02-04T18:04'
 ---
 
 Mit dem äußerst innovativen deutschen Titel
