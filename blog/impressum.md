@@ -29,31 +29,33 @@ Wolfgang
 ----
 
 ## Feeds
+
 relativwenigbartwuchs ist über folgende Feeds verfolgbar
 
 Startseite: https://relativwenigbartwuchs.de/feed.xml
 
 ## Zum Autor
+
 Wolfgang Malgadey wurde im Juli 1978 in Köln geboren, und hat sich seither nicht sehr viel weiter von seinem Geburtsort weg bewegt.
 
-Er wurde im Jahr 1998 Vater einer wunderbaren Tochter und absolvierte im Jahr 1999 am Hansa Gymnasium in Köln das Gymnasium.
+1998 und 1999 waren wegweisende Jahre: er wurde Vater und legte am Hansa Gymnasium in Köln sein Abitur ab. Den Wehrdienst absolvierte er kurz darauf; angetrieben von dem Wunsch, Kriegsgeschichten aus der eigenen Familiengeschichte zu verstehen.
 
-Den Wehrdienst absolvierte er, mit der Idee die schrecklichen Erzählungen seines Großvaters über dessen Erlebnisse im Krieg zu prüfen.
+Im Dezember 1999 wurde sein Optimismus auf eine schwere Probe gestellt.
 
-Als im Dezember 1999 seine Tochter plötzlich verstarb, wurde sein Optimismus auf die Probe gestellt.
+Halt fand er wieder in den Jahren 2003 und 2010 mit weiteren prägende Momente. Insgesamt über 20 wunderbare Jahre, in denen er das Vatersein in all seinen Facetten erlebt hat.
 
-Die Geburt der zweiten Tochter zu Beginn des neuen Jahrtausends vervollständigte sein Leben und lies die Trauer verblassen. 2003 folgte ein Sohn und 2010 eine weitere Tochter. Mit seiner kleinen Großfamilie verbrachte er 20 wunderbare Jahre.
-
-Mittlerweile ist Wolfgang glücklich geschieden und ein glücklicher Teil einer wunderbaren Familie.
-
+Als [Familienvater](/schlagwort/familie) von 2 Töchtern und 2 Söhnen hat Wolfgang nach 18 Jahren den Job gewechselt. Er ist jetzt glücklich geschieden und lebt seit 2023 in einer neuen Lebensphase.
 
 ## Haftungsausschluss
 
 ### Haftung für Inhalte
+
 Die Inhalte dieser Webseite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
 
 ### Haftung für Links
+
 Diese Webseite enthält Links zu externen Webseiten Dritter, auf deren Inhalte kein Einfluss genommen werden kann. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
 
 ## Urheberrecht
+
 Die auf dieser Webseite veröffentlichten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
