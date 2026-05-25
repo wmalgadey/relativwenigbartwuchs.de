@@ -7,6 +7,15 @@ categories:
   - rezensionen/bücher
 tags:
   - entwicklung
+  - Steve McConnell
+  - Robert C. Martin
+  - Gregor Hohpe
+  - Kent Beck
+  - Alistair Cockburn
+  - David Thomas
+  - Andrew Hunt
+  - Mark Richards
+  - Neal Ford
   - type/post
 type: post
 preview: images/IMG_9666.jpeg
