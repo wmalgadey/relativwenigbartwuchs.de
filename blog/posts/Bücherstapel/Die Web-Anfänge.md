@@ -6,6 +6,8 @@ categories:
   - rezensionen/bücher
 tags:
   - entwicklung
+  - web
+  - medien
   - kommentar
 preview: ../images/IMG_9671.jpeg
 ---

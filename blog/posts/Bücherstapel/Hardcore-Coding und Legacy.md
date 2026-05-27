@@ -6,6 +6,7 @@ categories:
   - rezensionen/bücher
 tags:
   - entwicklung
+  - coding
   - kommentar
 preview: ../images/IMG_9672.jpeg
 ---
