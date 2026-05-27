@@ -1,6 +1,6 @@
 ---
 title: Soft Skills und Agilität
-date created: 2026-05-25T21:06:00.000Z
+date created: 2026-05-27
 categories:
   - serie/bücherstapel
   - rezensionen/bücher
@@ -10,8 +10,6 @@ tags:
   - agile
   - Angela Dietz
   - Marshall B. Rosenberg
-  - type/post
-type: post
 preview: ../images/IMG_9668.jpeg
 ---
 
