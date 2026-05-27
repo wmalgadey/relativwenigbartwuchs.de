@@ -9,12 +9,10 @@ tags:
   - kultur
   - menschen
   - urheberrecht
-  - type/post
-type: post
 date modified: '2024-02-04T12:34'
 ---
 
-Diskussionen sind ja irgendwie total mühsam. So viele enden, wie sie begonnen haben. Das sind auch meistens die hitzigsten. Keiner läst sich überzeugen, weil die Standpunkte fest sind. 
+Diskussionen sind ja irgendwie total mühsam. So viele enden, wie sie begonnen haben. Das sind auch meistens die hitzigsten. Keiner läst sich überzeugen, weil die Standpunkte fest sind.
 
 So scheint mir die Politik von heute. Ich kann mich gar nicht daran erinnern, wann der letzte Politiker mal eine Meinung bewußt revidiert hat, weil er vom Gegenteil überzeugt war. Die eigene Meinung ist natürlich vom aktuellen Standpunkt beeinflußt. Über den Tellerrand zu schauen ist mühsam und dadurch fällt es schwerer sich auf die Meinung aus der Sicht eines anderen Standpunktes überhaupt nur einzulassen. Begriffe wie "Unbegreiflich" oder "Blödsinn" zeigen mir, dass man nicht bereit ist, sich auf die andere Seite zu setzen und mal dort zu schauen, wie es denn anders aussehen könnte.
 

@@ -8,8 +8,6 @@ tags:
   - entwicklung
   - agentic engineering
   - künstliche intelligenz
-  - type/post
-type: post
 preview: images/alter-computer.jpg
 credits:
   - 'Aufmacherbild von [Matt Benson](https://unsplash.com/@mattgyver) auf [Unsplash](https://unsplash.com/de/fotos/ein-alter-computer-der-neben-einer-wand-auf-dem-boden-steht-rvfm_b1C6lc)'

@@ -9,8 +9,6 @@ tags:
   - rezesion
   - rundfunk
   - wdr
-  - type/post
-type: post
 preview: images/brothers_bloom_web.jpg
 date modified: '2024-02-04T18:02'
 ---

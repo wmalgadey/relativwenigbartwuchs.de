@@ -10,8 +10,6 @@ tags:
   - kultur
   - kunst
   - porträt
-  - type/post
-type: post
 preview: images/jochen_malmsheimer.jpg
 date modified: '2024-02-04T18:03'
 ---

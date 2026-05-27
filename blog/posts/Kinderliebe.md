@@ -6,8 +6,6 @@ categories:
 tags:
   - familie
   - leben
-  - type/post
-type: post
 preview: images/childhood.png
 date modified: '2024-02-04T18:03'
 ---

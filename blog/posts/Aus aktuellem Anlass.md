@@ -8,8 +8,6 @@ tags:
   - denken
   - kommentar
   - umwelt
-  - type/post
-type: post
 preview: images/atomkraft-nein-danke.png
 date modified: '2024-02-04T18:02'
 ---

@@ -9,8 +9,6 @@ tags:
   - kommentar
   - streetview
   - volk
-  - type/post
-type: post
 preview: images/google_streetview_1.png
 date modified: '2024-02-04T18:04'
 ---

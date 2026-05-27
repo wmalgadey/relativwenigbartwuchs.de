@@ -8,8 +8,6 @@ tags:
   - kommentar
   - kultur
   - zeitgeist
-  - type/post
-type: post
 preview: images/dasendediesesinternets.png
 date modified: '2024-02-04T18:02'
 ---

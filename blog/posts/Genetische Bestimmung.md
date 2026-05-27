@@ -8,8 +8,6 @@ tags:
   - denken
   - kommentar
   - rassismus
-  - type/post
-type: post
 preview: images/dna_zellen.jpg
 date modified: '2024-02-04T18:03'
 ---

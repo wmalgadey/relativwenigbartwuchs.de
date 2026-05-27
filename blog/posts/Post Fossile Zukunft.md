@@ -9,8 +9,6 @@ tags:
   - transition-towns
   - utopia
   - utopia-entdecken
-  - type/post
-type: post
 preview: images/antimatter.jpg
 date modified: '2024-02-04T18:04'
 ---

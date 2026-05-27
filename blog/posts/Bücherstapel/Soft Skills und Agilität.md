@@ -17,7 +17,7 @@ Seit vielen Monden arbeite ich im Team, und Anfangs was es auch recht einfach zu
 
 - Gesundes Kommunizieren (Angela Dietz)
 - Gewaltfreie Kommunikation (Marshall B. Rosenberg)
-- Gewaltfreie Kommunikation - Giraffensprache (Marshall B. Rosenberg)
+- Giraffensprache (Marshall B. Rosenberg)
 - FISH! (Lundin, Paul, Christensen)
 - Die 5 Dysfunktionen eines Teams überwinden (Patrick Lencioni)
 - The Coaching Habit (Michael Bungay Stanier)

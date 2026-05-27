@@ -8,8 +8,6 @@ tags:
   - nachricht
   - neid
   - schreiben
-  - type/post
-type: post
 preview: images/envy_flickr.png
 date modified: '2024-02-04T18:04'
 ---

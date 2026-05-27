@@ -6,9 +6,6 @@ layout: page.njk
 eleventyNavigation:
   key: impressum
   order: 900
-tags:
-  - type/page
-type: page
 ---
 
 Persönliche Textsammlung. Impressumfrei nach § 55 RStV. Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:

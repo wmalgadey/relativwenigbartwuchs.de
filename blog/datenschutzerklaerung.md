@@ -6,9 +6,6 @@ layout: page.njk
 eleventyNavigation:
   key: datenschutzerklaerung
   order: 800
-tags:
-  - type/page
-type: page
 ---
 
 Die Nutzung dieser Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf der Webseite personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adresse) erhoben werden, erfolgt dies stets auf freiwilliger Basis.

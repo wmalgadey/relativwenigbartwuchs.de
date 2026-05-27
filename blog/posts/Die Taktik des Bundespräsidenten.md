@@ -8,8 +8,6 @@ tags:
   - kommentar
   - kultur
   - politik
-  - type/post
-type: post
 excerpt: 'Jedem, und da hau ich jetzt mal auf die Kacke, jedem auf diesem Planeten, muss doch begreiflich sein, das jede seiner Handlungen irgendwelche Resultate zur folge haben.'
 date modified: '2024-02-04T12:34'
 ---

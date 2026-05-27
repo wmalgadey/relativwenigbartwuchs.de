@@ -16,8 +16,6 @@ tags:
   - Andrew Hunt
   - Mark Richards
   - Neal Ford
-  - type/post
-type: post
 preview: images/IMG_9666.jpeg
 ---
 
@@ -37,7 +35,7 @@ Ich habe meine alten Bücher vor mir aufgereiht und in Stapel unterteilt. Sie do
 - The Lean Product Playbook (Dan Olsen)
 - Tidy First? (Kent Beck)
 - Hexagonal Architecture Explained (Alistair Cockburn, Juan Manuel Garrido de Paz)
-- Unifying User Stories, Use Cases, Story Maps, The power of verbs (Alistair Cockburn)
+- Unifying User Stories, Use Cases, Story Maps, The Power of Verbs (Alistair Cockburn)
 
 Ich könnte jetzt viel aus den Inhalten der Bücher zitieren oder davon schwärmen, aber das machen andere schon zur genüge und es gibt hunderte "Ein Software Entwickler muss diese 10 Bücher gelesen haben"-Beiträge. Für mich waren diese Autoren super interessant. Sie waren an der Entstehung meines Handwerks beteiligt und haben es maßgeblich geprägt. Es sind Stars meiner Jugend und immer noch wichtige Stimmen im Gewirr der vielen Meinungen.
 

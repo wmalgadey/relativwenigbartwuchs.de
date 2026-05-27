@@ -9,8 +9,6 @@ tags:
   - maschinen
   - mein-leben-als-entwickler
   - test-driven-development
-  - type/post
-type: post
 preview: images/red_green_refactor_tshirt.jpg
 date modified: '2024-02-04T18:04'
 ---

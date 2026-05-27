@@ -8,8 +8,6 @@ tags:
   - menschen
   - open-source
   - Raul-Krauthausen
-  - type/post
-type: post
 date modified: '2024-02-04T17:41'
 ---
 

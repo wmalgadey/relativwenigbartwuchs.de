@@ -9,8 +9,6 @@ tags:
   - kommentar
   - utopia
   - utopia-entdecken
-  - type/post
-type: post
 preview: images/dm.jpg
 date modified: '2024-02-04T18:02'
 ---

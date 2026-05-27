@@ -11,8 +11,6 @@ tags:
   - schreiben
   - wehret-den-anfängen
   - write-monkey
-  - type/post
-type: post
 preview: images/blackspace.png
 date modified: '2024-02-04T18:05'
 ---

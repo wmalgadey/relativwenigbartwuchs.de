@@ -7,8 +7,6 @@ tags:
   - bewegung
   - familie
   - leben
-  - type/post
-type: post
 preview: images/bmwi_i3_gallery_exterior_02-1.jpg
 date modified: '2024-02-04T18:04'
 ---

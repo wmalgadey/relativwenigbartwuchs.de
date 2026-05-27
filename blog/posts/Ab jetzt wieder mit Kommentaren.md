@@ -6,7 +6,6 @@ categories:
 tags:
   - blog
   - 11ty
-  - type/post
 preview: images/Gemini_Generated_Image_blb8u1blb8u1blb8.png
 credits:
   - 'Aufmacher generiert mit [Gemini](https://gemini.google.com/share/8136628b52eb)'

@@ -10,8 +10,6 @@ tags:
   - ios
   - kommentar
   - maschinen
-  - type/post
-type: post
 preview: images/ios5.jpeg
 date modified: '2024-02-04T18:04'
 ---

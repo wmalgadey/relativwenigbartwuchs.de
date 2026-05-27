@@ -9,8 +9,6 @@ tags:
   - essay
   - großeltern
   - revolution
-  - type/post
-type: post
 preview: images/kungfu.jpg
 date modified: '2024-02-04T18:02'
 ---

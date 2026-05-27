@@ -6,8 +6,6 @@ categories:
 tags:
   - familie
   - leben
-  - type/post
-type: post
 preview: images/sophie_poster-02.png
 date modified: '2024-02-04T18:04'
 ---

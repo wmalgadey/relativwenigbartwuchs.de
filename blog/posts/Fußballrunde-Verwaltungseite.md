@@ -10,8 +10,6 @@ tags:
   - maschinen
   - php
   - webdesign
-  - type/post
-type: post
 preview: images/cologne-soccer_-_uebersicht.png
 date modified: '2024-02-04T18:02'
 ---

@@ -10,8 +10,6 @@ tags:
   - urlaub
   - journal/2011
   - journal/2011-03
-  - type/post
-type: post
 preview: images/snow.jpg
 date modified: '2024-02-04T17:42'
 ---

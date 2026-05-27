@@ -7,7 +7,5 @@ categories:
 tags:
   - kino
   - kultur
-  - type/post
-type: post
 ---
 

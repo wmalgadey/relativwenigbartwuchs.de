@@ -9,8 +9,6 @@ tags:
   - kultur
   - Morgan-Freeman
   - rezesion
-  - type/post
-type: post
 preview: images/kinokarte_red.jpg
 ---
 

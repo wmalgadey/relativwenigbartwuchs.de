@@ -9,8 +9,6 @@ tags:
   - krieg
   - lektion
   - paintball
-  - type/post
-type: post
 preview: images/paintball_oberarm.jpg
 date modified: '2024-02-04T18:04'
 ---

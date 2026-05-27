@@ -8,8 +8,6 @@ tags:
   - kinderreim
   - lesezeichen
   - melancholie
-  - type/post
-type: post
 preview: images/amazon-shipping-robot.jpg
 date modified: '2024-02-04T18:04'
 ---

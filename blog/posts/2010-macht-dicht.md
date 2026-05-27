@@ -5,8 +5,6 @@ categories:
   - formate/bericht
 tags:
   - leben
-  - type/post
-type: post
 date modified: '2024-02-04T12:34'
 ---
 
@@ -18,7 +16,7 @@ date modified: '2024-02-04T12:34'
 
 ## Familie
 
-Daher wird 2011 ganz im Zeichen der Familie stehen. Wenn es Familie als Sternzeichen gäbe, wäre ich darin wohl geboren ;). Ich werde mich Hochdruck daran arbeiten, viel mehr mit der Familie gemeinsam zu unternehmen. Viel mehr schwimmen, viel mehr Ausflüge. Das ist 2010 viel zu kurz gekommen.  
+Daher wird 2011 ganz im Zeichen der Familie stehen. Wenn es Familie als Sternzeichen gäbe, wäre ich darin wohl geboren ;). Ich werde mich Hochdruck daran arbeiten, viel mehr mit der Familie gemeinsam zu unternehmen. Viel mehr schwimmen, viel mehr Ausflüge. Das ist 2010 viel zu kurz gekommen.
 Das wir seit dem 23ten im Bett liegen (Zuerst Fabian, dann Lea, dann ich und aktuell noch Heike) nehme ich jetzt mal als positives Zeichen, irgendwie muss man dieses verkorkste Weihnachts- und Silvesterfest ja deuten! Für 2011 werde ich mir um die Weihnachtszeit aber Aufbaupräparate und Vitamine bunkern ;)
 
 ## Boarden

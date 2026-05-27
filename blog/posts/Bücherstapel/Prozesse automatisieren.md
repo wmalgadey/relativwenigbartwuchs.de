@@ -1,22 +1,24 @@
 ---
 title: Prozesse automatisieren
-date created: 2026-06-01T00:00:00.000Z
+date created: 2026-05-27T18:00:00.000Z
 categories:
   - serie/bücherstapel
   - rezensionen/bücher
 tags:
+  - automatisierung
   - entwicklung
-  - kommentar
-  - type/post
-type: post
+  - Bernd Ruecker
+  - Leon Strauch
+  - Jakob Freund
 preview: ../images/IMG_9670.jpeg
-draft: true
 ---
 
-Hier die Bücher:
+Schon komisch, dass etwas das ich im Grunde jahrelang gemacht habe, in nur 3 Bücher in meinem Regal steht.
 
--
+- Practical Process Automation (Bernd Ruecker)
+- Enterprise Process Orchestration (Bernd Ruecker & Leon Strauch)
+- Real-Life BPMN (Jakob Freund & Bernd Rücker)
 
-## Was da drinsteckt und warum wir das noch brauchen
+Und Bernd Ruecker taucht in diesem Stapel gleich dreifach auf. Der Grund ist einfach, ich kannte einfach kein Tool, dass Prozess-Automatisierung so gut umgesetzt hat wie Camunda. Mittlerweile bin ich schlauer und kenne ein paar weitere, aber er hat mir die Tür für eine sehr strukturierte Sicht auf diese Domäne eröffnet. Zeitweise habe ich mich dabei gefragt, warum zum Henker haben wir das nicht früher gekannt? Und wieso gingen diese Tools an mir vorbei?
 
-Teil 3: Prozesse automatisieren gehört zu IMG_9670.jpeg. Hier stehen die erwähnten Werke Real-Life BPMN und Practical Process Automation
+Also im Nachhinein habe ich glaube ich nie etwas anderes gemacht. Ich habe immer versucht, manuelle Prozesse zu verstehen und so gut es geht zu automatisieren. Nur kam dabei eben Programmcode anstatt BPMN zum Einsatz. Dabei sind Microservices und die Unterschieden von Choreography versus Orchestration auch hier zentrale Teil der Architektur. Nichts anderes haben wir mit unserem Software Design versucht zu bauen. Eben nur speziell für eine bestimmte Domäne, und nicht allgemein für alles was man Automatisieren kann.

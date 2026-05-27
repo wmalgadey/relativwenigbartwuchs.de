@@ -16,7 +16,6 @@ tags:
   - type/page
 date created: git Last Modified
 date modified: 2024-02-04T18:26
-type: page
 ---
 
 {% if pagination.pageNumber == 0 -%}

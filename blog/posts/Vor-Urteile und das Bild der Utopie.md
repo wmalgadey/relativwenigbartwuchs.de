@@ -10,8 +10,6 @@ tags:
   - urteilen
   - utopie
   - vorurteile
-  - type/post
-type: post
 date modified: '2024-02-04T12:34'
 ---
 
