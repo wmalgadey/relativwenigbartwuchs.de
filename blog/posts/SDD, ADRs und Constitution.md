@@ -18,7 +18,7 @@ credits:
 
 Seit einigen Tagen versuche ich mit SDD (spec driven development) eine Idee für einen KI-Harness umzusetzen.
 
-Dabei wollte ich mich nicht einfach nur in guter neuer VibeCoding-Manier zum Ergebnis prompten, sondern mit Googles Spec-Kit über Specs, Contracts und Architekturentscheidungen (ADRs) arbeiten.
+Dabei wollte ich mich nicht einfach nur in guter neuer VibeCoding-Manier zum Ergebnis prompten, sondern mit Githubs Spec-Kit über Specs, Contracts und Architekturentscheidungen (ADRs) arbeiten.
 
 Mein Anspruch war, dass ich weder meine gesamte Idee vorab definiere, noch das ich die Architektur, die ich mir im Kopf vorstelle vollständig vorgebe. Die Features sollten iterativ entstehen und die Architektur sollte im Prozess selbst entsteht. Gleichzeitig sollten Prinzipien wie DDD, TDD, Observability und Clean Code von Anfang an gelten, bzw. die Entwicklung für mich handhabbar machen (ich wollte den Code gerne selbst verstehen).
 
