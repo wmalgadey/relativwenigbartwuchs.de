@@ -1,6 +1,6 @@
 ---
 title: 'SDD, ADRs und Constitution'
-date created: 2026-07-05T19:33:00.000Z
+date created: 2026-07-05T19:33:00
 categories:
   - formate/artikel
 tags:
