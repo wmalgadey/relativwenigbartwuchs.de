@@ -1,5 +1,5 @@
 ---
-title: Krieg des Pazifisten
+title: Mein Problem mit KI
 date created: 2026-09-20T00:00:00.000Z
 categories:
   - formate/bericht
