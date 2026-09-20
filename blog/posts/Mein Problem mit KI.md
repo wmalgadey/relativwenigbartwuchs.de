@@ -1,6 +1,6 @@
 ---
 title: Krieg des Pazifisten
-date created: 2026-09-21T12:00:00.000Z
+date created: 2026-09-20T00:00:00.000Z
 categories:
   - formate/bericht
 tags:
