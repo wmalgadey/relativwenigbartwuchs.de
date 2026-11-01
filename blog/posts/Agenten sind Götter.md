@@ -6,7 +6,7 @@ categories:
 tags:
   - ben_
   - kultur
-  - künstliche intelligenz
+  - künstliche-intelligenz
 preview: images/simone-pellegrini-L3QG_OBluT0-unsplash.jpg
 credits:
   - 'Aufmacherbild von [Simone Pellegrini](https://unsplash.com/de/@mazerone?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) auf [Unsplash](https://unsplash.com/de/fotos/statue-des-nackten-mannes-L3QG_OBluT0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)'

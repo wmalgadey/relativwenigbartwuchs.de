@@ -5,8 +5,8 @@ categories:
   - formate/artikel
 tags:
   - entwicklung
-  - künstliche intelligenz
-  - agentic engineering
+  - künstliche-intelligenz
+  - agentic-engineering
   - softwarearchitektur
 draft: true
 ---
