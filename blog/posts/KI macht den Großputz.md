@@ -5,9 +5,9 @@ categories:
   - formate/artikel
 tags:
   - entwicklung
-  - agentic engineering
-  - context engineering
-  - künstliche intelligenz
+  - agentic-engineering
+  - context-engineering
+  - künstliche-intelligenz
   - 11ty
 date modified: 2026-04-16T00:00:00.000Z
 ---
