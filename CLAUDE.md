@@ -16,6 +16,9 @@ npm run debug
 
 # Remove build output
 npm run clean
+
+# Check for tags that collide on the same /schlagwort/<slug>/ URL (also runs before production + in CI)
+npm run check:tags
 ```
 
 ## Architecture

@@ -1,4 +1,5 @@
 stages:
+  - check
   - build
   - deploy
 
@@ -28,6 +29,25 @@ variables:
   - mkdir -p ~/.ssh && chmod 700 ~/.ssh
   - printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
+
+# ── Check ─────────────────────────────────────────────────────────────────────
+#   Läuft auf jedem Push (auch Feature-Branches ohne MR), damit Konflikte wie
+#   doppelte Schlagwort-URLs früh auffallen.
+
+check:tags:
+  stage: check
+  image: node:18-alpine
+  needs: []
+  cache:
+    key:
+      files:
+        - package.json
+    paths:
+      - node_modules/
+    policy: pull-push
+  script:
+    - npm install --prefer-offline
+    - npm run check:tags
 
 # ── Build ─────────────────────────────────────────────────────────────────────
 
