@@ -22,7 +22,7 @@ Dabei wollte ich mich nicht einfach nur in guter neuer VibeCoding-Manier zum Erg
 
 Mein Anspruch war, dass ich weder meine gesamte Idee vorab definiere, noch das ich die Architektur, die ich mir im Kopf vorstelle vollständig vorgebe. Die Features sollten iterativ entstehen und die Architektur sollte im Prozess selbst entsteht. Gleichzeitig sollten Prinzipien wie DDD, TDD, Observability und Clean Code von Anfang an gelten, bzw. die Entwicklung für mich handhabbar machen (ich wollte den Code gerne selbst verstehen).
 
-Zuerst habe ich daher mit der KI die Umsetzung meiner Idee mit Spec-Kit gespiegelt und im Chat geschärft. Danach habe ich die Constitution (also Regeln, Leitplanken und Contracts) darauf basierend generiert und versucht dabei a. noch nicht die Domäne mit einfließen zu lassen, und b. nicht zu technisch bzw. zu spezifisch zu werden. Um die Architektur zusätzlich abzusichern, habe ich die Constitution noch so erweitert, dass für systemrelevante Komponenten zentrale ADRs verpflichtend sind.
+Zuerst habe ich daher mit dem LLM die Umsetzung meiner Idee mit Spec-Kit gespiegelt und im Chat geschärft. Danach habe ich die Constitution (also Regeln, Leitplanken und Contracts) darauf basierend generiert und versucht dabei a. noch nicht die Domäne mit einfließen zu lassen, und b. nicht zu technisch bzw. zu spezifisch zu werden. Um die Architektur zusätzlich abzusichern, habe ich die Constitution noch so erweitert, dass für systemrelevante Komponenten zentrale ADRs verpflichtend sind.
 
 Der Anfang fühlte sich das sehr gut an. So viele explizite Regeln und Verträge habe ich am Anfang eines Projekts bisher noch nie vorgegeben. Und Spec 001 (ein wirklich minimaler MVP) wurde super umgesetzt. Ein paar Dinge die ich anders gemacht hätte, aber zum einen war es ja nur ein MVP, zum anderen habe ich mir gedacht "das hätte ich bei meinen Mitarbeitern jetzt auch akzeptiert".
 
@@ -30,7 +30,7 @@ Spec 002 sollte darauf aufbauen und die wichtigen Architekturentscheidungen trag
 
 Konkret hat sich das LLM für eine ETL-Pipeline entschieden, weil ich in den Verträgen mehr Focus auf Determinismus gelegt habe, obwohl ich eigentlich ein agentisches, also nicht deterministisches (zufälliges) System bauen wollte.
 
-Spec 002 habe ich insgesamt dreimal verworfen (inklusive eines fast vollständigen Neustarts samt neuer Constitution). Meine Formulierungen und meine Contracts haben die KI immer wieder in die falsche Richtung gelenkt. Nach 4 Fable-5-Sessions (also 4x das Session-Limit in wenigen Minuten verbraten) und ungefähr 80% meines Copilot Pro+ Budgets war Spec 002 dann irgendwann umgesetzt 🥵.
+Spec 002 habe ich insgesamt dreimal verworfen (inklusive eines fast vollständigen Neustarts samt neuer Constitution). Meine Formulierungen und meine Contracts haben das LLM immer wieder in die falsche Richtung gelenkt. Nach 4 Fable-5-Sessions (also 4x das Session-Limit in wenigen Minuten verbraten) und ungefähr 80% meines Copilot Pro+ Budgets war Spec 002 dann irgendwann umgesetzt 🥵.
 
 Und selbst dabei musste ich die Constitution mehrfach nachschärfen. OTel-Metriken hatte ich von Anfang an drin, Logging aber nicht, also nicht als "Vertraglich binden". Spannend war der Workflow denn ich dabei "entdeckt" habe (ich weiß ehrlich gesagt nicht, ob ich das in der Doku hätte nachlesen können). Die Constitution kann man durchaus im Prozess anpassen (`/speckit-constitution`) muss dann aber mit `/speckit-converge` sicherstellen, dass der Plan, die Tasks und der Code noch dazu passt.
 
