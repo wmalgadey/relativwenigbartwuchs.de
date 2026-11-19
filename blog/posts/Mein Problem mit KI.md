@@ -11,6 +11,9 @@ tags:
   - spec-driven-development
   - agentic-coding
   - anforderungen
+preview: images/matt-ridley-Lyl8RL7imrw-unsplash.jpg
+credits:
+  - 'Aufmacherbild von [Matt Ridley](https://unsplash.com/de/@mattwridley) auf [Unsplash](https://unsplash.com/de/fotos/papierflugzeug-und-zerknitterte-papierkugel-Lyl8RL7imrw)'
 ---
 
 # Mein Problem mit KI
